@@ -1,15 +1,6 @@
 \documentclass[tese,capa]{texufpel}
 
-\usepackage[utf8]{inputenc} % acentuacao
-\usepackage{graphicx} % para inserir figuras
-\usepackage[T1]{fontenc}
-
-
-\hypersetup{
-    hidelinks, % Remove coloração e caixas
-    unicode=true,   %Permite acentuação no bookmark
-    linktoc=all %Habilita link no nome e página do sumário
-}
+\usepackage{madsantos}
 
 \unidade{Centro de Desenvolvimento Tecnológico}
 \programa{Programa de Pós-Gradua\-ção em Computação}
@@ -21,10 +12,8 @@
 
 \title{Um Blabla Blablabla com Aplicações em Blablabla}
 
-\author{Santos}{Maicon Ança dos}
-\advisor[Prof.~Dr.]{Cavalheiro}{Gerson Geraldo H.}
-% \coadvisor[Prof.~Dr.]{Aguiar}{Marilton Sanchotene de}
-% \collaborator[Prof.~Dr.]{Aguiar}{Marilton Sanchotene de}
+\author{Aguiar}{Marilton Sanchotene de}
+\advisor[Prof.~Dr.]{Aguiar}{Marilton Sanchotene de}
 
 %Palavras-chave em PT_BR
 \keyword{Palavrachave-um}
@@ -39,9 +28,6 @@
 \keywordeng{Keyword-four}
 
 \begin{document}
-
-%\renewcommand{\advisorname}{Orientadora}           %descomente caso tenhas orientadora
-%\renewcommand{\coadvisorname}{Coorientadora}      %descomente caso tenhas coorientadora
 
 \maketitle 
 
@@ -67,18 +53,6 @@ Doutor em Biotecnologia pela Universidade Federal de Pelotas.
 %Opcional
 \begin{dedicatoria}
   Dedico\ldots 
-  
-  Anotações:
-  \begin{itemize}
-      \item Apresentar extensões para o CloudSim é uma contribuição
-      \item Queremos contabilizar o custo de uma infraestrutura em nuvem:
-        \begin{itemize}
-            \item Considerando um trabalho atendido somente com os recursos locais
-            \item Considerando o atendimento com o cluster "federado"
-            \item Considerando o cloud bursting
-        \end{itemize}
-        \item Os cenários devem ser simulados de forma a permitir contabilizar estes custos.
-  \end{itemize}
 \end{dedicatoria}
 
 %Opcional
@@ -135,6 +109,43 @@ Bla blabla blablabla bla.
 
 %Sumario
 \tableofcontents
+
+\chapter*{Especificação do Caso de Estudo}
+
+Anotações:
+  \begin{itemize}
+      \item Apresentar extensões para o CloudSim é uma contribuição
+      \item Queremos contabilizar o custo de uma infraestrutura em nuvem:
+        \begin{itemize}
+            \item Considerando um trabalho atendido somente com os recursos locais
+            \item Considerando o atendimento com o cluster "federado"
+            \item Considerando o cloud bursting
+        \end{itemize}
+        \item Os cenários devem ser simulados de forma a permitir contabilizar estes custos.
+  \end{itemize}
+
+\textbf{Passo 1: Implantação do ambiente de nuvem}\\
+- identificar o "nó computacional" base (vai ser definido da cabeça)\\
+- identificar as instituições parceiras\\
+- identificar quantos nós cada instituição tem\\
+- interligar as instituições\\
+
+\textbf{Passo 2: avaliação preliminar}\\
+- gerar carga a partir das instituições parceiras\\
+-- em função de traço sintético\\
+- utilizar uma estratégia de distribuição da carga "simples" (algo que considere apenas disponibilidade de recursos nas outras instituições)\\
+- avaliar o comportamento a medida em que escala o aumento da demanda de processamento por instituição ou globalmente\\
+- individualizar o "custo" de uso da nuvem pelas instituições\\
+-- contabilizar o custo de ociosidade\\
+
+\textbf{Passo 3: Elaboração de estratégia de escalonamento e identificação dos limites da estrutura}\\
+- Propor uma estratégia de escalonamento mais elaborada, considerando alguns critérios (temos que ver estes critérios)\\
+- Reavaliar os custos\\
+
+\textbf{Passo 4: determinar vantagens e desvantagens (financeiras) de realizar cloud bursting}\\
+- Agora se apresenta a necessidade de "crescer" a infraestrutura: aumentar a quantidade de recursos ou alugar uma nuvem pública\\
+- Reaplicar a estratégia do Passo 3 neste novo contexto\\
+- Reavaliar os custos\\
 
 \chapter{Introdução}
 
@@ -288,7 +299,7 @@ Bla blabla blablabla bla.
 % \bibliographystyle{formato.bst} (sem extensao)
 
 \bibliographystyle{abnt}
-\bibliography{bibliografia} 
+\bibliography{MaiconSantosTese2021} 
 
 % Apêndices (Opcional) - Material produzido pelo autor
 \apendices

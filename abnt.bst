@@ -339,7 +339,7 @@ FUNCTION {format.names}
         and
         or
 		{
-			pop$ pop$ names " et~al." *
+			pop$ pop$ names " \MakeLowercase{et~al.}" *
 			n 'i :=
 		}{
 			"u" change.case$ swap$
@@ -379,10 +379,10 @@ FUNCTION {format.family.names}
 		and
 		or
 		{
-			pop$ names " et~al." *
+			pop$ names " \MakeLowercase{et~al.}" *
 			n 'i :=
 		}{
-			"u" change.case$
+			"t" change.case$
 			names swap$ add.to.namelist
 		} if$ 'names :=
 		#1 i + 'i :=
@@ -408,7 +408,7 @@ FUNCTION {format.family.names.all}
 		duplicate$ i "{ll}{~jj}" format.name$
 		duplicate$ "others" =
 		{
-			pop$ names " et~al." *
+			pop$ names " \MakeLowercase{et~al.}" *
 			n 'i :=
 		}{
 			"u" change.case$

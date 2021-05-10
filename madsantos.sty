@@ -1,0 +1,442 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{madsantos}[2018/12/17 MAdSantos Package]
+
+% \PassOptionsToPackage{dvipsnames}{xcolor} % esta opção deve ser adicionada antes da linha \documentclass, no arquivo mestre.
+
+%#### Language adjustments #####################################################
+\RequirePackage{babel} % idioma Português Brasil
+%\RequirePackage[brazil]{babel} % idioma Português Brasil
+%\RequirePackage[english]{babel} % idioma Inglês
+%###############################################################################
+
+%#### Packages #################################################################
+\RequirePackage[svgnames, table]{xcolor}
+\RequirePackage{tabularx, ragged2e, lmodern, bigstrut}
+\RequirePackage[printonlyused]{acronym}
+\RequirePackage[export]{adjustbox}
+\RequirePackage{algorithm}
+\RequirePackage{algpseudocode}
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{anyfontsize}
+\RequirePackage{appendix}
+\RequirePackage{array}
+\RequirePackage{atbegshi}
+\RequirePackage{bbding}
+\RequirePackage{blindtext}
+\RequirePackage{booktabs}
+\RequirePackage{breakcites}
+% \RequirePackage{breakurl}
+\RequirePackage{calc}
+\RequirePackage{cancel}
+% \RequirePackage{cite} %comentado porque a classe da UFPel utiliza o pacote natbib, que é imcompatível com o cite
+% \RequirePackage{caption} %comentado porque a classe da UFPel já define.
+\RequirePackage{cooltooltips}
+\RequirePackage[inline]{enumitem}
+\RequirePackage{etoolbox}
+\RequirePackage{fancyvrb}
+\RequirePackage{float}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[bottom]{footmisc}
+\RequirePackage{graphicx}
+\RequirePackage{hyphenat}
+\RequirePackage{hyperref}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{kvoptions}
+\RequirePackage{listings}
+\RequirePackage{lipsum}
+\RequirePackage{lscape}
+\RequirePackage{marginnote}
+\RequirePackage{microtype}
+\RequirePackage{multicol}
+\RequirePackage{multirow}
+% \RequirePackage[square,sort]{natbib}
+\RequirePackage{palatino}
+%\RequirePackage{paralist}
+\RequirePackage{pdfpages}
+\RequirePackage{pdflscape}
+\RequirePackage{pifont}
+\RequirePackage{pxfonts}
+\RequirePackage{soulutf8}
+% \RequirePackage{subcaption}
+%\RequirePackage{subfigure}
+\RequirePackage{subfiles}
+\RequirePackage{tablefootnote}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{textcomp}
+\RequirePackage{times}
+
+%################################################################################
+\RequirePackage{tikz}
+\usetikzlibrary{tikzmark,calc,decorations.pathmorphing}
+%################################################################################
+
+%################################################################################
+\setlength{\marginparwidth}{2cm}
+\RequirePackage[colorinlistoftodos,prependcaption,textsize=scriptsize,portuguese]{todonotes}
+%################################################################################
+
+\RequirePackage{times}
+\RequirePackage{txfonts}
+\RequirePackage[normalem]{ulem}\useunder{\uline}{\ul}{}
+\RequirePackage{url}
+\RequirePackage{verbatim}
+\RequirePackage{wasysym}
+\RequirePackage{xargs}
+% \RequirePackage[table]{xcolor}
+\RequirePackage{xcolor-material}
+\RequirePackage{xspace}
+
+%###############################################################################
+
+%#### Caption size adjustments #################################################
+%\captionsetup{font=scriptsize,labelfont=scriptsize}
+%\captionsetup{skip=1pt,belowskip=1pt}
+% \captionsetup{compatibility=false}
+%###############################################################################
+
+%#### Definitions ##############################################################
+
+%%%% ajuste para todonotes em tabelas
+\renewcommand{\marginpar}{\marginnote}
+
+%%%% Lista de Abreviaturas e Siglas %%%%
+\newcommand{\listasiglas}[1]{
+	\input{#1}
+}
+
+%%%% Alterar aparência da TODO List %%%%
+% \makeatletter
+% \def\myaddcontentsline#1#2#3{%
+%   \addtocontents{#1}{\protect\contentsline{#2}{#3}{see \thesubsection\ at p. \thepage}{}}}
+% \renewcommand{\@todonotes@addElementToListOfTodos}{%
+%     \if@todonotes@colorinlistoftodos%
+%         \myaddcontentsline{tdo}{todo}{{%
+%             \colorbox{\@todonotes@currentbackgroundcolor}%
+%                 {\textcolor{\@todonotes@currentbackgroundcolor}{o}}%
+%             \ \@todonotes@caption}}%
+%     \else%
+%         \myaddcontentsline{tdo}{todo}{{\@todonotes@caption}}%
+%     \fi}%
+% \newcommand*\mylistoftodos{%
+%   \begingroup
+%        \setbox\@tempboxa\hbox{see 9.9 at p. 99}%
+%        \renewcommand*\@tocrmarg{\the\wd\@tempboxa}%
+%        \renewcommand*\@pnumwidth{\the\wd\@tempboxa}%
+%        \listoftodos%
+%   \endgroup
+% }
+% % \makeatother
+
+%%%% Highlight em Latex %%%%
+%%%% use: \textdecor[<color>, draw=<color>]{<text>}
+\colorlet{tdcolor}{yellow!35}
+
+\makeatletter
+
+\newlength{\txtdec@depth}
+\setlength{\txtdec@depth}{.5ex}
+\newlength{\txtdec@height}
+\setlength{\txtdec@height}{\f@size pt} % sensible default
+
+\newcounter{txtdec@hyphmark}
+\newcounter{txtdec@decormark}
+\setcounter{txtdec@decormark}{1}
+\newcounter{txtdec@hyphdraw}
+\setcounter{txtdec@hyphdraw}{1}
+\newcounter{txtdec@decordraw}
+\setcounter{txtdec@decordraw}{1}
+
+\newcounter{txtdec@thenextpage}
+
+\newtoggle{txtdec@unfinisheddecor}
+\newtoggle{txtdec@stayonpage}
+\newtoggle{txtdec@stayondecor}
+\newtoggle{txtdec@stayonline}
+
+% from https://tex.stackexchange.com/a/33765/105447
+\newcommand{\gettikzxy}[3]{%
+  \tikz@scan@one@point\pgfutil@firstofone#1\relax
+  \edef#2{\the\pgf@x}%
+  \edef#3{\the\pgf@y}%
+}
+
+% the drawing macros
+
+\tikzset{%
+  defaultdecor/.style={%
+    fill=tdcolor,
+    decoration = {random steps, amplitude=1pt, segment length=10pt},
+    outer sep = -15pt,
+    inner sep = 0pt,
+    decorate}%
+}
+
+\newcommand{\txtdec@draw@all}{%
+  \tikzset{thisdecor/.style/.expanded=\csuse{decor@tikz@style@\thetxtdec@decordraw}}%
+  \path[defaultdecor, thisdecor]
+        ($(\Xbegin,\Ybegin)+(0,-\txtdec@depth)$) rectangle
+        ($(\Xend,\Yend)+(0,\txtdec@height-\txtdec@depth)$) ;
+}
+
+\newcommand{\txtdec@draw@begin}{%
+  \tikzset{thisdecor/.style/.expanded=\csuse{decor@tikz@style@\thetxtdec@decordraw}}%
+  \path[defaultdecor, thisdecor]
+        ($(\Xbegin,\Ybegin)+(0,-\txtdec@depth)$) rectangle
+        ($(\Xlineend,\Ylineend)+(0,\txtdec@height-\txtdec@depth)$) ;
+}
+
+\newcommand{\txtdec@draw@middle}{%
+  \tikzset{thisdecor/.style/.expanded=\csuse{decor@tikz@style@\thetxtdec@decordraw}}%
+  \path[defaultdecor, thisdecor]
+        ($(\Xlinebegin,\Ylinebegin)+(0,-\txtdec@depth)$) rectangle
+        ($(\Xlineend,\Ylineend)+(0,\txtdec@height-\txtdec@depth)$) ;
+}
+
+\newcommand{\txtdec@draw@end}{%
+  \tikzset{thisdecor/.style/.expanded=\csuse{decor@tikz@style@\thetxtdec@decordraw}}%
+  \path[defaultdecor, thisdecor]
+        ($(\Xlinebegin,\Ylinebegin)+(0,-\txtdec@depth)$) rectangle
+        ($(\Xend,\Yend)+(0,\txtdec@height-\txtdec@depth)$) ;
+}
+
+
+% using soul to set tikzmarks
+
+\def\SOUL@tdleaders{%
+  \stepcounter{txtdec@hyphmark}%
+  \tikzmark{p\thepage.d\arabic{txtdec@decormark}.\arabic{txtdec@hyphmark}}%
+  \leaders\hrule\@depth\z@\@height\z@\relax
+}
+
+\def\SOUL@tdunderline#1{{%
+    \setbox\z@\hbox{#1}%
+    \dimen@=\wd\z@
+    \dimen@i=\SOUL@uloverlap
+    \advance\dimen@2\dimen@i
+    \rlap{%
+      \null
+      \kern-\dimen@i
+      \SOUL@ulcolor{\SOUL@tdleaders\hskip\dimen@}%
+      \hskip\dimen@
+    }%
+    \unhcopy\z@
+  }}
+
+\def\SOUL@tdpreamble{%
+  \spaceskip\SOUL@spaceskip
+  \setcounter{txtdec@hyphmark}{0}%
+  \tikzmark{p\thepage.d\arabic{txtdec@decormark}.begin}%
+}
+\def\SOUL@tdeverysyllable{%
+  \SOUL@tdunderline{%
+    \the\SOUL@syllable
+    \SOUL@setkern\SOUL@charkern
+  }%
+  \stepcounter{txtdec@hyphmark}%
+  \tikzmark{p\thepage.d\arabic{txtdec@decormark}.\arabic{txtdec@hyphmark}}%
+}
+\def\SOUL@tdeveryhyphen{%
+  \discretionary{%
+    \unkern
+    \SOUL@tdunderline{%
+      \SOUL@setkern\SOUL@hyphkern
+      \SOUL@sethyphenchar
+    }%
+    \stepcounter{txtdec@hyphmark}%
+    \tikzmark{p\thepage.d\arabic{txtdec@decormark}.\arabic{txtdec@hyphmark}}%
+  }{}{}%
+}
+\def\SOUL@tdeveryexhyphen#1{%
+  \SOUL@setkern\SOUL@hyphkern
+  \SOUL@tdunderline{#1}%
+  \stepcounter{txtdec@hyphmark}%
+  \tikzmark{p\thepage.d\arabic{txtdec@decormark}.\arabic{txtdec@hyphmark}}%
+  \discretionary{}{}{%
+    \SOUL@setkern\SOUL@charkern
+  }%
+}
+\def\SOUL@tdpostamble{%
+  % create an extra mark, vertically displaced, to create an exit condition for the last line
+  \stepcounter{txtdec@hyphmark}%
+  \raisebox{-5pt}{\tikzmark{p\thepage.d\arabic{txtdec@decormark}.\arabic{txtdec@hyphmark}}}%
+  \tikzmark{p\thepage.d\arabic{txtdec@decormark}.end}%
+  \stepcounter{txtdec@decormark}%
+}
+\def\SOUL@tdsetup{%
+  \SOUL@setup
+  \let\SOUL@preamble\SOUL@tdpreamble
+  \let\SOUL@everysyllable\SOUL@tdeverysyllable
+  \let\SOUL@everyhyphen\SOUL@tdeveryhyphen
+  \let\SOUL@everyexhyphen\SOUL@tdeveryexhyphen
+  \let\SOUL@postamble\SOUL@tdpostamble
+}
+\DeclareRobustCommand*\textdecor[1][]{%
+  \csxdef{decor@tikz@style@\thetxtdec@decormark}{#1}%
+  \csxdef{decor@fsize@\thetxtdec@decormark}{\f@size pt}%
+  \SOUL@tdsetup\SOUL@}
+
+
+% get the drawing done AtBeginShipout
+
+\AtBeginShipout{%
+  \AtBeginShipoutUpperLeft{%
+    % getting the number of the next page
+    \setcounter{txtdec@thenextpage}{\thepage}%
+    \stepcounter{txtdec@thenextpage}%
+    % if the current decoration occurs on this page, stay on it
+    \iftikzmark{p\thepage.d\arabic{txtdec@decordraw}.\arabic{txtdec@hyphdraw}}{%
+      \toggletrue{txtdec@stayonpage}}{}%
+    \whileboolexpr{togl {txtdec@stayonpage}}{%
+      \begin{tikzpicture}[remember picture, overlay]
+        \setlength{\txtdec@height}{\csuse{decor@fsize@\thetxtdec@decordraw}}%
+        \iftikzmark{p\thepage.d\arabic{txtdec@decordraw}.begin}{%
+          % if current decor begins in current page, get coordinates
+          \gettikzxy{(pic cs:p\thepage.d\arabic{txtdec@decordraw}.begin)}{\Xbegin}{\Ybegin}}{%
+          % if current decor begins in previous page, set to top left of the page
+          \gettikzxy{(current page.north west)}{\Xbegin}{\Ybegin}}%
+        \iftikzmark{p\thepage.d\arabic{txtdec@decordraw}.end}{%
+          % if current decor ends in current page, get coordinates
+          \gettikzxy{(pic cs:p\thepage.d\arabic{txtdec@decordraw}.end)}{\Xend}{\Yend}}{%
+          % if current decor ends in future page, set to bottom right of the page
+          \gettikzxy{(current page.south east)}{\Xend}{\Yend}}%
+        \ifdim\Ybegin=\Yend % the simplest case, a single line
+          \txtdec@draw@all
+          \stepcounter{txtdec@decordraw}%
+        \else % current textdecor has a line break          
+          \toggletrue{txtdec@stayondecor}%
+          \whileboolexpr{togl {txtdec@stayondecor}}{%
+            \gettikzxy{(pic cs:p\thepage.d\arabic{txtdec@decordraw}.\arabic{txtdec@hyphdraw})}{\Xlinebegin}{\Ylinebegin}%
+            \edef\Xcurrent{\Xlinebegin}%
+            \edef\Ycurrent{\Ylinebegin}%
+            \edef\Xnext{\Xcurrent}%
+            \edef\Ynext{\Ycurrent}%
+            \toggletrue{txtdec@stayonline}%
+            \whileboolexpr{togl {txtdec@stayonline}}{%
+              \ifdim\Ycurrent=\Ynext
+                \stepcounter{txtdec@hyphdraw}%
+                % if the following tikzmark exists, we are at a page break
+                \iftikzmark{p\arabic{txtdec@thenextpage}.d\arabic{txtdec@decordraw}.\arabic{txtdec@hyphdraw}}{%
+                  \edef\Xcurrent{\Xnext}%
+                  \edef\Ycurrent{\Ynext}%
+                  \gettikzxy{(current page.south east)}{\Xnext}{\Ynext}
+                  \togglefalse{txtdec@stayondecor}%
+                }{% else, we remain on the same page
+                  \iftikzmark{p\thepage.d\arabic{txtdec@decordraw}.\arabic{txtdec@hyphdraw}}{%
+                    \edef\Xcurrent{\Xnext}%
+                    \edef\Ycurrent{\Ynext}%
+                    \gettikzxy{(pic cs:p\thepage.d\arabic{txtdec@decordraw}.\arabic{txtdec@hyphdraw})}{\Xnext}{\Ynext}}{}%
+                }%
+              \else
+                \edef\Xlineend{\Xcurrent}%
+                \edef\Ylineend{\Ycurrent}%
+                % if we are on the first line of the current decoration
+                \ifdim\Ylinebegin=\Ybegin
+                  \txtdec@draw@begin
+                \else
+                  % if we are on the last line of the current decoration
+                  \ifdim\Ycurrent=\Yend
+                    \txtdec@draw@end
+                    \stepcounter{txtdec@decordraw}%
+                    \setcounter{txtdec@hyphdraw}{1}%
+                    \togglefalse{txtdec@stayondecor}%
+                  % if we are in a middle line of the decoration
+                  \else
+                    \txtdec@draw@middle
+                  \fi
+                \fi
+                \togglefalse{txtdec@stayonline}%  
+              \fi
+            }%
+          }%
+        \fi
+      \end{tikzpicture}%
+      % if the beginning of the next decor does not exist in this page, leave this page
+      \iftikzmark{p\thepage.d\arabic{txtdec@decordraw}.begin}{}{%
+        \togglefalse{txtdec@stayonpage}}%
+      % if the continuation of the current decor exists in the next page, leave this page
+      \iftikzmark{p\arabic{txtdec@thenextpage}.d\arabic{txtdec@decordraw}.\arabic{txtdec@hyphdraw}}{%
+        \togglefalse{txtdec@stayonpage}}{}% 
+    }%
+  }%
+}
+
+\makeatother
+%%%% Highlight %%%%
+
+%%%% Checkmarks and ScaleChecks %%%%
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\def\scalecheck{\resizebox{\widthof{\checkmark}*\ratio{\widthof{x}}{\widthof{\normalsize x}}}{!}{\checkmark}}
+
+%%%% Other definitions
+\graphicspath{{./images/}}
+
+\definecolor{mygray}{gray}{0.8}
+
+\newtheorem{hipotese}{Hipótese}
+
+\lstset{extendedchars=true,frame=tb,basicstyle=\footnotesize,stringstyle=\ttfamily,showstringspaces=true} % ajustes para inserir código fonte
+
+\renewcommand{\lstlistingname}{Listagem}
+
+\floatname{algorithm}{Algoritmo}
+
+%\hypersetup{breaklinks=true}
+\hypersetup{
+    hidelinks, % Remove coloração e caixas
+    unicode=true,   %Permite acentuação no bookmark
+    linktoc=all, %Habilita link no nome e página do sumário
+    breaklinks=true
+}
+
+%%%% Ajuste para quebra de linha em URLs nas referências - bibtex
+\def\UrlBreaks{\do\/\do-}
+
+%%%% Caixas de texto com quebra %%%%
+\newtcolorbox{blockquoteRed}{colback=GoogleRed!50,grow to right by=-1mm,grow to left by=-1mm,boxrule=0pt,boxsep=0pt,breakable}
+\newtcolorbox{blockquoteGreen}{colback=GoogleGreen!50,grow to right by=-1mm,grow to left by=-1mm,boxrule=0pt,boxsep=0pt,breakable}
+
+%%%% dotlines %%%%
+%\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
+%\newcommand\dotline[2][.5em]{\leavevmode\hbox to #2{\dotfill{#1}\hfil}}
+
+%###############################################################################
+
+%#### "Tics" commands - green (ok) and red (no) ################################
+\newcommand{\ok}{\textbf{\textcolor{GoogleGreen}{\ding{51}}}}
+\newcommand{\no}{\textbf{\textcolor{GoogleRed}{\ding{55}}}}
+\newcommand{\tic}{\textbf{\ding{51}}}
+%###############################################################################
+
+%#### Comment balloons #########################################################
+% usage: \unsure{<text>} or \unsure[<option>]{<text>}
+%		 \change{<text>} or \change[<option>]{<text>}
+%		 \info{<text>} or \info[<option>]{<text>}
+%		 \improve{<text>} or \improve[<option>]{<text>}
+% option available: [inline]
+
+\newcounter{todocounter}
+\newcommand{\todonum}[2][]{\stepcounter{todocounter}\todo[#1]{\thetodocounter.~#2\xspace}}
+\newcommandx{\unsure}[2][1=]{\todonum[linecolor=MaterialBlueGrey,backgroundcolor=MaterialBlueGrey!25,bordercolor=MaterialBlueGrey,#1]{#2}\xspace}
+\newcommandx{\change}[2][1=]{\todonum[linecolor=GoogleRed,backgroundcolor=GoogleRed!25,bordercolor=GoogleRed,#1]{#2}\xspace}
+\newcommandx{\info}[2][1=]{\todonum[linecolor=GoogleGreen,backgroundcolor=GoogleGreen!25,bordercolor=GoogleGreen,#1]{#2}\xspace}
+\newcommandx{\improve}[2][1=]{\todonum[linecolor=GoogleBlue,backgroundcolor=GoogleBlue!25,bordercolor=GoogleBlue,#1]{#2}\xspace}
+\newcommandx{\ups}[2][1=]{\todonum[linecolor=GoogleYellow,backgroundcolor=GoogleYellow!25,bordercolor=GoogleYellow,#1]{#2}\xspace}
+
+% \newcounter{todocounter}
+% \newcommand{\todonum}[2][]{\stepcounter{todocounter}\todo[#1]{\thetodocounter.#2}}
+% \newcommandx{\unsure}[2][1=]{\todonum[linecolor=gray,backgroundcolor=gray!25,bordercolor=gray,#1]{\textbf{[UNSURE]:}\newline #2}}
+% \newcommandx{\change}[2][1=]{\todonum[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{\textbf{[CHANGE]:}\newline #2}}
+% \newcommandx{\info}[2][1=]{\todonum[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{\textbf{[INFO]:}\newline #2}}
+% \newcommandx{\improve}[2][1=]{\todonum[linecolor=NavyBlue,backgroundcolor=NavyBlue!25,bordercolor=NavyBlue,#1]{\textbf{[IMPROVE]:}\newline #2}}
+%\newcommand{\todonum}[2][]{\todo[#1]{\thesubsection{}. #2}}
+
+%###############################################################################
+
+%#### Beamer adjustments #######################################################
+%\usefonttheme{structurebold} % bold na fontes
+%\setbeamertemplate{caption}[numbered] % numeração de figuras
+%###############################################################################
+
+\endinput
