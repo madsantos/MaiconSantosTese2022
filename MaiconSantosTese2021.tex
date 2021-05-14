@@ -1,6 +1,7 @@
 \documentclass[tese,capa]{texufpel}
 
 \usepackage{madsantos}
+\usepackage[utf8]{inputenc}
 
 \unidade{Centro de Desenvolvimento Tecnológico}
 \programa{Programa de Pós-Gradua\-ção em Computação}
@@ -100,22 +101,22 @@ Bla blabla blablabla bla.
 
 \chapter*{\listabbrvname}
 \acronymused{CAPEX}
-\acronymused{CPU}
-\acronymused{Gbps}
-\acronymused{HPC}
-\acronymused{IaaS}
-\acronymused{IEP}
-\acronymused{LGPD}
-\acronymused{M}
-\acronymused{MPI}
-\acronymused{OE}
-\acronymused{OPEX}
-\acronymused{QP}
-\acronymused{ROI}
-\acronymused{RSL}
-\acronymused{SLA}
-\acronymused{TCO}
-\acronymused{vCPU}
+% \acronymused{CPU}
+% \acronymused{Gbps}
+% \acronymused{HPC}
+% \acronymused{IaaS}
+% \acronymused{IEP}
+% \acronymused{LGPD}
+% \acronymused{M}
+% \acronymused{MPI}
+% \acronymused{OE}
+% \acronymused{OPEX}
+% \acronymused{QP}
+% \acronymused{ROI}
+% \acronymused{RSL}
+% \acronymused{SLA}
+% \acronymused{TCO}
+% \acronymused{vCPU}
 
 \listasiglas{_Abreviaturas}
 
@@ -134,43 +135,6 @@ Bla blabla blablabla bla.
 %Sumario
 \tableofcontents
 
-\chapter*{Especificação do Caso de Estudo}
-
-Anotações:
-  \begin{itemize}
-      \item Apresentar extensões para o CloudSim é uma contribuição
-      \item Queremos contabilizar o custo de uma infraestrutura em nuvem:
-        \begin{itemize}
-            \item Considerando um trabalho atendido somente com os recursos locais
-            \item Considerando o atendimento com o cluster "federado"
-            \item Considerando o cloud bursting
-        \end{itemize}
-        \item Os cenários devem ser simulados de forma a permitir contabilizar estes custos.
-  \end{itemize}
-
-\textbf{Passo 1: Implantação do ambiente de nuvem}\\
-- identificar o "nó computacional" base (vai ser definido da cabeça)\\
-- identificar as instituições parceiras\\
-- identificar quantos nós cada instituição tem\\
-- interligar as instituições\\
-
-\textbf{Passo 2: avaliação preliminar}\\
-- gerar carga a partir das instituições parceiras\\
--- em função de traço sintético\\
-- utilizar uma estratégia de distribuição da carga "simples" (algo que considere apenas disponibilidade de recursos nas outras instituições)\\
-- avaliar o comportamento a medida em que escala o aumento da demanda de processamento por instituição ou globalmente\\
-- individualizar o "custo" de uso da nuvem pelas instituições\\
--- contabilizar o custo de ociosidade\\
-
-\textbf{Passo 3: Elaboração de estratégia de escalonamento e identificação dos limites da estrutura}\\
-- Propor uma estratégia de escalonamento mais elaborada, considerando alguns critérios (temos que ver estes critérios)\\
-- Reavaliar os custos\\
-
-\textbf{Passo 4: determinar vantagens e desvantagens (financeiras) de realizar cloud bursting}\\
-- Agora se apresenta a necessidade de "crescer" a infraestrutura: aumentar a quantidade de recursos ou alugar uma nuvem pública\\
-- Reaplicar a estratégia do Passo 3 neste novo contexto\\
-- Reavaliar os custos\\
-
 \chapter{Introdução}
 
 \section{Uma subseção}
@@ -183,26 +147,6 @@ blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
 Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
 blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
 Bla blabla blablabla bla.
-
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla~\citet{Moore:1979:MAI,Aguiar:2005}.
-
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-Bla blabla blablabla bla~\cite{vonNeumann:1966:TSR}.
 
 \section{Outra seção}
 
@@ -973,6 +917,43 @@ Nas colunas seguintes, ``Nuvem Privada'', ``Nuvem Pública'' e ``\textit{Cluster
   \end{tabular}%
   }
 \end{table}
+
+\chapter{Especificação do caso de estudo}
+
+Anotações:
+  \begin{itemize}
+      \item Apresentar extensões para o CloudSim é uma contribuição
+      \item Queremos contabilizar o custo de uma infraestrutura em nuvem:
+        \begin{itemize}
+            \item Considerando um trabalho atendido somente com os recursos locais
+            \item Considerando o atendimento com o cluster "federado"
+            \item Considerando o cloud bursting
+        \end{itemize}
+        \item Os cenários devem ser simulados de forma a permitir contabilizar estes custos.
+  \end{itemize}
+
+\textbf{Passo 1: Implantação do ambiente de nuvem}\\
+- identificar o "nó computacional" base (vai ser definido da cabeça)\\
+- identificar as instituições parceiras\\
+- identificar quantos nós cada instituição tem\\
+- interligar as instituições\\
+
+\textbf{Passo 2: avaliação preliminar}\\
+- gerar carga a partir das instituições parceiras\\
+-- em função de traço sintético\\
+- utilizar uma estratégia de distribuição da carga "simples" (algo que considere apenas disponibilidade de recursos nas outras instituições)\\
+- avaliar o comportamento a medida em que escala o aumento da demanda de processamento por instituição ou globalmente\\
+- individualizar o "custo" de uso da nuvem pelas instituições\\
+-- contabilizar o custo de ociosidade\\
+
+\textbf{Passo 3: Elaboração de estratégia de escalonamento e identificação dos limites da estrutura}\\
+- Propor uma estratégia de escalonamento mais elaborada, considerando alguns critérios (temos que ver estes critérios)\\
+- Reavaliar os custos\\
+
+\textbf{Passo 4: determinar vantagens e desvantagens (financeiras) de realizar cloud bursting}\\
+- Agora se apresenta a necessidade de "crescer" a infraestrutura: aumentar a quantidade de recursos ou alugar uma nuvem pública\\
+- Reaplicar a estratégia do Passo 3 neste novo contexto\\
+- Reavaliar os custos\\
 
 \chapter{Desenvolvimento}
 
