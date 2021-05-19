@@ -884,27 +884,146 @@ Nas colunas seguintes, ``Nuvem Privada'', ``Nuvem Pública'' e ``\textit{Cluster
   }
 \end{table}
 
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \scriptsize
+  % \newcommand\tic{\checkmark}
+  \definecolor{RWGray}{gray}{0.85}
+  \caption{Abordagens adotadas pelos trabalhos relacionados}
+  \label{tbl:state-of-art}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabularx}{\linewidth}{p{6cm}>{\columncolor{RWGray}}XX>{\columncolor{RWGray}}XX>{\columncolor{RWGray}}XX>{\columncolor{RWGray}}XX>{\columncolor{RWGray}}XX>{\columncolor{RWGray}}XX>{\columncolor{RWGray}}XX>{\columncolor{RWGray}}XX}
+    \toprule
+                            &
+    \rotatebox[origin=l]{90}{\textbf{HPC}}					&
+    \rotatebox[origin=l]{90}{\textbf{Simulação}} 			&
+    \rotatebox[origin=l]{90}{\textbf{Infra. real}} 			&
+    \rotatebox[origin=l]{90}{\textbf{Traço}} 				&
+    \rotatebox[origin=l]{90}{\textbf{\textit{Benchmark}}} 	&
+    \rotatebox[origin=l]{90}{\textbf{Nuvem privada}} 		&
+    \rotatebox[origin=l]{90}{\textbf{Nuvem pública}} 		&
+    \rotatebox[origin=l]{90}{\textbf{\textit{Cluster} local}}&
+    \rotatebox[origin=l]{90}{\textbf{Análise de custo}} 		&
+    \rotatebox[origin=l]{90}{\textbf{Satisf. usuário}} 		&
+    \rotatebox[origin=l]{90}{\textbf{Satisf. provedor}}		\\	
+    \hline
+    \cite{roloffHighPerformanceComputing2012c}				& \tic 	 &       & \tic	&		& \tic 	& 		& \tic	& \tic	& \tic	& \tic	& \\
+    \hline
+    \cite{maratheComparativeStudyHighperformance2013c}		& \tic   &       & \tic	& \tic  & \tic  &		& \tic  & \tic	& \tic	& \tic	& \\
+    \hline
+    \cite{guerreroPerformanceCostModel2014b}				& \tic   &       & \tic	&       &    	&		& \tic  & \tic	& \tic	& \tic	& \\
+    \hline
+    \cite{shenCostOptimizedResourceProvision2014b}			&        & \tic  &		&       &    	& \tic	& \tic  &		& \tic	& \tic 	& \tic \\
+    \hline
+    \cite{guptaEvaluatingImprovingPerformance2016d}			& \tic   & \tic  & \tic	&       & \tic  & \tic	& \tic  & \tic	& 		& \tic 	& \tic \\
+    \hline
+    \cite{prukkantragornPriceEfficiencyHigh2016b}			& \tic   &       & \tic	&       & \tic  &		& \tic  &		& \tic	& \tic	& \\
+    \hline
+    \cite{arabnejadSchedulingDeadlineConstrained2017c}		&        & \tic  &		& \tic  &    	&		&       &		& 		& \tic	& \\
+    \hline
+    \cite{dreherCostAnalysisComparing2017e}					& \tic   &       &		&       &    	& \tic	& \tic  & \tic	& \tic	& \tic	& \\
+    \hline
+    \cite{roloffHPCApplicationPerformance2017c}				& \tic   &       & \tic	&       & \tic  &		& \tic  & \tic	& 		& \tic	& \\
+    \hline
+    \cite{sadooghiUnderstandingPerformancePotential2017d}	& \tic   &       & \tic	&       & \tic  & \tic	& \tic  &		& \tic	& \tic	& \\
+    \hline
+    \cite{emerasAmazonElasticCompute2019c}					& \tic   &       &		&       & \tic  &		& \tic  & \tic	& \tic	& 		& \\
+    \hline
+    \cite{roloffExploringInstanceHeterogeneity2019a}		& \tic   &       & \tic	&       & \tic  &		& \tic  &		& 		& \tic	& \\
+  \bottomrule
+  \end{tabularx}%
+  }
+\end{table}	
+
 \chapter{Especificação do caso de estudo}
 
-Anotações:
-  \begin{itemize}
-      \item Apresentar extensões para o CloudSim é uma contribuição
-      \item Queremos contabilizar o custo de uma infraestrutura em nuvem:
-        \begin{itemize}
-            \item Considerando um trabalho atendido somente com os recursos locais
-            \item Considerando o atendimento com o cluster "federado"
-            \item Considerando o cloud bursting
-        \end{itemize}
-        \item Os cenários devem ser simulados de forma a permitir contabilizar estes custos.
-  \end{itemize}
+% Anotações:
+%   \begin{itemize}
+%       \item Apresentar extensões para o CloudSim é uma contribuição
+%       \item Queremos contabilizar o custo de uma infraestrutura em nuvem:
+%         \begin{itemize}
+%             \item Considerando um trabalho atendido somente com os recursos locais
+%             \item Considerando o atendimento com o cluster "federado"
+%             \item Considerando o cloud bursting
+%         \end{itemize}
+%         \item Os cenários devem ser simulados de forma a permitir contabilizar estes custos.
+%   \end{itemize}
 
-\textbf{Passo 1: Implantação do ambiente de nuvem}\\
+% \textbf{Passo 1: Implantação do ambiente de nuvem}\\
+% - identificar o "nó computacional" base (vai ser definido da cabeça)\\
+% - identificar as instituições parceiras\\
+% - identificar quantos nós cada instituição tem\\
+% - interligar as instituições\\
+
+% \textbf{Passo 2: avaliação preliminar}\\
+% - gerar carga a partir das instituições parceiras\\
+% -- em função de traço sintético\\
+% - utilizar uma estratégia de distribuição da carga "simples" (algo que considere apenas disponibilidade de recursos nas outras instituições)\\
+% - avaliar o comportamento a medida em que escala o aumento da demanda de processamento por instituição ou globalmente\\
+% - individualizar o "custo" de uso da nuvem pelas instituições\\
+% -- contabilizar o custo de ociosidade\\
+
+% \textbf{Passo 3: Elaboração de estratégia de escalonamento e identificação dos limites da estrutura}\\
+% - Propor uma estratégia de escalonamento mais elaborada, considerando alguns critérios (temos que ver estes critérios)\\
+% - Reavaliar os custos\\
+
+% 
+
+\section{Implantação do Ambiente de Nuvem}
+
 - identificar o "nó computacional" base (vai ser definido da cabeça)\\
 - identificar as instituições parceiras\\
 - identificar quantos nós cada instituição tem\\
 - interligar as instituições\\
 
-\textbf{Passo 2: avaliação preliminar}\\
+Com base no Mapa de Investimentos do \textdecor[GoogleYellow!35, draw=GoogleYellow!35]{CNPq}\ups{adicionar à lista de siglas} (Conselho Nacional de Desenvolvimento Científico e Tecnológico), disponível na Internet em \url{http://efomento.cnpq.br/efomento/distribuicaoGeografica/distribuicaoGeografica.do?metodo=apresentar}\improve{transformar em referência formal}, sob a modalidade de "Apoio a Projetos de Pesquisa", foram selecionadas 15 instituições, contemplado Universidades e Institutos Federais, com maior percentual de participação em Projetos de Pesquisa no Estado do RS.
+
+\begin{table}[]
+  \centering
+  \caption{Instituições Parceiras}
+  \label{tab:my-table}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}|l|l|l|@{}}
+  \toprule
+  Instituição                                                        & Sigla      & \# projetos \\ \midrule
+  Universidade Federal do Rio Grande do Sul                          & UFRGS      & 280         \\ \midrule
+  Universidade Federal de Santa Maria                                & UFSM       & 108         \\ \midrule
+  Universidade Federal de Pelotas                                    & UFPEL      & 88          \\ \midrule
+  Universidade Federal do Rio Grande                                 & FURG       & 60          \\ \midrule
+  Universidade do Vale do Rio do Sinos                               & UNISINOS   & 57          \\ \midrule
+  Pontifícia Universidade Católica do Rio Grande do Sul              & PUCRS      & 44          \\ \midrule
+  Universidade de Caxias do Sul                                      & UCS        & 28          \\ \midrule
+  Universidade Federal do Pampa                                      & UNIPAMPA   & 21          \\ \midrule
+  Fundação Universidade Federal de Ciências da Saúde de Porto Alegre & UFCSPA     & 13          \\ \midrule
+  Universidade do Vale do Taquari                                    & UNIVATES   & 13          \\ \midrule
+  Universidade de Passo Fundo                                        & UPF        & 10          \\ \midrule
+  Universidade Feevale                                               & FEEVALE    & 10          \\ \midrule
+  Universidade La Salle                                              & UNILASALLE & 9           \\ \midrule
+  Universidade Regional Integrada do Alto Uruguai e das Missões      & URI        & 9           \\ \midrule
+  Instituto Federal Sul-rio-grandense                                & IFSul      & 8           \\ \bottomrule
+  \end{tabular}%
+  }
+  \end{table}
+
+Como critério para definir a quantidade de nós de computação que cada instituição teria, foi utilizada a seguinte condição:
+
+\begin{table}[H]
+  \centering
+  \caption{Nós por Instituição}
+  \label{tab:my-table2}
+  \begin{tabular}{@{}l|l@{}}
+  \toprule
+  \# projetos & \# nós \\ \midrule
+  1 a 10      & 1      \\ \midrule
+  11 a 50     & 2      \\ \midrule
+  51 a 100    & 4      \\ \midrule
+  100+        & 8      \\ \bottomrule
+  \end{tabular}%
+  \end{table}
+
+\section{Avaliação Preliminar}
+
 - gerar carga a partir das instituições parceiras\\
 -- em função de traço sintético\\
 - utilizar uma estratégia de distribuição da carga "simples" (algo que considere apenas disponibilidade de recursos nas outras instituições)\\
@@ -912,26 +1031,16 @@ Anotações:
 - individualizar o "custo" de uso da nuvem pelas instituições\\
 -- contabilizar o custo de ociosidade\\
 
-\textbf{Passo 3: Elaboração de estratégia de escalonamento e identificação dos limites da estrutura}\\
+\section{Elaboração da Estratégia de Escalonamento e Identificação de Limites da Estrutura}
+
 - Propor uma estratégia de escalonamento mais elaborada, considerando alguns critérios (temos que ver estes critérios)\\
 - Reavaliar os custos\\
 
-\textbf{Passo 4: determinar vantagens e desvantagens (financeiras) de realizar cloud bursting}\\
+\section{Determinar Vantagens e Desvantagens (financeiras) de Realizar Cloud Bursting}
+
 - Agora se apresenta a necessidade de "crescer" a infraestrutura: aumentar a quantidade de recursos ou alugar uma nuvem pública\\
 - Reaplicar a estratégia do Passo 3 neste novo contexto\\
 - Reavaliar os custos\\
-
-\section{Implantação do Ambiente de Nuvem}
-
-
-
-\section{Avaliação Preliminar}
-
-\section{Elaboração da Estratégia de Escalonamento}
-
-\section{Identificação de Limites da Estrutura}
-
-\section{Determinar Vantagens e Desvantagens (financeiras) de Realizar Cloud Bursting}
 
 \chapter{Desenvolvimento}
 
