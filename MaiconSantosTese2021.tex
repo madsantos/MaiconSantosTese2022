@@ -11,7 +11,7 @@
 \programaeng{Postgraduate Program in Computing}
 \cursoeng{Computer Science}
 
-\title{Impactos da Adoção de Infraestruturas de Nuvem no Desenvolvimento de Pesquisas Acadêmicas}
+\title{ da Adoção de Infraestruturas de Nuvem no Desenvolvimento de Pesquisas Acadêmicas}
 
 \author{Santos}{Maicon Ança dos}
 \advisor[Prof.~Dr.]{Cavalheiro}{Gerson Geraldo H.}
@@ -101,33 +101,35 @@ Doutor em Biotecnologia pela Universidade Federal de Pelotas.
 
 \chapter*{\listabbrvname}
 \acronymused{CAPEX}
-% \acronymused{CPU}
-% \acronymused{Gbps}
-% \acronymused{HPC}
-% \acronymused{IaaS}
-% \acronymused{IEP}
-% \acronymused{LGPD}
-% \acronymused{M}
-% \acronymused{MPI}
-% \acronymused{OE}
-% \acronymused{OPEX}
-% \acronymused{QP}
-% \acronymused{ROI}
-% \acronymused{RSL}
-% \acronymused{SLA}
-% \acronymused{TCO}
-% \acronymused{vCPU}
+\acronymused{CNPq}
+\acronymused{CPU}
+\acronymused{Gbps}
+\acronymused{HPC}
+\acronymused{IaaS}
+\acronymused{IEP}
+\acronymused{LGPD}
+\acronymused{M}
+\acronymused{MPI}
+\acronymused{OE}
+\acronymused{OPEX}
+\acronymused{QP}
+\acronymused{ROI}
+\acronymused{RSL}
+\acronymused{SLA}
+\acronymused{TCO}
+\acronymused{vCPU}
 
 \listasiglas{_Abreviaturas}
 
-% %lista de abreviaturas e siglas
-% \begin{listofabbrv}{ABNT}%coloque aqui a maior sigla para ajustar a distância
-%         \item[ABNT] Associação Brasileira de Normas Técnicas
-%         \item[NUMA] Non-Uniform Memory Access
-%         \item[SIMD] Single Instruction Multiple Data
-%         \item[SMP] Symmetric Multi-Processor
-%         \item[SPMD] Single Program Multiple Data
-% \end{listofabbrv}
+%lista de abreviaturas e siglas
+\begin{listofabbrv}{CAPEX}%coloque aqui a maior sigla para ajustar a distância
+        \item[CAPEX] asdll asdas dds
+        \item[\textbf{ABNT}] Associação Brasileira de Normas Técnicas
+        \item[NUMA] \textit{Non-Uniform Memory Access}
+        \item[SIMD] Single Instruction Multiple Data
+        \item[SMP] Symmetric Multi-Processor
+        \item[SPMD] Single Program Multiple Data
+\end{listofabbrv}
 
 % Lista de tarefas pendentes
 \listoftodos % REMOVER NA VERSÃO FINAL
@@ -160,7 +162,7 @@ Para apoiar o desenvolvimento do trabalho proposto, foi realizada uma Revisão S
 
 \section{Estrutura do texto}\label{sec:esttexto}
 
-O texto desta Proposta de Tese está organizado da seguinte forma: no Capítulo \ref{chap:reqhpc} são apresentados os requisitos de execução para aplicações HPC, juntamente com os diferentes custos associados à implantação de nuvens, assim como caracterizados os aspectos que influenciam nas suas respectivas variações. O Capítulo \ref{chap:trabEst} apresenta a Revisão Sistemática da Literatura, juntamente com os trabalhos relacionados ao tema deste estudo. O Capítulo \ref{chap:prop}, contextualiza a pesquisa a ser desenvolvida, bem como a metodologia a ser seguida para o desenvolvimento da Tese de Doutorado e o cronograma de atividades. Por fim, o Capítulo \ref{chap:considfin}, encerra a leitura desta Proposta, com algumas considerações finais sobre o estudo e, também, mencionando artigo aceito para publicação em periódico de abrangência nacional.
+% O texto desta Proposta de Tese está organizado da seguinte forma: no Capítulo \ref{chap:reqhpc} são apresentados os requisitos de execução para aplicações HPC, juntamente com os diferentes custos associados à implantação de nuvens, assim como caracterizados os aspectos que influenciam nas suas respectivas variações. O Capítulo \ref{chap:trabEst} apresenta a Revisão Sistemática da Literatura, juntamente com os trabalhos relacionados ao tema deste estudo. O Capítulo \ref{chap:prop}, contextualiza a pesquisa a ser desenvolvida, bem como a metodologia a ser seguida para o desenvolvimento da Tese de Doutorado e o cronograma de atividades. Por fim, o Capítulo \ref{chap:considfin}, encerra a leitura desta Proposta, com algumas considerações finais sobre o estudo e, também, mencionando artigo aceito para publicação em periódico de abrangência nacional.
 
 \chapter{Requisitos de Execução para Aplicações HPC}\label{chap:reqhpc}
 
@@ -938,6 +940,100 @@ Nas colunas seguintes, ``Nuvem Privada'', ``Nuvem Pública'' e ``\textit{Cluster
 
 \chapter{Especificação do caso de estudo}
 
+O cenário a ser avaliado é representado por um ambiente de processamento em nuvem instanciado, de forma federada, nas instituições de ensino e pesquisa do Estado do Rio Grande do Sul. Neste capítulo este cenário é apresentado, bem como caracterizados os aspectos a serem considerados na sua avaliação.
+
+Este capítulo inicia com as seções \ref{sec:instfederadas} e \ref{sec:confnos}, caracterizando o grupo de instituições federadas e a unidade de recursos computacionais de cada nó da nuvem. A Seção \ref{sec:rede} expõe a malha de conexão entre os nós. É apresentada a atual configuração de rede, interligando as instituições federadas, e também a proposta de uma nova malha de interconexão, oferecendo redundância aos canais de comunicação. A Seção \ref{sec:caracaplic} discute o uso da infraestrutura de nuvem como suporte ao processamento, identificando critérios de desempenho para as aplicações submetidas.
+
+\section{Instituições Federadas}\label{sec:instfederadas}
+
+% Neste local classificar as instituições em níveis considerando o número de projetos. Nível 1 a UFRGS, Nível 4 (o maior).
+
+O paradigma de computação em nuvem federada permite, aos provedores de serviço, o compartilhamento de recursos computacionais mediante regras estabelecidas pela própria federação \cite{toosi_interconnected_2014}. Este modelo visa superar limitações de recursos de infraestruturas locais dos provedores por meio do repasse de solicitações para outros membros da federação. Além disso, uma federação em nuvem possibilita que provedores operando com baixa demanda de solicitações, disponibilizem parte de seus recursos para que sejam utilizados pelos demais integrantes da nuvem federada.
+
+Uma abordagem de nuvem federada deve resolver problemas de interoperabilidade, uma vez que diferentes tecnologias podem ser unificadas e abstraídas para os seus consumidores finais.\ups{Isso não vais ver.} No entanto, se apresenta como uma alternativa financeiramente interessante para o dimensionamento de recursos necessários para o atendimento a picos de demanda que ocorrem de forma distribuída, no tempo, entre seus usuários. O ganho, portanto, está na distribuição dos custos de implantação e manutenção da rede entre os sítios participantes, com a probabilidade de alta disponibilidade às demandas.\ups{Distribuição dos custos e alta disponibilidade deve ser visto.}
+
+% A abordagem de nuvem federada busca resolver problemas de interoperabilidade, uma vez que diferentes tecnologias podem ser unificadas e abstraídas para os seus consumidores finais. Torna-se, ainda, uma alternativa financeiramente viável para o dimensionamento de recursos necessários para o atendimento a picos de demanda.
+
+% A federação em nuvem permite que os provedores compartilhem seus recursos por meio de regulamentações da federação. Nesse paradigma, os provedores buscam superar a limitação de recursos em sua infraestrutura local, o que pode resultar na rejeição das solicitações dos clientes, terceirizando as solicitações para outros membros da federação. Além disso, a federação em nuvem permite que os provedores operando com baixa utilização aluguem parte de seus recursos para outros membros da federação, a fim de evitar o desperdício de seus recursos de computação não armazenáveis.\cite{toosi_interconnected_2014}
+
+% um projeto de pesquisa parcialmente financiado pela União Européia, focado na federação de Nuvens em nível de infraestrutura. A abordagem de nuvem federada, em que uma única entidade serve como porta de entrada para diferentes soluções independentes, é uma forma de resolver a interoperabilidade limitada, já que diferentes tecnologias podem ser unificadas e abstraídas para os consumidores. Essa abordagem também é uma alternativa econômica para superdimensionar a quantidade de servidores para lidar com os picos de carga, já que recursos extras de outros sites na nuvem federada podem ser utilizados durante os picos. Da mesma forma, recursos subutilizados podem ser disponibilizados para outros locais durante os períodos de menor carga como uma fonte extra de renda. \cite{elmroth_accounting_2009}
+
+Para o cenário a ser estudado neste trabalho, a infraestrutura de nuvem federada será composta por recursos computacionais disponibilizados pelas IEPs (Instituições de Ensino e Pesquisa) do Estado do Rio Grande do Sul. Neste cenário é considerado que as instituições parceiras na criação da nuvem estão de acordo com o pacto federado para a implantação da nuvem e estarão dispostas a instalar o conjunto de equipamentos necessários a efetivar sua participação. Entendendo que a capacidade de investimento de cada instituição difere, é de se considerar que cada uma contribua, em termos de equipamentos alocados à nuvem, de acordo com sua realidade. Para configuração do cenário a ser considerado é necessário, assim, definir um modelo de como os recursos computacionais estarão distribuídos, fisicamente, entre as instituições. 
+
+O critério de seleção proposto associa o potencial de investimento de cada instituição ao percentual de participação em projetos de pesquisa, registrados junto ao CNPq (Conselho Nacional de Desenvolvimento Científico e Tecnológico). Com base no Mapa de Investimentos do CNPq\footnote{\textbf{Mapa de Investimentos do CNPq}. Disponível em: \url{http://efomento.cnpq.br/efomento/distribuicaoGeografica/distribuicaoGeografica.do?metodo=apresentar}. Acesso em: 12 julho 2021.}, sob a modalidade de "Apoio a Projetos de Pesquisa", foram selecionadas 15 instituições, contemplado Universidades e Institutos Federais, com maior percentual de participação em Projetos de Pesquisa no Estado do Rio Grande do Sul.
+
+\begin{table}[H]
+\centering
+\caption{Instituições Parceiras}
+\label{tab:instpar}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Instituição (sigla)} & \multicolumn{1}{l}{\textbf{\# Projetos}} & \multicolumn{1}{l}{\textbf{Nível}} \\ \midrule
+UFRGS      & 252 & 1 \\
+UFSM       & 103 & 1 \\ \midrule
+UFPEL      & 82  & 2 \\
+FURG       & 58  & 2 \\ \midrule
+UNISINOS   & 49  & 3 \\
+PUCRS      & 39  & 3 \\
+UCS        & 25  & 3 \\
+UNIPAMPA   & 20  & 3 \\
+UFCSPA     & 12  & 3 \\
+UNIVATES   & 12  & 3 \\ \midrule
+UPF        & 9   & 4 \\ 
+FEEVALE    & 9   & 4 \\
+URI        & 9   & 4 \\
+IFSul      & 8   & 4 \\
+UNILASALLE & 7   & 4 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+A Tabela \ref{tab:instpar} apresenta as Instituições Parceiras, que foram relacionadas de acordo com o critério de seleção proposto. Também constam na Tabela \ref{tab:instpar}, informações sobre qual nível determinada Instituição está classificada.
+
+A definição dos níveis de classificação tomou por base o quantitativo de projetos de pesquisa, divididos em faixas de valores. A partir disso, também defini-se a quantidade de nós de computação que serão disponibilizados por cada Instituição. Conforme Tabela \ref{tab:noporinst}, é possível determinar o quantitativo sugerido de nós de computação que cada Instituição Parceira poderá dispor, em função do nível de classificação ao qual está enquadrada, a partir do número de projetos de pesquisa ativos.
+
+\begin{table}[H]
+\centering
+\caption{Níveis de classificação}
+\label{tab:noporinst}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Nível} & \textbf{\# Projetos} & \textbf{\# Nós} \\ \midrule
+1              & 100+                 & 8               \\
+2              & 51 a 100             & 4               \\
+3              & 11 a 50              & 2               \\
+4              & 1 a 10               & 1               \\ \bottomrule
+\end{tabular}
+\end{table}
+
+% \begin{table}[H]
+% \centering
+% \caption{Nós por Instituição}
+% \label{tab:noporinst}
+% \begin{tabular}{@{}l|l@{}}
+%   \toprule
+%   \# projetos & \# nós \\ \midrule
+%   1 a 10      & 1      \\ \midrule
+%   11 a 50     & 2      \\ \midrule
+%   51 a 100    & 4      \\ \midrule
+%   100+        & 8      \\ \bottomrule
+% \end{tabular}%
+% \end{table}
+
+\section{Configuração do Nó}\label{sec:confnos}
+
+No presente trabalho, entende-se por nó de computação a infraestrutura física, em termos de computadores servidores e equipamentos de rede e armazenamento, que será ofertada pela Instituição para uso local e pelos demais participantes da solução de nuvem computacional federada. Assume-se que, para a implantação inicial da nuvem, em comum acordo, as instituições se comprometem em adquirir e disponibilizar um conjunto padronizado de recursos computacionais. Este conjunto de recursos computacionais corresponde ao nó de computação da nuvem e a quantidade de nós disponibilizado individualmente pelas instituições depende de sua capacidade de investimento, modelada, neste trabalho, conforme caracterizado na Seção \ref{sec:instfederadas}.
+
+A definição das especificações técnicas
+do nó de computação, foram levadas em consideração tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware. A solução de nuvem computacional federada
+
+Aqui descrever a configuração de um nó. Imagino caixinha tipo plug-and-play, com recursos de rede e tudo. Até imagino que existam dois tipos de caixinha, um com switch e outro não. Bom, talvez um terceiro tipo, com storage. Não, dois tipos: um com switch e storage e outro só processamento. Caixinha basic e caixinha HPC. Imagino, talvez, a proporção de uma caixinha basic para até 8 caixinhas HPC.
+
+% Para definição das especificações técnicas do nó de computação, o qual pode ser uma única máquina ou um conjunto de equipamentos, que será disponibilizado para as Instituições de Ensino e Pesquisa, foram levadas em consideração tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware.
+
+\section{Interligação entre Nós}\label{sec:rede}
+\section{Caracterização das Aplicações}\label{sec:caracaplic}
+\section{Conclusão do Capítulo}\label{sec:concap}
+
 % Anotações:
 %   \begin{itemize}
 %       \item Apresentar extensões para o CloudSim é uma contribuição
@@ -977,52 +1073,54 @@ Nas colunas seguintes, ``Nuvem Privada'', ``Nuvem Pública'' e ``\textit{Cluster
 - identificar quantos nós cada instituição tem\\
 - interligar as instituições\\
 
-Para definição das especificações técnicas do nó de computação (ou conjunto de equipamentos) padrão, que será disponibilizado para as Instituições de Ensino e Pesquisa, foi levado em consideração tecnologias atuais de mercado
+Para definição das especificações técnicas do nó de computação padrão, o qual pode ser uma única máquina ou um conjunto de equipamentos, que será disponibilizado para as Instituições de Ensino e Pesquisa, foram levadas em consideração tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware.
 
-Com base no Mapa de Investimentos do \textdecor[GoogleYellow!35, draw=GoogleYellow!35]{CNPq}\ups{adicionar à lista de siglas} (Conselho Nacional de Desenvolvimento Científico e Tecnológico), disponível na Internet em \url{http://efomento.cnpq.br/efomento/distribuicaoGeografica/distribuicaoGeografica.do?metodo=apresentar}\improve{transformar em referência formal}, sob a modalidade de "Apoio a Projetos de Pesquisa", foram selecionadas 15 instituições, contemplado Universidades e Institutos Federais, com maior percentual de participação em Projetos de Pesquisa no Estado do RS.
+Entende-se por nó de computação padrão a infraestrutura física, em termos de computadores servidores, que será ofertada pela Instituição para uso local e pelas demais Instituições participantes da solução de nuvem computacional em nível estadual.
 
-\begin{table}[H]
-  \centering
-  \caption{Instituições Parceiras}
-  \label{tab:my-table}
-  \resizebox{\textwidth}{!}{%
-  \begin{tabular}{@{}|l|l|l|@{}}
-  \toprule
-  Instituição                                                        & Sigla      & \# projetos \\ \midrule
-  Universidade Federal do Rio Grande do Sul                          & UFRGS      & 280         \\ \midrule
-  Universidade Federal de Santa Maria                                & UFSM       & 108         \\ \midrule
-  Universidade Federal de Pelotas                                    & UFPEL      & 88          \\ \midrule
-  Universidade Federal do Rio Grande                                 & FURG       & 60          \\ \midrule
-  Universidade do Vale do Rio do Sinos                               & UNISINOS   & 57          \\ \midrule
-  Pontifícia Universidade Católica do Rio Grande do Sul              & PUCRS      & 44          \\ \midrule
-  Universidade de Caxias do Sul                                      & UCS        & 28          \\ \midrule
-  Universidade Federal do Pampa                                      & UNIPAMPA   & 21          \\ \midrule
-  Fundação Universidade Federal de Ciências da Saúde de Porto Alegre & UFCSPA     & 13          \\ \midrule
-  Universidade do Vale do Taquari                                    & UNIVATES   & 13          \\ \midrule
-  Universidade de Passo Fundo                                        & UPF        & 10          \\ \midrule
-  Universidade Feevale                                               & FEEVALE    & 10          \\ \midrule
-  Universidade La Salle                                              & UNILASALLE & 9           \\ \midrule
-  Universidade Regional Integrada do Alto Uruguai e das Missões      & URI        & 9           \\ \midrule
-  Instituto Federal Sul-rio-grandense                                & IFSul      & 8           \\ \bottomrule
-  \end{tabular}%
-  }
-  \end{table}
+% Com base no Mapa de Investimentos do \textdecor[GoogleYellow!35, draw=GoogleYellow!35]{CNPq}\ups{adicionar à lista de siglas} (Conselho Nacional de Desenvolvimento Científico e Tecnológico), disponível na Internet em \url{http://efomento.cnpq.br/efomento/distribuicaoGeografica/distribuicaoGeografica.do?metodo=apresentar}\improve{transformar em referência formal}, sob a modalidade de "Apoio a Projetos de Pesquisa", foram selecionadas 15 instituições, contemplado Universidades e Institutos Federais, com maior percentual de participação em Projetos de Pesquisa no Estado do RS.
+
+% \begin{table}[H]
+%   \centering
+%   \caption{Instituições Parceiras}
+%   \label{tab:my-table}
+%   \resizebox{\textwidth}{!}{%
+%   \begin{tabular}{@{}|l|l|l|@{}}
+%   \toprule
+%   Instituição                                                        & Sigla      & \# projetos \\ \midrule
+%   Universidade Federal do Rio Grande do Sul                          & UFRGS      & 280         \\ \midrule
+%   Universidade Federal de Santa Maria                                & UFSM       & 108         \\ \midrule
+%   Universidade Federal de Pelotas                                    & UFPEL      & 88          \\ \midrule
+%   Universidade Federal do Rio Grande                                 & FURG       & 60          \\ \midrule
+%   Universidade do Vale do Rio do Sinos                               & UNISINOS   & 57          \\ \midrule
+%   Pontifícia Universidade Católica do Rio Grande do Sul              & PUCRS      & 44          \\ \midrule
+%   Universidade de Caxias do Sul                                      & UCS        & 28          \\ \midrule
+%   Universidade Federal do Pampa                                      & UNIPAMPA   & 21          \\ \midrule
+%   Fundação Universidade Federal de Ciências da Saúde de Porto Alegre & UFCSPA     & 13          \\ \midrule
+%   Universidade do Vale do Taquari                                    & UNIVATES   & 13          \\ \midrule
+%   Universidade de Passo Fundo                                        & UPF        & 10          \\ \midrule
+%   Universidade Feevale                                               & FEEVALE    & 10          \\ \midrule
+%   Universidade La Salle                                              & UNILASALLE & 9           \\ \midrule
+%   Universidade Regional Integrada do Alto Uruguai e das Missões      & URI        & 9           \\ \midrule
+%   Instituto Federal Sul-rio-grandense                                & IFSul      & 8           \\ \bottomrule
+%   \end{tabular}%
+%   }
+%   \end{table}
 
 Como critério para definir a quantidade de nós de computação que cada instituição teria, foi utilizada a seguinte condição:
 
-\begin{table}[H]
-  \centering
-  \caption{Nós por Instituição}
-  \label{tab:my-table2}
-  \begin{tabular}{@{}l|l@{}}
-  \toprule
-  \# projetos & \# nós \\ \midrule
-  1 a 10      & 1      \\ \midrule
-  11 a 50     & 2      \\ \midrule
-  51 a 100    & 4      \\ \midrule
-  100+        & 8      \\ \bottomrule
-  \end{tabular}%
-  \end{table}
+% \begin{table}[H]
+%   \centering
+%   \caption{Nós por Instituição}
+%   \label{tab:noporinst}
+%   \begin{tabular}{@{}l|l@{}}
+%   \toprule
+%   \# projetos & \# nós \\ \midrule
+%   1 a 10      & 1      \\ \midrule
+%   11 a 50     & 2      \\ \midrule
+%   51 a 100    & 4      \\ \midrule
+%   100+        & 8      \\ \bottomrule
+%   \end{tabular}%
+%   \end{table}
 
 \section{Avaliação Preliminar}
 
