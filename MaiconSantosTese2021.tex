@@ -1023,7 +1023,14 @@ A definição dos níveis de classificação tomou por base o quantitativo de pr
 
 No presente trabalho, entende-se por nó a infraestrutura física, em termos de computadores servidores e equipamentos de rede e armazenamento, que será ofertada pela Instituição para uso local e pelos demais participantes da solução de nuvem computacional federada. Assume-se que, para a implantação inicial da nuvem, em comum acordo, as instituições se comprometem em adquirir e disponibilizar um conjunto padronizado de recursos computacionais. Este conjunto de recursos computacionais corresponde ao nó da nuvem e a quantidade de nós disponibilizados, individualmente, pelas instituições depende de sua capacidade de investimento, modelada, neste trabalho, conforme caracterizado na Seção \ref{sec:instfederadas}.
 
-A definição das especificações técnicas do nó se deu a partir de avaliações feitas sobre tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware. Cada nó da solução de nuvem computacional federada contará com dois módulos: controle e computação. O módulo de controle será composto por equipamentos de processamento, armazenamento e conexão de rede ao passo que o módulo de computação contará com recursos de processamento e adicionará, ao módulo de controle, quantidades de armazenamento à medida que são incorporadas mais unidades, do módulo de computação, à solução de nuvem instalada na Instituição.
+A definição das especificações técnicas do nó se deu a partir de avaliações feitas sobre tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware. De acordo com a Figura \ref{fig:IEPNosModulos}, cada nó da solução de nuvem computacional federada contará com dois módulos: controle e computação. O módulo de controle será composto por equipamentos de processamento, armazenamento e conexão de rede ao passo que o módulo de computação contará com recursos de processamento e adicionará, ao módulo de controle, quantidades de armazenamento à medida que são incorporadas mais unidades, do módulo de computação, à solução de nuvem instalada na Instituição.
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=1]{IEPNosModulos}
+	\caption[Composição dos nós da nuvem nas Instituições de Ensino e Pesquisa.]{Composição dos nós da nuvem nas Instituições de Ensino e Pesquisa.} 
+	\label{fig:IEPNosModulos}
+\end{figure}
 
 O papel do módulo de controle será o de gerenciar todos os elementos do nó da nuvem alocado na Instituição. Ele servirá como ponto de agregação para as interconexões entre os módulos de computação, equipamentos de armazenamento e conexões, via rede, com o restante da infraestrutura da Intituição hospedeira, possibilitando, assim, o compartilhamento dos recursos de hardware com os demais membros da nuvem federada. O módulo de computação terá a função de ampliar o poder de processamento do nó, adicionando \emph{cores} e espaço de armazenamento ao \emph{storage} localizado no módulo de controle.
 
