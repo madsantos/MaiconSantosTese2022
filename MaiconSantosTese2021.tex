@@ -1036,6 +1036,24 @@ O papel do módulo de controle será o de gerenciar todos os elementos do nó da
 
 A partir da classificação apresentada na Seção \ref{sec:instfederadas}, Tabelas \ref{tab:instpar} e \ref{tab:noporinst}, fica posto que as IEPs poderão dispor de até oito nós, dependendo do nível nos quais foram enquadradas. Cada nó poderá formar um conjunto com até oito módulos de computação. Destaca-se que, no modelo proposto para a solução, um módulo de computação não pode ser disposto sem a existência de uma módulo de controle. Assim, mesmo as IEPs detentoras de apenas um nó da nuvem, devem ter\improve{melhorar isso}, ao menos, dois módulos operantes.
 
+Com relação às capacidades de processamento, armazenamento e conexões de rede, 
+
+\begin{table}[]
+  \centering
+  \caption{Especificações de hardware dos módulos de controle e computação.}
+  \label{tab:modulosespec}
+  \begin{tabular}{@{}lrrrl@{}}
+  \toprule
+  \multicolumn{1}{c}{\textbf{Módulo}} &
+    \multicolumn{1}{c}{\textit{\textbf{Cores}}} &
+    \multicolumn{1}{c}{\textbf{Memória RAM (GB)}} &
+    \multicolumn{1}{c}{\textbf{Interfaces de Rede}} &
+    \multicolumn{1}{c}{\textbf{Armazenamento}} \\ \midrule
+  Controle   & 32 & 256 & 24 & 1TB (inicial) \\
+             &    &     &    &               \\
+  Computação & 64 & 512 & 2  & 1TB           \\ \bottomrule
+  \end{tabular}
+  \end{table}
 
 % Aqui descrever a configuração de um nó. Imagino caixinha tipo plug-and-play, com recursos de rede e tudo. Até imagino que existam dois tipos de caixinha, um com switch e outro não. Bom, talvez um terceiro tipo, com storage. Não, dois tipos: um com switch e storage e outro só processamento. Caixinha basic e caixinha HPC. Imagino, talvez, a proporção de uma caixinha basic para até 8 caixinhas HPC.
 
