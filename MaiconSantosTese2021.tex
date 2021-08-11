@@ -3,9 +3,6 @@
 \usepackage{madsantos}
 \usepackage[utf8]{inputenc}
 
-\newcommandx{\trocar}[2]{{\textcolor{red}{\sout{#1}}}{{\textcolor{blue}{\textrm{#2}}}}}
-
-
 \unidade{Centro de Desenvolvimento Tecnológico}
 \programa{Programa de Pós-Gradua\-ção em Computação}
 \curso{Ciência da Computação}
@@ -992,7 +989,7 @@ UNILASALLE & 7   & 4 \\ \bottomrule
 
 A Tabela \ref{tab:instpar} apresenta as Instituições Parceiras, que foram relacionadas de acordo com o critério de seleção proposto. Também constam na Tabela \ref{tab:instpar}, informações sobre qual nível determinada instituição está classificada.
 
-A definição dos níveis de classificação tomou por base o quantitativo de projetos de pesquisa, divididos em faixas de valores. A partir disso, também defini-se a quantidade de nós que serão disponibilizados pelas instituições individualmente. Conforme Tabela \ref{tab:noporinst}, é possível determinar o quantitativo sugerido de nós que cada instituição parceira poderá dispor, em função do nível de classificação ao qual está enquadrada, a partir do número de projetos de pesquisa ativos.
+A definição dos níveis de classificação tomou por base o quantitativo de projetos de pesquisa, divididos em faixas de valores. A partir disso, também defini-se a quantidade de módulos que serão disponibilizados pelas instituições individualmente. Conforme Tabela \ref{tab:noporinst}, é possível determinar o quantitativo sugerido de módulos que cada instituição parceira poderá dispor, em função do nível de classificação ao qual está enquadrada, a partir do número de projetos de pesquisa ativos.
 
 \begin{table}[H]
 \centering
@@ -1000,7 +997,7 @@ A definição dos níveis de classificação tomou por base o quantitativo de pr
 \label{tab:noporinst}
 \begin{tabular}{@{}lll@{}}
 \toprule
-\textbf{Nível} & \textbf{\# Projetos} & \textbf{\# Nós} \\ \midrule
+\textbf{Nível} & \textbf{\# Projetos} & \textbf{\# Módulos} \\ \midrule
 1              & 100+                 & 8               \\
 2              & 51 a 100             & 4               \\
 3              & 11 a 50              & 2               \\
@@ -1008,38 +1005,28 @@ A definição dos níveis de classificação tomou por base o quantitativo de pr
 \end{tabular}
 \end{table}
 
-% \begin{table}[H]
-% \centering
-% \caption{Nós por Instituição}
-% \label{tab:noporinst}
-% \begin{tabular}{@{}l|l@{}}
-%   \toprule
-%   \# projetos & \# nós \\ \midrule
-%   1 a 10      & 1      \\ \midrule
-%   11 a 50     & 2      \\ \midrule
-%   51 a 100    & 4      \\ \midrule
-%   100+        & 8      \\ \bottomrule
-% \end{tabular}%
-% \end{table}
-
-\textcolor{blue}{Gostei desta seção. Na leitura me ocorreu que não foi citado o fato de que, neste cenário, pode ocorrer que, eventualmente, seja necessário mais recursos que o disponível. Isso dá margem ao Cloud Bursting. Faço essa anotação para registro, pois acho que não seria bem aqui que isso entraria.}
+%#############################################################################
+%#############################################################################
+% \textcolor{blue}{Gostei desta seção. Na leitura me ocorreu que não foi citado o fato de que, neste cenário, pode ocorrer que, eventualmente, seja necessário mais recursos que o disponível. Isso dá margem ao Cloud Bursting. Faço essa anotação para registro, pois acho que não seria bem aqui que isso entraria.}
+%#############################################################################
+%#############################################################################
 
 \section{Configuração dos Nós}\label{sec:confnos}
 
-No presente trabalho, entende-se por nó a infraestrutura física, em termos de computadores servidores e equipamentos de rede e armazenamento, que será ofertada pelas instituição para uso local e pelos demais participantes da solução nuvem. Assume-se que, para a implantação inicial da nuvem, em comum acordo, as instituições se comprometem em adquirir e disponibilizar um conjunto padronizado de recursos computacionais. Este conjunto de recursos computacionais corresponde ao nó da nuvem e a quantidade de nós disponibilizados, individualmente, pelas instituições depende de sua capacidade de investimento, modelada, neste trabalho, conforme caracterizado na Seção \ref{sec:instfederadas}.
+No presente trabalho, entende-se por nó a infraestrutura física, em termos de computadores servidores e equipamentos de rede e armazenamento, que será ofertada pelas instituição para uso local e pelos demais participantes da solução nuvem. Assume-se que, para a implantação inicial da nuvem, em comum acordo, as instituições se comprometem em adquirir e disponibilizar um conjunto padronizado de recursos computacionais. Este conjunto de recursos computacionais corresponde ao nó da nuvem e a quantidade de módulos disponibilizados, individualmente, pelas instituições depende de sua capacidade de investimento, modelada, neste trabalho, conforme caracterizado na Seção \ref{sec:instfederadas}.
 
-A definição das especificações técnicas do nó se deu a partir de avaliações feitas sobre tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware. De acordo com a Figura \ref{fig:IEPNosModulos}, cada nó da solução de nuvem computacional federada é formada pelo arranjo de módulos pertencentes às seguintes categorias: controle e computação. O módulo de controle é composto por equipamentos de processamento, armazenamento e conexão de rede ao passo que o módulo de computação conta com recursos de processamento. À medida que são incorporadas módulos de computação em um nó de uma dada instituição, é previsto crescimento proporcional do espaço de armazenamento no módulo de controle.
+A definição das especificações técnicas do nó se deu a partir de avaliações feitas sobre tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware. De acordo com a Figura \ref{fig:IEPNosModulos}, cada nó da solução de nuvem computacional federada é formada pelo arranjo de módulos pertencentes às seguintes categorias: controle e computação. O módulo de controle é composto por equipamentos de processamento, armazenamento e conexão de rede ao passo que o módulo de computação conta com recursos de processamento. À medida que são incorporados módulos de computação em um nó de uma dada instituição, é previsto crescimento proporcional do espaço de armazenamento no módulo de controle.
 
 \begin{figure}[H]
 	\centering 
 	\includegraphics[scale=1]{IEPNosModulos}
 	\caption[Composição dos nós da nuvem nas Instituições de Ensino e Pesquisa.]{Composição dos nós da nuvem nas Instituições de Ensino e Pesquisa.} 
 	\label{fig:IEPNosModulos}
-\end{figure}
+\end{figure}\change{Alterar imagem para refletir texto.}
 
-O papel do módulo de controle \trocar{será}{é} o de gerenciar todos os elementos do nó da nuvem alocados em um nó. Este módulo atua como ponto de agregação para as interconexões entre os módulos de computação, equipamentos de armazenamento e conexões, via rede, com o restante da infraestrutura da instituição hospedeira, possibilitando, assim, o compartilhamento dos recursos de hardware com os demais membros da nuvem federada. O módulo de computação \trocar{terá a função de ampliar o}{oferece o} poder de processamento do nó, adicionando \emph{cores} e espaço de armazenamento ao \emph{storage} localizado no módulo de controle.
+O papel do módulo de controle é o de gerenciar todos os elementos do nó da nuvem alocados em uma IEP. Este módulo atua como ponto de agregação para as interconexões entre os módulos de computação, equipamentos de armazenamento e conexões, via rede, com o restante da infraestrutura da instituição hospedeira, possibilitando, assim, o compartilhamento dos recursos de hardware com os demais membros da nuvem federada. O módulo de computação oferece o poder de processamento do nó, adicionando \emph{cores} e espaço de armazenamento ao \emph{storage} localizado no módulo de controle.
 
-A partir da classificação apresentada na Seção \ref{sec:instfederadas}, Tabelas \ref{tab:instpar} e \ref{tab:noporinst}, fica posto que as IEPs poderão dispor de até oito nós, dependendo do nível nos quais foram enquadradas\textcolor{blue}{, compondo assim um nó na nuvem}. \sout{Cada nó poderá formar um conjunto com até oito módulos de computação.} Destaca-se que, no modelo proposto para a solução, um módulo de computação não pode ser disposto sem a existência de uma módulo de controle. \textcolor{blue}{Assim, a menor configuração de nó na nuvem é composta por, pelo menos, dois módulos, um de controle e outro de processamento. Na hipótese de um crescimento maior do poder de processamento em uma instituição, excedendo a composição máxima de um nó, ou seja, 8 módulos de processamento, essa instituição deverá prover a instalação de um segundo nó.}
+A partir da classificação apresentada na Seção \ref{sec:instfederadas}, Tabelas \ref{tab:instpar} e \ref{tab:noporinst}, fica posto que as IEPs poderão dispor de até oito módulos de computação, dependendo do nível nos quais foram enquadradas, compondo assim um nó da nuvem. Destaca-se que, no modelo proposto para a solução, um módulo de computação não pode ser disposto sem a existência de uma módulo de controle. Assim, a menor configuração de um nó da nuvem é composta por, pelo menos, dois módulos, um de controle e outro de computação. Na hipótese de um crescimento \improve{Acho que esse "crescimento maior" pode ser melhorado...}maior do poder de processamento em uma instituição, excedendo a composição máxima de um nó, ou seja, 8 módulos de computação, essa instituição deverá prover a instalação de um segundo nó.
 
 Com relação às especificações técnicas de processamento, armazenamento e conexões de rede, na Tabela \ref{tab:modulosespec} é apresentada uma possibilidade de configuração para os módulos de controle e computação. Essa configuração é a considerada no restante deste trabalho.
 
