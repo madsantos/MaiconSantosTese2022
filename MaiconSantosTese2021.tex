@@ -963,28 +963,28 @@ Para o cenário a ser estudado neste trabalho, a infraestrutura de nuvem federad
 O critério de seleção proposto associa o potencial de investimento de cada instituição ao percentual de participação em projetos de pesquisa, registrados junto ao CNPq (Conselho Nacional de Desenvolvimento Científico e Tecnológico). Com base no Mapa de Investimentos do CNPq\footnote{\textbf{Mapa de Investimentos do CNPq}. Disponível em: \url{http://efomento.cnpq.br/efomento/distribuicaoGeografica/distribuicaoGeografica.do?metodo=apresentar}. Acesso em: 12 julho 2021.}, sob a modalidade de "Apoio a Projetos de Pesquisa", foram selecionadas 15 instituições, contemplado Universidades e Institutos Federais, com maior percentual de participação em Projetos de Pesquisa no Estado do Rio Grande do Sul.
 
 \begin{table}[H]
-\centering
-\caption{Instituições Parceiras}
-\label{tab:instpar}
-\begin{tabular}{@{}lcc@{}}
-\toprule
-\textbf{Instituição (sigla)} & \multicolumn{1}{l}{\textbf{\# Projetos}} & \multicolumn{1}{l}{\textbf{Nível}} \\ \midrule
-UFRGS      & 252 & 1 \\
-UFSM       & 103 & 1 \\ \midrule
-UFPEL      & 82  & 2 \\
-FURG       & 58  & 2 \\ \midrule
-UNISINOS   & 49  & 3 \\
-PUCRS      & 39  & 3 \\
-UCS        & 25  & 3 \\
-UNIPAMPA   & 20  & 3 \\
-UFCSPA     & 12  & 3 \\
-UNIVATES   & 12  & 3 \\ \midrule
-UPF        & 9   & 4 \\ 
-FEEVALE    & 9   & 4 \\
-URI        & 9   & 4 \\
-IFSul      & 8   & 4 \\
-UNILASALLE & 7   & 4 \\ \bottomrule
-\end{tabular}
+    \centering
+    \caption{Instituições Parceiras}
+    \label{tab:instpar}
+    \begin{tabular}{@{}lcc@{}}
+        \toprule
+        \textbf{Instituição (sigla)} & \multicolumn{1}{l}{\textbf{\# Projetos}} & \multicolumn{1}{l}{\textbf{Nível}} \\ \midrule
+        UFRGS      & 252 & 1 \\
+        UFSM       & 103 & 1 \\ \midrule
+        UFPEL      & 82  & 2 \\
+        FURG       & 58  & 2 \\ \midrule
+        UNISINOS   & 49  & 3 \\
+        PUCRS      & 39  & 3 \\
+        UCS        & 25  & 3 \\
+        UNIPAMPA   & 20  & 3 \\
+        UFCSPA     & 12  & 3 \\
+        UNIVATES   & 12  & 3 \\ \midrule
+        UPF        & 9   & 4 \\ 
+        FEEVALE    & 9   & 4 \\
+        URI        & 9   & 4 \\
+        IFSul      & 8   & 4 \\
+        UNILASALLE & 7   & 4 \\ \bottomrule
+    \end{tabular}
 \end{table}
 
 A Tabela \ref{tab:instpar} apresenta as Instituições Parceiras, que foram relacionadas de acordo com o critério de seleção proposto. Também constam na Tabela \ref{tab:instpar}, informações sobre qual nível determinada instituição está classificada.
@@ -992,17 +992,17 @@ A Tabela \ref{tab:instpar} apresenta as Instituições Parceiras, que foram rela
 A definição dos níveis de classificação tomou por base o quantitativo de projetos de pesquisa, divididos em faixas de valores. A partir disso, também defini-se a quantidade de módulos que serão disponibilizados pelas instituições individualmente. Conforme Tabela \ref{tab:noporinst}, é possível determinar o quantitativo sugerido de módulos que cada instituição parceira poderá dispor, em função do nível de classificação ao qual está enquadrada, a partir do número de projetos de pesquisa ativos.
 
 \begin{table}[H]
-\centering
-\caption{Níveis de classificação}
-\label{tab:noporinst}
-\begin{tabular}{@{}lll@{}}
-\toprule
-\textbf{Nível} & \textbf{\# Projetos} & \textbf{\# Módulos} \\ \midrule
-1              & 100+                 & 8               \\
-2              & 51 a 100             & 4               \\
-3              & 11 a 50              & 2               \\
-4              & 1 a 10               & 1               \\ \bottomrule
-\end{tabular}
+    \centering
+    \caption{Níveis de classificação}
+    \label{tab:noporinst}
+    \begin{tabular}{@{}lll@{}}
+        \toprule
+        \textbf{Nível} & \textbf{\# Projetos} & \textbf{\# Módulos} \\ \midrule
+        1              & 100+                 & 8               \\
+        2              & 51 a 100             & 4               \\
+        3              & 11 a 50              & 2               \\
+        4              & 1 a 10               & 1               \\ \bottomrule
+    \end{tabular}
 \end{table}
 
 %#############################################################################
@@ -1031,21 +1031,22 @@ A partir da classificação apresentada na Seção \ref{sec:instfederadas}, Tabe
 Com relação às especificações técnicas de processamento, armazenamento e conexões de rede, na Tabela \ref{tab:modulosespec} é apresentada uma possibilidade de configuração para os módulos de controle e computação. Essa configuração é a considerada no restante deste trabalho.
 
 \begin{table}[H]
-  \centering
-  \caption{Especificações de hardware dos módulos de controle e computação.}
-  \label{tab:modulosespec}
-  \begin{tabular}{@{}lrrrl@{}}
-  \toprule
-  \multicolumn{1}{c}{\textbf{Módulo}} &
-    \multicolumn{1}{c}{\textit{\textbf{Cores}}} &
-    \multicolumn{1}{c}{\textbf{Memória RAM (GB)}} &
-    \multicolumn{1}{c}{\textbf{Interfaces de Rede}} &
-    \multicolumn{1}{c}{\textbf{Armazenamento}} \\ \midrule
-  Controle   & 32 & 256 & 24 & 1TB (inicial) \\
-             &    &     &    &               \\
-  Computação & 64 & 512 & 2  & 1TB           \\ \bottomrule
-  \end{tabular}
-  \end{table}
+    \centering
+    \caption{Especificações de hardware dos módulos de controle e computação.}
+    \label{tab:modulosespec}
+    \begin{tabular}{@{}lrrrl@{}}
+        \toprule
+        \multicolumn{1}{c}{\textbf{Módulo}} &
+        \multicolumn{1}{c}{\textit{\textbf{Cores}}} &
+        \multicolumn{1}{c}{\textbf{Memória RAM (GB)}} &
+        \multicolumn{1}{c}{\textbf{Interfaces de Rede}} &
+        \multicolumn{1}{c}{\textbf{Armazenamento}} \\ \midrule
+        Controle   & 16 & 256 & 24 & 10TB* \\
+                   &    &     &    &               \\
+        Computação & 64 & 512 & 2  & 1TB** \\ \bottomrule
+    \end{tabular}
+    \caption*{*~ Quantidade de armazenamento inicialmente disponível no módulo de controle.\\ ** Quantidade de armazenamento adicionada por cada módulo de computação.}
+\end{table}
   
 O módulo de controle não necessita de recursos dedicados às tarefas de computação devido ao seu papel de gerenciamento dentro da solução. Os recursos de armazenamento, provenientes das adições de novos módulos de computação, são recepcionados na estrutura de \emph{storage} oferecida pelo módulo de controle. 
 
