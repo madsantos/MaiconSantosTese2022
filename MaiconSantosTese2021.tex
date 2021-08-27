@@ -1048,8 +1048,7 @@ Com relação às especificações técnicas de processamento, armazenamento e c
     \caption*{*~ Quantidade de armazenamento inicialmente disponível no módulo de controle.\\ ** Quantidade de armazenamento adicionada por cada módulo de computação.}
 \end{table}
   
-O módulo de controle não necessita de recursos dedicados às tarefas de computação devido ao seu papel de gerenciamento dentro da solução. Os recursos de armazenamento, provenientes das adições de novos módulos de computação, são recepcionados na estrutura de \emph{storage} oferecida pelo módulo de controle. vamos ver...
-
+O módulo de controle não necessita de recursos dedicados às tarefas de computação devido ao seu papel de gerenciamento dentro da solução. Os recursos de armazenamento, provenientes das adições de novos módulos de computação, são recepcionados na estrutura de \emph{storage} oferecida pelo módulo de controle.
 
 
 % Aqui descrever a configuração de um nó. Imagino caixinha tipo plug-and-play, com recursos de rede e tudo. Até imagino que existam dois tipos de caixinha, um com switch e outro não. Bom, talvez um terceiro tipo, com storage. Não, dois tipos: um com switch e storage e outro só processamento. Caixinha basic e caixinha HPC. Imagino, talvez, a proporção de uma caixinha basic para até 8 caixinhas HPC.
@@ -1168,7 +1167,26 @@ Como critério para definir a quantidade de nós de computação que cada instit
 - Reaplicar a estratégia do Passo 3 neste novo contexto\\
 - Reavaliar os custos\\
 
-\chapter{Desenvolvimento}
+%\chapter{Desenvolvimento}
+
+\chapter{Desempenho na Nuvem Federada}
+
+Nesse capítulo avaliar, com o Simulador, o desempenho da rede federada considerando a topologia especificada. Avaliar o desempenho/custo considerando o crescimento da demanda. Nesse momento, a estratégia básica é, a aplicação é lançada no sitio X e, então, priorizada sua execução em X mesmo. Se não der, exporta a aplicação. \textcolor{blue}{Pergunta: existe como realizar escalonamentos no simulador que considerem a data de término da aplicação? Caso tenha, poderemos pensar em como explorar.}
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=1]{NuvemRS}
+	\caption[Composição dos nós da nuvem nas Instituições de Ensino e Pesquisa.]{Composição dos nós da nuvem nas Instituições de Ensino e Pesquisa.} 
+	\label{fig:NuvemRS}
+\end{figure}\change{Alterar imagem para refletir texto.}
+
+\chapter{Introdução de Cloud Bursting}
+
+No capítulo anterior, a simulação foi até o ponto em que a demanda dos usuários suplantou a oferta de recursos, aumentando o tempo de espera dos usuários. Uma alternativa é o incremento dos recursos, implicando em gastos. Outra é utilizar cloud bursting. Nesse capítulo discutir os custos associados ao cloud bursting. É possível que uma estratégia de escalonamento deva ser realizada. Imagino que o escalonamento opere da seguinte forma: tenta lançar local, se não deu, tenta lançar em um outro sítio, se não deu, dispara na pública. Em execução, a medida em que um sitio se torna ocioso, busca para executar o que está na nuvem.
+
+\chapter{Impacto nos Custos}
+
+Aqui relacionar vantagens e desvantagens das soluções: incrementar a nuvem, realizar bursting.
 
 %   Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
 %   blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
