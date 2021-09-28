@@ -1,0 +1,14 @@
+%% aspas: ``crase''
+%%%%% BEGIN: UPS, UPSOK, TALVEZ, TIRAR e TROCAR
+\usepackage{xargs}
+\usepackage[textsize=tiny]{todonotes}
+\usepackage[normalem]{ulem}
+\usepackage{xcolor}
+%\usepackage[textwidth=1.35cm,colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\trocar}[2]{{\textcolor{red}{\sout{#1}}}{{\textcolor{blue}{\textrm{#2}}}}}
+\newcommandx{\talvez}[2]{{\textcolor{red}{#1}}{{\textcolor{green}{\textrm{(#2?)}}}}}
+\newcommandx{\tirar}[1]{{\textcolor{red}{\sout{#1}}}}
+\newcommandx{\inserir}[1]{{\textcolor{green}{#1}}}
+\newcommandx{\ups}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\upsok}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+%%%%% END: UPS, UPSOK, TALVEZ, TIRAR e TROCAR

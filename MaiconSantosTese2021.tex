@@ -3,6 +3,8 @@
 \usepackage{madsantos}
 \usepackage[utf8]{inputenc}
 
+\input{ups.tex}
+
 \unidade{Centro de Desenvolvimento Tecnológico}
 \programa{Programa de Pós-Gradua\-ção em Computação}
 \curso{Ciência da Computação}
@@ -170,8 +172,118 @@ Em ambientes de nuvem, a precificação é o processo pelo qual se determina qua
 
 Neste Capítulo são apresentados diferentes custos associados à implantação de nuvens, Seção \ref{sec:fontescustos}, assim como caracterizados os aspectos que influenciam nas suas respectivas variações, Seção \ref{sec:fatorescustos}. O custo da implantação de uma nuvem é contabilizado a partir da composição destes custos individuais, Seção \ref{sec:custoglobal}. Este trabalho, tendo interesse na exploração de nuvens para HPC, apresenta uma abordagem particular para este caso específico na Seção \ref{sec:custoshpc}. A discussão final, Seção \ref{sec:discussao}, aborda o contexto de custos analisado sob a ótica das necessidades de implantação de nuvens para HPC para delimitar o contexto da Revisão Sistemática da Literatura conduzida nesta pesquisa.
 
+\section{Modelo de Aplicação BoT}\label{sec:modelo_de_aplicacao_bot}\info{Aqui COMEÇA o texto que veio da dissertação}
+
+A infraestrutura provida por nuvens computacionais fornece suporte para a execução de aplicações do tipo BoT. Em muitos casos, as tarefas pertencentes às aplicações BoT possuem um alto custo computacional e para evitar grandes investimentos em recursos de hardware, usuários podem submeter às infraestruturas computacionais em nuvem, de forma oportunista, suas demandas de processamento para este tipo de aplicação.
+
+Neste trabalho, uma aplicação BoT é descrita por um conjunto $A$ composto por $n \ge 1$ quádruplas descrevendo, cada uma, um conjunto de tarefas $\tau$, na forma:
+
+\[
+A = \{q_1 \dots q_n\} ~\textsf{onde}~ q_i = [a_i,d_i,b_i,c_i], \forall  i | 1 \le  i \le n
+\]
+
+Os elementos destas quádruplas são:
+\begin{inparaenum}[]
+	\item \textbf{\emph{a}}: é o instante de tempo no qual o conjunto de tarefas chega para o processamento;
+	\item \textbf{\emph{d}}: é o tempo de duração do grupo de tarefas;
+	\item \textbf{\emph{b}}: é a quantidade de tarefas descritas por quádrupla correspondente; e
+	\item \textbf{\emph{c}}: é a taxa de utilização de CPU para cada tarefa da quádrupla. O valor informado para o custo deve estar entre 1 e 100, indicando o percentual de uso da CPU de cada uma das tarefas quando em execução.
+\end{inparaenum}
+As informações relacionadas a tempo, $a$ e $d$, são informadas na unidade adotada. No modelo adotado, as informações de tempo consideram a existência de um número não limitado de processadores e sua execução em um ambiente livre de contenção. Assim, cada quádrupla $q_i$ descreve um grupo de $b_i$ tarefas $\tau_i^j, \forall j | 1 \le j \le b_i$ que são inseridas no \textit{bag} no tempo $a_i$, com duração $d_i$ e custo individual de $c_i$.
+
+O número total de tarefas de uma aplicação $A$ composta por $n$ quádruplas é dado por: 
+
+\[
+N_A^n = \sum_{i=1}^{n}b_i
+\]
+
+Não existe nenhuma restrição de ordem de execução entre as tarefas definidas em cada quádrupla, uma vez que, por definição, as tarefas em um BoT são independentes. No entanto, a data de chegada $a_i$ das tarefas definidas pela tupla $q_i$ impõe que nenhuma tarefa definida por $q_i$ inicie antes do tempo $a_i$.
+
+A seguir é apresentado um exemplo da descrição de uma aplicação conforme o modelo definido.
+
+\[
+A = \{[0,5,3,50],[0,8,5,30],[3,4,6,80],[4,10,2,20]\}
+\]
+
+O exemplo de aplicação apresentado consiste em uma aplicação $A$ composta de um total de 16 tarefas, distribuídas em quatro grupos de tarefas idênticos. Os dois primeiros grupos definem tarefas que chegam no tempo 0 (zero) do processamento. As tarefas do terceiro e do quarto grupo são adicionadas ao \emph{bag} nos tempos 3 e 4. No modelo adotado, estes tempos consideram a existência de um número não limitado de processadores e sua execução em um ambiente livre de contenção.
+
+Para efeito de controle de evolução das aplicações BoT, o tempo é assumido discreto. Desta forma, os atributos descrevendo unidade tempo, os atributos $a$ e $d$ das quádruplas (tempo de chegada e duração) definem a relação de granularidade entre as tarefas, nas quais sendo maior o tempo, mais grossa a granularidade, podendo cada unidade ser mapeada em um valor qualquer, alterando, para uma mesma aplicação, a granularidade de todas as tarefas de modo uniforme.
+
+Define-se \emph{passo} a passagem de uma unidade de tempo. Desta forma, a duração $d_i$ de uma tarefa $\tau_i$ descreve o número de passos necessários para executá-la. Ao conjunto de instruções de passo de uma tarefa se dá o nome de \emph{job}. Assim, cada tarefa $\tau_i$ define $d_i$ \textit{jobs} pelo conjunto $\{w_1 \dots w_{d_i}\}$, os quais devem ser executados na estrita sequência de ordem na qual foram definidos, garantindo que $w_1$ não seja executado antes do passo definido por $a_i$. O passo $a_i$ deve ser interpretado, no caso da execução da aplicação em uma arquitetura não contingenciada, pelo número total de passos previamente executados pela aplicação. Inexistem relações de ordem entre os \textit{jobs} de diferentes tarefas, pelas razões já expostas. O número total de \textit{jobs} de uma aplicação $A$ descrita por $n$ quádruplas é dado por:
+
+\[
+N^*_A = \sum_{i=1}^{n}d_i \times b_i
+\]
+
+Na Figura \ref{ExemploBoT} são apresentados os 6 primeiros passos na evolução da aplicação $A$ descrita no exemplo anterior. Observe que nesta representação está sendo assumido a existência de um número não limitado de recursos de processamento e inexistência de condições de contenção de execução. No passo inicial (passo=0), 8 tarefas estão presentes no bag e são lançadas para execução. Terminado o passo, avança o tempo (passo=1) e um \textit{job} de cada uma das tarefas é completado. O mesmo ocorre ao término do passo 1 e do passo 2. No passo 3, um novo conjunto de tarefas é recebido no bag e lançado. Ao final do passo 3, todas as tarefas em execução finalizam a execução de um \textit{job}. No passo 4, como no passo anterior, um novo conjunto de tarefas inicia a execução e todas as tarefas completam a execução de um \textit{job}. Neste passo ocorre também que um conjunto de tarefas executa seu último \textit{job}, finalizando sua execução. No passo seguinte (passo=5) as tarefas remanescentes avançam, concluindo mais um passo. A execução prossegue reproduzindo o padrão apresentado.
+
+\begin{figure}[htbp]
+	\centerline{
+		\includegraphics[scale=0.9]{images/BagOfTasks4.pdf}}
+	\caption[Exemplo de aplicação \textit{Bag of Tasks}]{Exemplo de aplicação \textit{Bag of Tasks}.}
+	\label{ExemploBoT}
+\end{figure}
+
+\section{Consolidação de Tarefas}\label{sec:consolidacao_de_tarefas}
+
+A consolidação de tarefas consiste em uma etapa de escalonamento, realizada em nível aplicativo, que realiza o mapeamento das tarefas definidas em uma aplicação sobre um conjunto finito de recursos de processamento. Os critérios de escalonamento para tal consolidação levam em consideração unicamente aqueles atributos empregados para descrever aplicações BoT apresentados na Seção \ref{sec:modelo_de_aplicacao_bot}: data de chegada, duração, número de tarefas, quantidade de processamento requerida e o número de processadores disponíveis.
+
+Assume-se que as seguintes situações possam ser verdadeiras em um determinado instante de execução:
+
+\begin{itemize}
+\item O número total de tarefas é maior que o total de processadores disponíveis.
+\item A quantidade de processamento requerida pelo conjunto de \textit{jobs} aptos a executar é superior àquela oferecida pelo conjunto de processadores disponíveis.
+\end{itemize}
+
+\subsection{Discretização das tarefas}\label{subsec:discretizacao_de_tarefas}
+
+Embora em uma aplicação do tipo BoT inexistam relações de dependência, tampouco precedência entre tarefas, uma tarefa qualquer pode gerar novas tarefas para o bag. Assim, considere duas tarefas $\tau_k^i$ e $\tau_l^j$, definidas em duas quádruplas $q_i$ e $q_j$, de tal forma que $a_i < a_j$, existindo, portanto, um valor $\delta$ tal que $a_i+\delta=a_j$. Isto significa que, pelo menos uma tarefa em $q_i$ pode ter criado $q_j$ ao final da execução de um \textit{job} $w^{\tau^i}_\delta$. Como o modelo de aplicação BoT adotado não distingue as tarefas pertencentes a uma mesma quádrupla, assume-se que todas as tarefas $\tau_l$ de $q_j$ são inseridas no bag após o término do passo $w_{\delta}$ de todas as tarefas $\tau_k$ de $q_i$.
+
+Define-se \emph{passo global} $g$ um instante de tempo discreto na evolução de uma aplicação BoT no modelo descrito em um ambiente com número não limitado de recursos de processamento e sem contenção. Uma aplicação qualquer, descrita por $n$ quádruplas possui $|g| = \max_{i=1}^{k}(a_i+d_i)$ passos globais. Nesta situação, a passagem de $g_i$ para $g_{i+1}$ marca o término da execução de um \textit{job} de cada tarefa presente no bag até $g_i$, inclusive.
+
+Os atributos de um \textit{job} $w_j^i$, criado a partir de uma tarefa $\tau^i_k$ especificada em uma quádrupla $q_i$, são descritos por uma quádrupla contendo $[g_j^i,r_j^i,f_j^i,c_j^i]$, onde $g_j^i$ corresponde ao passo global em que o \textit{job} encontra-se disponível para execução e $c_j^i$ ao custo do \textit{job} definido pela tarefa. Nesta quádrupla, os membros $r_j^i$ e $f_j^i$, respectivamente, representam o número de \textit{jobs} de $\tau_i$ que ainda estão no bag e os que já foram concluídos. Para um dado \textit{job} $w_j^i$, $g_j^i = a_i+f_j^i$, bem como $r_j^i + f_j^i = b_i$ e $c_j^i = c_i$.
+
+Para uma determinada tarefa $\tau^i_k$, são instanciados $d_i$ \textit{jobs} na forma: 
+
+\[\{w_1^i, w_2^i, \dots w_{d_i}^i\} = \{[g_1^i,r_1^i,f_1^i,c_1^i],[g_2^i,r_2^i,f_2^i,c_2^i], [g_3^i,r_3^i,f_3^i,c_3^i] \dots [g_{d_i}^i,r_{d_i}^i,f_{d_i}^i,c_{d_i}^i]\}\]
+
+Para efeito de consolidação das tarefas, assume-se como unidade de manipulação o \textit{job}. Os \textit{jobs} definidos por diferentes tarefas são independentes entre si. Os \textit{jobs} definidos por uma tarefa, no entanto, são executados na ordem expressa pelos respectivos $g_i$.
+
+\subsection{Contingenciamento de execução}\label{subsec:contingenciamento_de_execucao}
+
+Em um ambiente real, a capacidade de processamento é limitada, tanto em termos de recursos, definidos pelo número de processadores ou quantidade de memória, como em termos de capacidade, exemplificada pela velocidade de comunicação. A aplicação em execução, em tais sistemas, é a principal fonte de consumo destes recursos, não sendo, no entanto, a única. A atuação de um sistema de gerenciamento, como o provido pelo mecanismo de escalonamento, também consome a capacidade de processamento oferecida. No modelo BoT apresentado, é considerado apenas o custo computacional de cada tarefa, o que implica em considerar a carga de processamento oferecida pela arquitetura disponível, assumindo, desta forma, ilimitada capacidade de processamento, armazenamento e nulos os custos de comunicação. Assume-se, também, que a influência do mecanismo de escalonamento não introduz sobrecustos à execução.
+
+O número de processadores disponíveis na arquitetura real delimita, no modelo adotado, a capacidade de processamento disponível. Uma arquitetura $M$ dedicada à execução de uma aplicação BoT $A$ é composta por $m$ processadores idênticos, $\{p_1, p_2 \dots p_m\}$, com ilimitada capacidade de memória por processador e custo 0 (zero) para comunicação de tarefas e operações de escalonamento entre eles. Em determinado passo global, a quantidade de processamento máximo disponível nesta máquina é dado por $C = m\times 100\%$.
+
+O número de \textit{jobs} que podem ser executados em um determinado passo global $g$ é limitado pela quantidade de processamento oferecida. Assim, se em um determinado passo global $g$ o somatório dos custos computacionais $c_k^i$ dos \textit{jobs} $w_i$ aptos à execução suplantar a capacidade $C$ de processamento oferecida, haverá contenção na execução. Deve também ser observado que a necessidade de processamento de um \textit{job} não pode ser dividida entre processadores. Como consequência, pode ocorrer fragmentação de uso de processador quando, em um passo global, um novo \textit{job} não pode ser adicionado aos demais por ultrapassar o limite de uso de 100\% de CPU máximo previsto por passo. Assim, a capacidade real $C_g$ explorada em um passo global $g$ é limitada em $C_g \le m\times 100\%$.
+
+\subsection{Normalização do passo global}\label{subsec:normalizacao_do_passo_global}
+
+Como existe contingenciamento na execução dos \textit{jobs}, em função da carga computacional disponível, em um dado passo global $g$ nem todos os \textit{jobs} elegíveis para execução podem ser de fato executados. Assim, cada tarefa terá, no máximo um \textit{job} em execução, havendo a possibilidade de tarefas não terem nenhum \textit{job} executado em um determinado passo global.
+
+Para cada tarefa $\tau^i_k$, apenas um \textit{job} é elegível para execução, sendo este o \textit{job} que possuir o menor $g_j^i$, satisfazendo $g_j^i \le g$. Considerando dois \textit{jobs} $w_j^i$ e $w_k^i$ definidos por uma mesma tarefa $\tau_i$ a relação de ordem temporal definida pelo atributo $g_i$ de cada um deles deve ser preservada.
+
+Considerando dois \textit{jobs} $w_j^i$ e $w_k^h$, definidos pelas tarefas $\tau^i_k$ e $\tau^h_l$, respectivamente, ambas elegíveis para execução, não existe nenhuma ordem pré-definida de execução entre eles.
+
+Em consequência do contingenciamento, em um dado passo $g$ pode existir um conjunto não vazio de \textit{jobs} em que se verifica que $g_i \le g$. Uma parcela limitada das tarefas já iniciadas contendo estes \textit{jobs} é elegível para execução em função da limitação dos recursos de processamento disponíveis. As demais, não elegíveis por não haver recursos de processamento suficientes, terão sua execução retardada.
+
+Deste fato destaca-se a consequência da contingência no modelo de BoT adotado. Conforme previsto na Seção \ref{sec:modelo_de_aplicacao_bot}, o atributo $a_i$ definido por uma quádrupla $q_i$ representa a quantidade de processamento já realizada pela aplicação em uma arquitetura não contingenciada. Portanto, todo atraso na execução de qualquer \textit{job} reflete no atraso, na mesma proporção, da chegada de um novo lote de tarefas (e seus \textit{jobs} correspondentes) da mesma aplicação.
+
+A Figura \ref{fig:normalizatempo} apresenta um exemplo da situação. Supondo duas aplicações $A = \{[0,5,1,c^A_1], [3,d^A_1,2,c^A_1]\}$ e $B = \{[3,d^B_1,3,c^B_1]\}$, cujos atributos não identificados são irrelevantes para compreensão do exemplo. Nesta figura, \textit{jobs} são representados por círculos, sendo envolvidos pelas tarefas que os descrevem. O inteiro informado no interior de cada \textit{job} refere-se ao seu passo de execução. As setas tracejadas identificam a dependência de criação de tarefas anotada entre os \textit{jobs}. A discretização do tempo (passos) também é apresentada.
+
+\begin{figure}[htbp]
+	\centerline{
+		\includegraphics[scale=0.44]{images/NormalizacaoTempo2.pdf}}
+	\caption[Dependência na criação de tarefas entre \textit{jobs}.]{Dependência na criação de tarefas entre \textit{jobs}.}
+\label{fig:normalizatempo}
+\end{figure}
+
+Na Figura \ref{fig:normalizatempo}, o BoT $A$ possui dois grupos de tarefas, o primeiro é recebido no tempo 0 (zero), sendo composto por uma (1) tarefa com comprimento de cinco passos, ou seja, de cinco \textit{jobs}. O segundo grupo é composto por duas tarefas, sendo recebido no tempo 3 em uma arquitetura sem contenção. A interpretação é a de que de todas as tarefas lançadas anteriormente, na mesma aplicação, devem ter tido o direito de executar até 3 passos, ou seja, até 3 de seus \textit{jobs}, de forma que a quantidade de trabalho suficiente para criação deste segundo grupo tenha sido completada.
+
+Nesta mesma figura, o BoT $B$, possui um único grupo de tarefas, composto por três tarefas, que é recebido no tempo 3. A execução destas tarefas não depende de trabalhos realizados em outra aplicação, uma vez que trata-se de um novo BoT. Seus \textit{jobs} não são atrasados, portanto, em decorrência de atrasos de execução de \textit{jobs} descritos em outro BoT, no caso da figura, das tarefas do BoT $A$. \info{Aqui TERMINA o texto que veio da dissertação}
+
 \section{Fontes de Custos em IaaS}\label{sec:fontescustos}
-De um modo geral, os recursos disponibilizados por nuvens do tipo IaaS são difíceis de ser quantificados, fazendo com que seja necessária a utilização de modelos de decisão orientados a custos. Um dos modelos mais utilizados é o custo total de propriedade -- TCO (\emph{Total Cost of Ownership}) \cite{strebelEconomicDecisionModel2010}.
+De um modo geral, os custos associados à utilização dos recursos computacionais disponibilizados por nuvens do tipo IaaS são difíceis de ser quantificados, fazendo com que seja necessária a utilização de modelos de decisão orientados a custos. Um dos modelos mais utilizados é o custo total de propriedade -- TCO (\emph{Total Cost of Ownership}) \cite{strebelEconomicDecisionModel2010}.
 
 O custo total de propriedade, inicialmente definido pela empresa Gartner, Inc.\footnote{\url{https://www.gartner.com/en} - empresa criada no final dos anos 1970, com atuação nos ramos de pesquisa, consultoria, eventos e prospecção do mercado de Tecnologia da Informação.}, é reconhecido como o método padrão para a análise financeira de recursos de Tecnologia da Informação (TI) e outros custos empresariais relacionados à TI \cite{mieritzDefiningGartnerTotal2005}. O modelo de TCO inclui aquisição, gerenciamento e suporte de hardware e software, comunicações, despesas do usuário final e os custos com tempo de inatividade, treinamento e outras perdas de produtividade. Para Filiopoulou e seu grupo \cite{filiopoulouIntegratingCostAnalysis2015}, a estimativa do custo total de propriedade, em particular, é um procedimento que fornece os meios para determinar o valor econômico total de um investimento, incluindo as despesas iniciais de capital (CAPEX, \emph{capital expenditure}) e as despesas operacionais (OPEX, \emph{operational expenditure}). No contexto de computação em nuvem, corresponde à estimativa de valores necessários para implementação e operação de uma infraestrutura.
 
@@ -1056,6 +1168,17 @@ O módulo de controle não necessita de recursos dedicados às tarefas de comput
 % Para definição das especificações técnicas do nó de computação, o qual pode ser uma única máquina ou um conjunto de equipamentos, que será disponibilizado para as Instituições de Ensino e Pesquisa, foram levadas em consideração tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware.
 
 \section{Interligação entre Nós}\label{sec:rede}
+
+A interligação entre os nós que compõe a infraestrutura de nuvem federada merece destaque em função de características  necessárias para que seu funcionamento esteja de acordo com as expectativas dos usuários.
+
+Por ser um infraestrutura geograficamente distribuída, com pontos de conexão localizados em diferentes cidades do estado do Rio Grande do Sul, a existência de uma rede de comunicação de dados estável e suficiente para o desempenho das atividades, as quais se a nuvem federada, é de suma importância para a concretização do projeto. Tal rede deve ser capaz de prover comunicação a todos os nós da nuvem, alocados nas IEPs do estado do Rio Grande do Sul.
+
+\textcolor{blue}{Apresentar a rede tche como a rede que já existe e que poderia ser utilizada de forma imediata. Então descrever a rede tche. Depois, comentar que outras possibilidades poderiam ser adotadas, e então descrever quais requisitos e qual tipo de topologia poderia ser adotada.}\textcolor{red}{A vantagem de descrever desta forma é que justifica a avaliaçção usando a capilaridade da rede tche e a realização de novos casos de estudo com alternativas à ela.}
+
+Com uma capilaridade bem distribuída entre as instituições que, eventualmente, se credenciem a fazer parte da infraestrutura de nuvem federada, a Rede Tchê é uma opção de conexão a ser considerada, com o objetivo de oferecer as capacidades de interconexão exigidas pelos nós da nuvem. A Rede Tchê é uma infraestrutura de rede de computadores que interliga IEPs, no caso, Universidades, Institutos Federais e Centros de Pesquisa, no estado do Rio Grande do Sul. Atualmente, todas as instituições se conectam ao nó da Rede Tchê localizado em Porto Alegre, o qual é se configura como a porta de entrada e ponto de conexão à Internet, e com o resto do país, por meio do Ponto de Presença da RNP no Rio Grande do Sul, o qual possibilita que as instituições conectadas desenvolvam vários projetos por meio da infraestrutura disponibilizada pela Rede Tchê e suas abrangências locais.
+
+% Atualmente, só é possível conectar-se diretamente a Porto Alegre. O nodo de Porto Alegre é a porta de entrada da rede no Estado e ponto de conexão com o resto do país através do Ponto de Presença do Rio Grande do Sul. Neste nodo também existe uma conexão com o Ponto de Troca de Tráfego Internet no Rio Grande do Sul, o RSiX, onde estão conectados vários backbones comis e acadêmicos. As instituições podem estabelecer conexão por meio de linhas dedicadas, próprias ou alugadas de diversas teles que hoje possuem equipamentos no PoP-RS. Também é possivel a conexão utilizando enlaces via fibra óptica, rádio, ADSL ou cable-modem providos pelas teles locais. As várias instituições conectadas desenvolvem inúmeros projetos através da estrutura disponibilizada pela rede nas suas regiões de abrangência no estado.
+
 \section{Caracterização das Aplicações}\label{sec:caracaplic}
 \section{Conclusão do Capítulo}\label{sec:concap}
 
