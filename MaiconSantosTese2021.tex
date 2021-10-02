@@ -3,7 +3,7 @@
 \usepackage{madsantos}
 \usepackage[utf8]{inputenc}
 
-\input{ups.tex}
+% \input{ups.tex}
 
 \unidade{Centro de Desenvolvimento Tecnológico}
 \programa{Programa de Pós-Gradua\-ção em Computação}
@@ -183,13 +183,24 @@ A = \{q_1 \dots q_n\} ~\textsf{onde}~ q_i = [a_i,d_i,b_i,c_i], \forall  i | 1 \l
 \]
 
 Os elementos destas quádruplas são:
-\begin{inparaenum}[]
-	\item \textbf{\emph{a}}: é o instante de tempo no qual o conjunto de tarefas chega para o processamento;
-	\item \textbf{\emph{d}}: é o tempo de duração do grupo de tarefas;
-	\item \textbf{\emph{b}}: é a quantidade de tarefas descritas por quádrupla correspondente; e
-	\item \textbf{\emph{c}}: é a taxa de utilização de CPU para cada tarefa da quádrupla. O valor informado para o custo deve estar entre 1 e 100, indicando o percentual de uso da CPU de cada uma das tarefas quando em execução.
-\end{inparaenum}
+\begin{enumerate*}[itemjoin={{; }},itemjoin*={{; e }}]
+	\item[]\textbf{\emph{a}}, o instante de tempo no qual o conjunto de tarefas chega para o processamento
+	\item[]\textbf{\emph{d}}, o tempo de duração do grupo de tarefas
+	\item[]\textbf{\emph{b}}, a quantidade de tarefas descritas por quádrupla correspondente
+	\item[]\textbf{\emph{c}}, a taxa de utilização de CPU para cada tarefa da quádrupla. O valor informado para o custo deve estar entre 1 e 100, indicando o percentual de uso da CPU de cada uma das tarefas quando em execução.
+\end{enumerate*}
 As informações relacionadas a tempo, $a$ e $d$, são informadas na unidade adotada. No modelo adotado, as informações de tempo consideram a existência de um número não limitado de processadores e sua execução em um ambiente livre de contenção. Assim, cada quádrupla $q_i$ descreve um grupo de $b_i$ tarefas $\tau_i^j, \forall j | 1 \le j \le b_i$ que são inseridas no \textit{bag} no tempo $a_i$, com duração $d_i$ e custo individual de $c_i$.
+
+% Para a condução desta RSL foram acessadas diversas bases de indexação de trabalhos, amplamente utilizadas por pesquisadores. Ao todo foram selecionadas cinco bases:
+% % \begin{enumerate*}[label=\textit{\roman*}),itemjoin={{; }},itemjoin*={{; e }}]
+% \begin{enumerate*}
+% % [label=\textit{\roman*}),itemjoin={{; }},itemjoin*={{; e }}]
+%   \item \textbf{\emph{a}}: ACM Digital Library
+%   \item \textbf{\emph{m}}: IEEE Digital Library
+%   \item Science@Direct
+%   \item Scopus
+%   \item Web of Science
+% \end{enumerate*}. Tais bases foram escolhidas devido a sua importância e por serem repositórios digitais que oferecem acesso eletrônico à maioria dos periódicos e artigos de conferências publicados na área da Ciência da Computação.
 
 O número total de tarefas de uma aplicação $A$ composta por $n$ quádruplas é dado por: 
 
