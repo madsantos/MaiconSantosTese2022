@@ -3,6 +3,17 @@
 \usepackage{madsantos}
 \usepackage[utf8]{inputenc}
 
+% \usepackage{tocbibind}
+% \usepackage{tocloft}
+% \usepackage{xpatch}
+
+% \newcommand{\listequationsname}{List of Equations}
+% \newlistof{myequations}{equ}{\listequationsname}
+% \newcommand{\myequations}[1]{%
+% \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}}
+
+% \xpretocmd{\listofmyequations}{\addcontentsline{toc}{chapter}{\listequationsname}}{}{}
+
 % \input{ups.tex}
 
 \unidade{Centro de Desenvolvimento Tecnológico}
@@ -132,6 +143,9 @@ Doutor em Biotecnologia pela Universidade Federal de Pelotas.
         \item[SMP] Symmetric Multi-Processor
         \item[SPMD] Single Program Multiple Data
 \end{listofabbrv}
+
+% \clearpage
+% \listofmyequations
 
 % Lista de tarefas pendentes
 \listoftodos % REMOVER NA VERSÃO FINAL
@@ -301,18 +315,20 @@ O custo total de propriedade, inicialmente definido pela empresa Gartner, Inc.\f
 Os benefícios do uso da abordagem de TCO estão na melhoria da comunicação entre cliente e provedor e na análise de todo o ciclo de vida dos artefatos de TI. Além disso, é possível analisar os custos ou componentes de custos individuais de um artefato de TI por meio de um esquema predefinido \cite{walterbuschEvaluatingCloudComputing2013}. Como o objetivo do modelo TCO é fornecer uma visão abstrata e simplificada do ``mundo real'', em vez de incluir todos os custos relevantes na análise, a complexidade da realidade pode ser reduzida trabalhando com base em premissas e incluindo apenas um número limitado de fatores de custo cuidadosamente selecionados.
 
 Métricas para os cálculos de custo e investimento em infraestruturas de nuvens computacionais necessitam de um modelo claro, juntamente com os fatores que influenciam estes custos. A Tabela \ref{tab:tiposfatores} atribui fatores de custo $f$ para cada tipo de custo $t$ identificado. Os tipos de custo $t \in T$ e os fatores de custo $f \in F$ estão sujeitos aos conjuntos $T$ e $F$:
-\begin{equation*}
+\begin{equation}
   \begin{aligned}
     T = {} & \{dEst,ava,txIaaS,imp,sup,trein,manut,falha,bs\}
   \end{aligned}
-\end{equation*}
-\begin{equation*}
+\end{equation}
+% \myequations{teste}
+
+\begin{equation}
   \begin{aligned}
     F = {} & \{dTempo,sCon,itDec,pComp,cArm,\\ 
-           & tEnt,tSda,tInt,nCon,dom,ssl,lic,txServ,\\
-           & pPort,cSup,rProb,tPrep,tPart,mInstr,perda\}
+          & tEnt,tSda,tInt,nCon,dom,ssl,lic,txServ,\\
+          & pPort,cSup,rProb,tPrep,tPart,mInstr,perda\}
   \end{aligned}
-\end{equation*}
+\end{equation}
 
 Cada fator influenciador é atribuído a um tipo de custo e, em seguida, os elementos dos conjuntos $T$ e $F$ são agrupados em fórmulas. Cada fórmula é aplicada a um custo específico, possibilitando a obtenção dos valores para cada tipo de custo.
 
@@ -360,12 +376,15 @@ As despesas com o tempo (\emph{dTempo}) necessário para cumprir as tarefas de i
 O tipo de custo Suporte (\emph{sup}) depende do custo dos serviços de atendimento via telefone, e-mail, sistema de chamados ou \emph{chat} durante todo ciclo de vida da infraestrutura de nuvem. Portanto, este tipo de custo depende do gasto de tempo (\emph{dTempo}) necessário para interação com a equipe de suporte, bem como dos custos ocorridos. Alguns provedores de serviços cobram seus usuários com base no tempo necessário para a resolução de problemas e suporte. Os custos totais com suporte podem ser determinados pela multiplicação do preços de uma unidade pelo número total de unidades necessárias $\left(C^{sup}_{cSup} = p^{sup}_{cSup} * a^{sup}_{cSup}\right)$. Já os custos com resolução de problemas dependem do número de unidades consumidas e o preço por unidade $\left(C^{sup}_{rProb} = p^{sup}_{rProb} * a^{sup}_{rProb }\right)$.
 
 Os custos totais do tipo de custo "treinamento inicial e permanente" (\emph{trein}) podem ser subdivididos em treinamento interno, no qual os próprios colaborados atuam como treinadores, e treinamento externo, no qual são necessários treinadores externos à empresa. Os custos de um treinamento interno dependem da quantidade de tempo de preparação investido por um ou mais empregados (\emph{tPrep}), o tempo de participação dos funcionários internos (\emph{tPart}) e os custos com material para os treinamentos (\emph{mInstr}):
+
 \begin{eqnarray*}
 C^{trein}_{int} &=& \sum C^{trein}_{tPrep,m} + \sum C^{trein}_{tPart,m} + C^{trein}_{mInstr,m} \\
                 &=& \sum\left(p^{trein}_{tPrep,m} * a^{trein}_{tPrep,m}\right) \\
                 &+& \sum\left(p^{trein}_{tPart,m} * a^{trein}_{tPart,m}\right) + C^{trein}_{mInstr}
 \end{eqnarray*}
+
 O total dos custos de um treinamento externo pode se calculado pela adição dos custos com serviços de consultoria que organizam o treinamento (\emph{sCon}), a quantidade de tempo que os empregados investem na participação do treinamento (\emph{tPart}) e os custos com materiais de treinamento (\emph{mInstr}):
+
 \begin{eqnarray*}
 C^{trein}_{ext} &=& \sum C^{trein}_{sCon} + \sum C^{trein}_{tPart} + C^{trein}_{mInstr,m} \\
                 &=& \sum\left(p^{trein}_{sCon} * a^{trein}_{sCon}\right) \\
@@ -388,13 +407,13 @@ C^{bs}_{dTempo} = \sum p^{bs}_{dTempo,m} * a^{bs}_{dTempo,m}
 \label{sec:custoglobal}
 Em um ambiente de nuvem pública do tipo IaaS, o custo total de propriedade de um serviço de computação em nuvem é igual à soma de todos os tipos de custos envolvidos e pode ser definido como:
 
-\begin{equation*}
+\begin{equation}
   \centering
   \begin{aligned}
     TCO_{Nuvem} = \sum C^t ~\textsf{onde}~ t \in T
   \end{aligned}
   \label{eq:tco}
-\end{equation*}
+\end{equation}
 
 O valor total de um tipo de custo $t$ é igual à soma de todos os fatores de custo $f$ envolvidos, conforme segue: $C^t = \sum C^t_f ~\textsf{onde}~ t \in T, f \in F$. 
 
@@ -1073,7 +1092,7 @@ Este capítulo inicia com as seções \ref{sec:instfederadas} e \ref{sec:confnos
 
 O paradigma de computação em nuvem federada permite, aos provedores de serviço, o compartilhamento de recursos computacionais mediante regras estabelecidas pela própria federação \cite{toosi_interconnected_2014}. Este modelo visa superar limitações de recursos de infraestruturas locais dos provedores por meio do repasse de solicitações para outros membros da federação. Além disso, uma federação em nuvem possibilita que provedores operando com baixa demanda de solicitações, disponibilizem parte de seus recursos para que sejam utilizados pelos demais integrantes da nuvem federada.
 
-Uma abordagem de nuvem federada deve resolver problemas de interoperabilidade, uma vez que diferentes tecnologias podem ser unificadas e abstraídas para os seus consumidores finais.\ups{Isso não vais ver.} No entanto, se apresenta como uma alternativa financeiramente interessante para o dimensionamento de recursos necessários para o atendimento a picos de demanda que ocorrem de forma distribuída, no tempo, entre seus usuários. O ganho, portanto, está na distribuição dos custos de implantação e manutenção da rede entre os sítios participantes, com a probabilidade de alta disponibilidade às demandas.\ups{Distribuição dos custos e alta disponibilidade deve ser visto.}
+Uma abordagem de nuvem federada deve ser capaz de resolver problemas de interoperabilidade, uma vez que diferentes tecnologias podem ser unificadas e abstraídas para os seus consumidores finais.\ups{Isso não vais ver.} No entanto, se apresenta como uma alternativa financeiramente interessante para o dimensionamento de recursos necessários para o atendimento a picos de demanda que ocorram de forma distribuída, no tempo, entre seus usuários. O ganho, portanto, está na distribuição dos custos de implantação e manutenção da rede entre os sítios participantes, com a probabilidade de alta disponibilidade às demandas.\ups{Distribuição dos custos e alta disponibilidade deve ser visto.}
 
 % A abordagem de nuvem federada busca resolver problemas de interoperabilidade, uma vez que diferentes tecnologias podem ser unificadas e abstraídas para os seus consumidores finais. Torna-se, ainda, uma alternativa financeiramente viável para o dimensionamento de recursos necessários para o atendimento a picos de demanda.
 
@@ -1136,7 +1155,7 @@ A definição dos níveis de classificação tomou por base o quantitativo de pr
 
 \section{Configuração dos Nós}\label{sec:confnos}
 
-No presente trabalho, entende-se por nó a infraestrutura física, em termos de computadores servidores e equipamentos de rede e armazenamento, que será ofertada pelas instituição para uso local e pelos demais participantes da solução nuvem. Assume-se que, para a implantação inicial da nuvem, em comum acordo, as instituições se comprometem em adquirir e disponibilizar um conjunto padronizado de recursos computacionais. Este conjunto de recursos computacionais corresponde ao nó da nuvem e a quantidade de módulos disponibilizados, individualmente, pelas instituições depende de sua capacidade de investimento, modelada, neste trabalho, conforme caracterizado na Seção \ref{sec:instfederadas}.
+No presente trabalho, entende-se por nó a infraestrutura física, em termos de computadores servidores e equipamentos de rede e armazenamento, que será ofertada pelas instituições para uso local e pelos demais participantes da solução de nuvem. Assume-se que, para a implantação inicial da nuvem, em comum acordo, as instituições se comprometem em adquirir e disponibilizar um conjunto padronizado de recursos computacionais. \trocar{Este conjunto de recursos computacionais corresponde ao nó da nuvem e a quantidade de módulos disponibilizados, individualmente, pelas instituições, depende de sua capacidade de investimento, modelada, neste trabalho, conforme caracterizado na Seção \ref{sec:instfederadas}}{Este conjunto de recursos computacionais corresponde ao nó da nuvem. Por sua vez, a quantidade de módulos disponibilizados pelas instituições, individualmente, depende de sua capacidade de investimento, modelada conforme caracterizado na Seção \ref{sec:instfederadas}}.
 
 A definição das especificações técnicas do nó se deu a partir de avaliações feitas sobre tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware. De acordo com a Figura \ref{fig:IEPNosModulos}, cada nó da solução de nuvem computacional federada é formada pelo arranjo de módulos pertencentes às seguintes categorias: controle e computação. O módulo de controle é composto por equipamentos de processamento, armazenamento e conexão de rede ao passo que o módulo de computação conta com recursos de processamento. À medida que são incorporados módulos de computação em um nó de uma dada instituição, é previsto crescimento proporcional do espaço de armazenamento no módulo de controle.
 
@@ -1182,16 +1201,54 @@ O módulo de controle não necessita de recursos dedicados às tarefas de comput
 
 A interligação entre os nós que compõe a infraestrutura de nuvem federada merece destaque em função de características  necessárias para que seu funcionamento esteja de acordo com as expectativas dos usuários.
 
-Por ser um infraestrutura geograficamente distribuída, com pontos de conexão localizados em diferentes cidades do estado do Rio Grande do Sul, a existência de uma rede de comunicação de dados estável e suficiente para o desempenho das atividades, as quais se a nuvem federada, é de suma importância para a concretização do projeto. Tal rede deve ser capaz de prover comunicação a todos os nós da nuvem, alocados nas IEPs do estado do Rio Grande do Sul.
+Por ser um infraestrutura geograficamente distribuída, com pontos de conexão localizados em diferentes cidades do estado do Rio Grande do Sul, a existência de uma rede de comunicação de dados estável e suficiente para o desempenho das atividades, as quais se propõe a nuvem federada, é de suma importância para a concretização do projeto. Tal rede deve ser capaz de prover comunicação a todos os nós da nuvem, alocados nas IEPs do estado.
 
-\textcolor{blue}{Apresentar a rede tche como a rede que já existe e que poderia ser utilizada de forma imediata. Então descrever a rede tche. Depois, comentar que outras possibilidades poderiam ser adotadas, e então descrever quais requisitos e qual tipo de topologia poderia ser adotada.}\textcolor{red}{A vantagem de descrever desta forma é que justifica a avaliaçção usando a capilaridade da rede tche e a realização de novos casos de estudo com alternativas à ela.}
+Atualmente, as instituições candidatas a membro da federação de nuvem proposta, estão conectadas por meio da infraestrutura de comunicação ofertada pela Rede Tchê. Tal estrutura já permite, de modo imediato, a troca de informações entre as IEPs do estado do Rio Grande do Sul.
 
-Com uma capilaridade bem distribuída entre as instituições que, eventualmente, se credenciem a fazer parte da infraestrutura de nuvem federada, a Rede Tchê é uma opção de conexão a ser considerada, com o objetivo de oferecer as capacidades de interconexão exigidas pelos nós da nuvem. A Rede Tchê é uma infraestrutura de rede de computadores que interliga IEPs, no caso, Universidades, Institutos Federais e Centros de Pesquisa, no estado do Rio Grande do Sul. Atualmente, todas as instituições se conectam ao nó da Rede Tchê localizado em Porto Alegre, o qual é se configura como a porta de entrada e ponto de conexão à Internet, e com o resto do país, por meio do Ponto de Presença da RNP no Rio Grande do Sul, o qual possibilita que as instituições conectadas desenvolvam vários projetos por meio da infraestrutura disponibilizada pela Rede Tchê e suas abrangências locais.
+Por apresentar uma capilaridade bem distribuída entre as instituições que, eventualmente, se credenciem a fazer parte da infraestrutura de nuvem federada, a Rede Tchê é uma opção de conexão a ser considerada, com o objetivo de oferecer as capacidades de interconexão exigidas pelos nós da nuvem. A Rede Tchê é uma infraestrutura de rede de computadores que interliga IEPs, no caso, Universidades, Institutos Federais e Centros de Pesquisa, no estado do Rio Grande do Sul. Hoje, todas as instituições se conectam ao nó da Rede Tchê localizado na cidade de Porto Alegre, o qual se configura como a porta de entrada da rede e ponto de conexão à Internet, e com o resto do país, por meio do Ponto de Presença da RNP (Rede Nacional de Ensino e Pesquisa) no Rio Grande do Sul. Isso possibilita que as instituições conectadas desenvolvam vários projetos por meio da infraestrutura disponibilizada pela Rede Tchê e suas abrangências locais.
+
+Uma alternativa à Rede Tchê seria a criação de uma rede de comunicação, entre as IEPs, com topologia em anel duplo, exclusiva para o tráfego de informações pertinentes ao usuários da nuvem federada. A topologia de rede em anel duplo permite que o tráfego flua em dois sentidos diferentes, permitindo um melhor aproveitamento da banda de rede disponível e garantindo um bom nível de redundância para a estrutura. Tal rede alternativa proveria acesso por meio de \emph{links} dedicados entre cada localidade na qual se encontre nós da infraestrutura de nuvem. Para a concretização de um projeto de rede como o citado anteriormente, seriam necessários investimentos financeiros por parte da instituições, além dos recursos que já seriam empregados para disposição dos nós a serem integrados à nuvem federada. O uso de uma rede alternativa pode configurar um ambiente, de certa forma, independente no que diz respeito a eventuais restrições impostas por empresas operadoras de serviços de telecomunicações. Porém, há de se considerar que a construção de uma rede alternativa implica em altos custos tanto de implantação quanto de manutenção, que poderiam inviabilizar financeiramente a concretização de um projeto de nuvem federada.
+
+% \textcolor{blue}{Apresentar a rede tche como a rede que já existe e que poderia ser utilizada de forma imediata. Então descrever a rede tche. Depois, comentar que outras possibilidades poderiam ser adotadas, e então descrever quais requisitos e qual tipo de topologia poderia ser adotada.}\textcolor{red}{A vantagem de descrever desta forma é que justifica a avaliaçção usando a capilaridade da rede tche e a realização de novos casos de estudo com alternativas à ela.}
+
+\section{Conclusão do Capítulo}\label{sec:concap}
+
+Neste Capítulo foram apresentadas as condições para que uma IEP possa se credenciar como membro de uma infraestrutura de nuvem federada, de acordo com o modelo proposto por este trabalho.
+
+A partir de critérios estabelecidos, foi possível definir um enquadramento para as instituições, estabelecendo-se níveis de classificação que serviram como base para definição de quantidades de módulos de recursos computacionais que devem ser dispostos pelas IEPs, como parte do acordo de participação no ambiente de nuvem federada.
+
+% Com uma capilaridade bem distribuída entre as instituições que, eventualmente, se credenciem a fazer parte da infraestrutura de nuvem federada, a Rede Tchê é uma opção de conexão a ser considerada, com o objetivo de oferecer as capacidades de interconexão exigidas pelos nós da nuvem. A Rede Tchê é uma infraestrutura de rede de computadores que interliga IEPs, no caso, Universidades, Institutos Federais e Centros de Pesquisa, no estado do Rio Grande do Sul. Atualmente, todas as instituições se conectam ao nó da Rede Tchê localizado em Porto Alegre, o qual é se configura como a porta de entrada e ponto de conexão à Internet, e com o resto do país, por meio do Ponto de Presença da RNP no Rio Grande do Sul. Isso possibilita que as instituições conectadas desenvolvam vários projetos por meio da infraestrutura disponibilizada pela Rede Tchê e suas abrangências locais.
 
 % Atualmente, só é possível conectar-se diretamente a Porto Alegre. O nodo de Porto Alegre é a porta de entrada da rede no Estado e ponto de conexão com o resto do país através do Ponto de Presença do Rio Grande do Sul. Neste nodo também existe uma conexão com o Ponto de Troca de Tráfego Internet no Rio Grande do Sul, o RSiX, onde estão conectados vários backbones comis e acadêmicos. As instituições podem estabelecer conexão por meio de linhas dedicadas, próprias ou alugadas de diversas teles que hoje possuem equipamentos no PoP-RS. Também é possivel a conexão utilizando enlaces via fibra óptica, rádio, ADSL ou cable-modem providos pelas teles locais. As várias instituições conectadas desenvolvem inúmeros projetos através da estrutura disponibilizada pela rede nas suas regiões de abrangência no estado.
 
+
+\section{Elaboração da Estratégia de Escalonamento e Identificação de Limites da Estrutura}
+
+- Propor uma estratégia de escalonamento mais elaborada, considerando alguns critérios (temos que ver estes critérios)\\
+- Reavaliar os custos\\
+
+
+
+%\chapter{Desenvolvimento}
+
+\chapter{Desempenho na Nuvem Federada}
+
+\noindent- simulações\\
+- mapeamento quadrupla - google\\
+- mapeamento dos traces do google para quadruplas (quais colunas devem ser selecionadas para representar a estrutura de quádrupla)\\
+- como "executar" a quádrupla dentro do simulador (penso que deva ser algo como, na classe que faz a leitura dos arquivos do Google, ler os dados somente das colunas mapeadas que refletem o formato e os dados que interessam para as equivalência com as quádruplas)\\
+- 
+
+Nesse capítulo avaliar, com o Simulador, o desempenho da rede federada considerando a topologia especificada. Avaliar o desempenho/custo considerando o crescimento da demanda. Nesse momento, a estratégia básica é, a aplicação é lançada no sitio X e, então, priorizada sua execução em X mesmo. Se não der, exporta a aplicação. \textcolor{blue}{Pergunta: existe como realizar escalonamentos no simulador que considerem a data de término da aplicação? Caso tenha, poderemos pensar em como explorar.}
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=.25]{images/IEP.png}
+	\caption[Distribuição geográfica das IEPs no Estado do Rio Grande do Sul.]{Distribuição geográfica das IEPs no Estado do Rio Grande do Sul.} 
+	\label{fig:IEP}
+\end{figure}
+
 \section{Caracterização das Aplicações}\label{sec:caracaplic}
-\section{Conclusão do Capítulo}\label{sec:concap}
 
 % Anotações:
 %   \begin{itemize}
@@ -1225,16 +1282,16 @@ Com uma capilaridade bem distribuída entre as instituições que, eventualmente
 
 % 
 
-\section{Implantação do Ambiente de Nuvem}
+% \section{Implantação do Ambiente de Nuvem}
 
-- identificar o "nó computacional" base (vai ser definido da cabeça)\\
-- identificar as instituições parceiras\\
-- identificar quantos nós cada instituição tem\\
-- interligar as instituições\\
+% - identificar o "nó computacional" base (vai ser definido da cabeça)\\
+% - identificar as instituições parceiras\\
+% - identificar quantos nós cada instituição tem\\
+% - interligar as instituições\\
 
-Para definição das especificações técnicas do nó de computação padrão, o qual pode ser uma única máquina ou um conjunto de equipamentos, que será disponibilizado para as Instituições de Ensino e Pesquisa, foram levadas em consideração tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware.
+% Para definição das especificações técnicas do nó de computação padrão, o qual pode ser uma única máquina ou um conjunto de equipamentos, que será disponibilizado para as Instituições de Ensino e Pesquisa, foram levadas em consideração tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware.
 
-Entende-se por nó de computação padrão a infraestrutura física, em termos de computadores servidores, que será ofertada pela Instituição para uso local e pelas demais Instituições participantes da solução de nuvem computacional em nível estadual.
+% Entende-se por nó de computação padrão a infraestrutura física, em termos de computadores servidores, que será ofertada pela Instituição para uso local e pelas demais Instituições participantes da solução de nuvem computacional em nível estadual.
 
 % Com base no Mapa de Investimentos do \textdecor[GoogleYellow!35, draw=GoogleYellow!35]{CNPq}\ups{adicionar à lista de siglas} (Conselho Nacional de Desenvolvimento Científico e Tecnológico), disponível na Internet em \url{http://efomento.cnpq.br/efomento/distribuicaoGeografica/distribuicaoGeografica.do?metodo=apresentar}\improve{transformar em referência formal}, sob a modalidade de "Apoio a Projetos de Pesquisa", foram selecionadas 15 instituições, contemplado Universidades e Institutos Federais, com maior percentual de participação em Projetos de Pesquisa no Estado do RS.
 
@@ -1290,33 +1347,19 @@ Como critério para definir a quantidade de nós de computação que cada instit
 - individualizar o "custo" de uso da nuvem pelas instituições\\
 -- contabilizar o custo de ociosidade\\
 
-\section{Elaboração da Estratégia de Escalonamento e Identificação de Limites da Estrutura}
+\section{Mapeamento googleclusterdata --> quádrupla}
 
-- Propor uma estratégia de escalonamento mais elaborada, considerando alguns critérios (temos que ver estes critérios)\\
-- Reavaliar os custos\\
+
+
+\chapter{Introdução de Cloud Bursting}
+
+No capítulo anterior, a simulação foi até o ponto em que a demanda dos usuários suplantou a oferta de recursos, aumentando o tempo de espera dos usuários. Uma alternativa é o incremento dos recursos, implicando em gastos. Outra é utilizar cloud bursting. Nesse capítulo discutir os custos associados ao cloud bursting. É possível que uma estratégia de escalonamento deva ser realizada. Imagino que o escalonamento opere da seguinte forma: tenta lançar local, se não deu, tenta lançar em um outro sítio, se não deu, dispara na pública. Em execução, a medida em que um sitio se torna ocioso, busca para executar o que está na nuvem.
 
 \section{Determinar Vantagens e Desvantagens (financeiras) de Realizar Cloud Bursting}
 
 - Agora se apresenta a necessidade de "crescer" a infraestrutura: aumentar a quantidade de recursos ou alugar uma nuvem pública\\
 - Reaplicar a estratégia do Passo 3 neste novo contexto\\
 - Reavaliar os custos\\
-
-%\chapter{Desenvolvimento}
-
-\chapter{Desempenho na Nuvem Federada}
-
-Nesse capítulo avaliar, com o Simulador, o desempenho da rede federada considerando a topologia especificada. Avaliar o desempenho/custo considerando o crescimento da demanda. Nesse momento, a estratégia básica é, a aplicação é lançada no sitio X e, então, priorizada sua execução em X mesmo. Se não der, exporta a aplicação. \textcolor{blue}{Pergunta: existe como realizar escalonamentos no simulador que considerem a data de término da aplicação? Caso tenha, poderemos pensar em como explorar.}
-
-\begin{figure}[H]
-	\centering 
-	\includegraphics[scale=.25]{images/IEP.png}
-	\caption[Distribuição geográfica das IEPs no Estado do Rio Grande do Sul.]{Distribuição geográfica das IEPs no Estado do Rio Grande do Sul.} 
-	\label{fig:IEP}
-\end{figure}
-
-\chapter{Introdução de Cloud Bursting}
-
-No capítulo anterior, a simulação foi até o ponto em que a demanda dos usuários suplantou a oferta de recursos, aumentando o tempo de espera dos usuários. Uma alternativa é o incremento dos recursos, implicando em gastos. Outra é utilizar cloud bursting. Nesse capítulo discutir os custos associados ao cloud bursting. É possível que uma estratégia de escalonamento deva ser realizada. Imagino que o escalonamento opere da seguinte forma: tenta lançar local, se não deu, tenta lançar em um outro sítio, se não deu, dispara na pública. Em execução, a medida em que um sitio se torna ocioso, busca para executar o que está na nuvem.
 
 \chapter{Impacto nos Custos}
 
