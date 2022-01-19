@@ -3619,3 +3619,208 @@
   language = {en},
   number = {1}
 }
+
+%%%%%%%%%%%%%%%% Tese - 2022 %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@article{clemente-castelloPerformanceModelMapReduce2018,
+  title = {Performance {{Model}} of {{MapReduce Iterative Applications}} for {{Hybrid Cloud Bursting}}},
+  author = {{Clemente-Castello}, Francisco J. and Nicolae, Bogdan and Mayo, Rafael and Fernandez, Juan Carlos},
+  year = {2018},
+  month = aug,
+  journal = {IEEE Transactions on Parallel and Distributed Systems},
+  volume = {29},
+  number = {8},
+  pages = {1794--1807},
+  issn = {1045-9219, 1558-2183, 2161-9883},
+  doi = {10.1109/TPDS.2018.2802932},
+  abstract = {Hybrid cloud bursting (i.e., leasing temporary off-premise cloud resources to boost the overall capacity during peak utilization) can be a cost-effective way to deal with the increasing complexity of big data analytics, especially for iterative applications. However, the low throughput, high latency network link between the on-premise and offpremise resources (``weak link'') makes it difficult to maintain scalability. While there are several data locality techniques dedicated for big data bursting on hybrid clouds, their effectiveness is difficult to estimate in advance. On the other hand, such estimations are critical for users, because they aid in the decision of whether the extra pay-as-you-go cost incurred by using the off-premise resources justifies the runtime speed-up. To this end, the current paper contributes with a performance model and methodology to estimate the runtime of iterative MapReduce applications in a hybrid cloud bursting scenario. A key idea of the proposal is to focus on the overhead incurred by the weak link at fine granularity, both for the map and reduce phases. This enables high estimation accuracy, as demonstrated by extensive experiments at scale using a mix of real-life iterative MapReduce applications from standard big data benchmarking suites that cover a broad spectrum of data patterns. Not only are the produced estimations accurate in absolute terms compared with the actual experimental results, but they are also up to an order of magnitude more accurate than applying state-of-art estimation approaches originally designed for single-site MapReduce deployments.},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/25GCMUKI/Clemente-Castello et al. - 2018 - Performance Model of MapReduce Iterative Applicati.pdf}
+}
+
+@article{fernandez-cereroMeasuringDatacentreWorkflows2020,
+  title = {Measuring Data-Centre Workflows Complexity through Process Mining: The {{Google}} Cluster Case},
+  shorttitle = {Measuring Data-Centre Workflows Complexity through Process Mining},
+  author = {{Fern{\'a}ndez-Cerero}, Dami{\'a}n and {Varela-Vaca}, {\'A}ngel Jes{\'u}s and {Fern{\'a}ndez-Montes}, Alejandro and {G{\'o}mez-L{\'o}pez}, Mar{\'i}a Teresa and {Alv{\'a}rez-Bermejo}, Jos{\'e} Antonio},
+  year = {2020},
+  month = apr,
+  journal = {The Journal of Supercomputing},
+  volume = {76},
+  number = {4},
+  pages = {2449--2478},
+  issn = {0920-8542, 1573-0484},
+  doi = {10.1007/s11227-019-02996-2},
+  abstract = {Data centres have become the backbone of large Cloud services and applications, providing virtually unlimited elastic and scalable computational and storage resources. The search for the efficiency and optimisation of resources is one of the current key aspects for large Cloud Service Providers and is becoming more and more challenging, since new computing paradigms such as Internet of Things, Cyber-Physical Systems and Edge Computing are spreading. One of the key aspects to achieve efficiency in data centres consists of the discovery and proper analysis of the data-centre behaviour. In this paper, we present a model to automatically retrieve execution workflows of existing data-centre logs by employing process mining techniques. The discovered processes are characterised and analysed according to the understandability and complexity in terms of execution efficiency of data-centre jobs. We finally validate and demonstrate the usability of the proposal by applying the model in a real scenario, that is, the Google Cluster traces.},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/JIBEYRAW/Fernández-Cerero et al. - 2020 - Measuring data-centre workflows complexity through.pdf}
+}
+
+@article{hoseinyfarahabadyParetoOptimalCloudBursting2014,
+  title = {Pareto-{{Optimal Cloud Bursting}}},
+  author = {HoseinyFarahabady, Mohammad Reza and Lee, Young Choon and Zomaya, Albert Y.},
+  year = {2014},
+  month = oct,
+  journal = {IEEE Transactions on Parallel and Distributed Systems},
+  volume = {25},
+  number = {10},
+  pages = {2670--2682},
+  issn = {1045-9219},
+  doi = {10.1109/TPDS.2013.218},
+  abstract = {Large-scale Bag-of-Tasks (BoT) applications are characterized by their massively parallel, yet independent operations. The use of resources in public clouds to dynamically expand the capacity of a private computer system might be an appealing alternative to cope with such massive parallelism. To fully realize the benefit of this `cloud bursting', the performance to cost ratio (or cost efficiency) must be thoroughly studied and incorporated into scheduling and resource allocation strategies. In this paper, we present PANDA, a framework for static scheduling BoT applications across resources in both private and public clouds.},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/PF6PZVSJ/HoseinyFarahabady et al. - 2014 - Pareto-Optimal Cloud Bursting.pdf}
+}
+
+@inproceedings{leeCloudBurstingScheduler2017,
+  title = {Cloud {{Bursting Scheduler}} for {{Cost Efficiency}}},
+  booktitle = {2017 {{IEEE}} 10th {{International Conference}} on {{Cloud Computing}} ({{CLOUD}})},
+  author = {Lee, Young Choon and Lian, Bing},
+  year = {2017},
+  month = jun,
+  pages = {774--777},
+  publisher = {{IEEE}},
+  address = {{Honolulu, CA, USA}},
+  doi = {10.1109/CLOUD.2017.112},
+  abstract = {Clouds have been increasingly adopted due to primarily their elasticity and pay-as-you-go (PAYG) pricing. While many organizations outsource the entire ICT solution to public clouds like Amazon Web Services Elastic Compute Cloud (EC2), others consider occasional workload offloading (cloud bursting) due to various reasons including governance and security. In this paper, we present Cloud Bursting Scheduler (CBS), a new cloud bursting algorithm. CBS explicitly takes into account cost factors of private in-house system (or private cloud) and public cloud. In particular, CBS attempts to optimize the cost to performance ratio by offloading jobs to public cloud explicitly taking into account time-varying electricity rates with private clouds and the timeinvariant rental rate of many public clouds. Based on simulation results obtained using real workload traces, CBS saves costs of running workloads by 55\% and 12\% compared with costs of cloud sourcing and private cloud, respectively. It also improves resource utilization (to 89\%) by judiciously (de)activating inhouse resources and dynamically provisioning cloud resources.},
+  isbn = {978-1-5386-1993-3},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/58GLSB2N/Lee e Lian - 2017 - Cloud Bursting Scheduler for Cost Efficiency.pdf}
+}
+
+@article{liOperationalCostMinimization2015,
+  title = {Towards {{Operational Cost Minimization}} in {{Hybrid Clouds}} for {{Dynamic Resource Provisioning}} with {{Delay-Aware Optimization}}},
+  author = {Li, Song and Zhou, Yangfan and Jiao, Lei and Yan, Xinya and Wang, Xin and Lyu, Michael Rung-Tsong},
+  year = {2015},
+  month = may,
+  journal = {IEEE Transactions on Services Computing},
+  volume = {8},
+  number = {3},
+  pages = {398--409},
+  issn = {1939-1374},
+  doi = {10.1109/TSC.2015.2390413},
+  abstract = {Recently, hybrid cloud computing paradigm has be widely advocated as a promising solution for Software-as-a-Service (SaaS) providers to effectively handle the dynamic user requests. With such a paradigm, the SaaS providers can extend their local services into the public clouds seamlessly so that the dynamic user request workload to a SaaS can be elegantly processed with both the local servers and the rented computing capacity in the public cloud. However, although it is suggested that a hybrid cloud may save cost compared with building a powerful private cloud, considerable renting cost and communication cost are still introduced in such a paradigm. How to optimize such operational cost becomes one major concern for the SaaS providers to adopt the hybrid cloud computing paradigm. However, this critical problem remains unanswered in the current state of the art. In this paper, we focus on optimizing the operational cost for the hybrid cloud paradigm by theoretically analyzing the problem with a Lyapunov optimization framework. This allows us to design an online dynamic provision algorithm. In this way, our approach can address the real-world challenges where no a priori information of public cloud renting prices is available and the future probability distribution of user requests is unknown. We then conduct extensive experimental study based on a set of real-world data, and the results confirm that our algorithm can work effectively in reducing the operational cost.},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/GRZ6MCVC/Li et al. - 2015 - Towards Operational Cost Minimization in Hybrid Cl.pdf}
+}
+
+@article{liOperationalCostMinimization2018,
+  title = {Towards Operational Cost Minimization for Cloud Bursting with Deadline Constraints in Hybrid Clouds},
+  author = {Li, Chunlin and Tang, Jianhang and Luo, Youlong},
+  year = {2018},
+  month = dec,
+  journal = {Cluster Computing},
+  volume = {21},
+  number = {4},
+  pages = {2013--2029},
+  issn = {1386-7857, 1573-7543},
+  doi = {10.1007/s10586-018-2841-4},
+  abstract = {In hybrid clouds, there is a technique named cloud bursting which can allow companies to expand their capacity to meet the demands of peak workloads in a low-priced manner. In this work, a cost-aware job scheduling approach based on queueing theory in hybrid clouds is proposed. The job scheduling problem in the private cloud is modeled as a queueing model. A genetic algorithm is applied to achieve optimal queues for jobs to improve the utilization rate of the private cloud. Then, the task execution time is predicted by back propagation neural network. The max\textendash min strategy is applied to schedule tasks according to the prediction results in hybrid clouds. Experiments show that our cost-aware job scheduling algorithm can reduce the average job waiting time and average job response time in the private cloud. In additional, our proposed job scheduling algorithm can improve the system throughput of the private cloud. It also can reduce the average task waiting time, average task response time and total costs in hybrid clouds.},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/URXZCC97/Li et al. - 2018 - Towards operational cost minimization for cloud bu.pdf}
+}
+
+@inproceedings{liuQuantitativeWorkloadAnalysis2016,
+  title = {Quantitative Workload Analysis and Prediction Using {{Google}} Cluster Traces},
+  booktitle = {2016 {{IEEE Conference}} on {{Computer Communications Workshops}} ({{INFOCOM WKSHPS}})},
+  author = {Liu, Bingwei and {Yinan Lin} and Chen, Yu},
+  year = {2016},
+  month = apr,
+  pages = {935--940},
+  publisher = {{IEEE}},
+  address = {{San Francisco, CA, USA}},
+  doi = {10.1109/INFCOMW.2016.7562213},
+  abstract = {Resource allocation efficiency and energy consumption are among the top concerns to today's Cloud data center. Finding the optimal point where users' multiple job requests can be accomplished timely with minimum electricity and hardware cost is one of the key factors for system designers and managers to optimize the system configurations. Understanding the characteristics of the distribution of user task is an essential step for this purpose. At large-scale Cloud Computing data centers, a precise workload prediction will significantly help designers and operators to schedule hardware/software resources and power supplies in a more efficient manner, and make appropriate decisions to upgrade the Cloud system when the workload grows. While a lot of study has been conducted for hypervisorbased Cloud, container-based virtualization is becoming popular because of the low overhead and high efficiency in utilizing computing resources. In this paper, we have studied a set of real-world container data center traces from part of Google's cluster. We investigated the distribution of job duration, waiting time and machine utilization and the number of jobs submitted in a fix time period. Based on the quantitative study, an Ensemble Workload Prediction (EnWoP) method and a novel prediction evaluation parameter called Cloud Workload Correction Rate (CRate) have been proposed. The experimental results have verified that the EnWoP method achieved high prediction accuracy and the C-Rate evaluates the prediction methods more objective.},
+  isbn = {978-1-4673-9955-5},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/XY5PNTMI/Liu et al. - 2016 - Quantitative workload analysis and prediction usin.pdf}
+}
+
+@article{mansouriAutomatedImplementationHybrid2020,
+  title = {An {{Automated Implementation}} of {{Hybrid Cloud}} for {{Performance Evaluation}} of {{Distributed Databases}}},
+  author = {Mansouri, Yaser and Prokhorenko, Victor and Babar, M. Ali},
+  year = {2020},
+  month = jun,
+  journal = {arXiv:2006.02833 [cs]},
+  eprint = {2006.02833},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  abstract = {A Hybrid cloud is an integration of resources between private and public clouds. It enables users to horizontally scale their on-premises infrastructure up to public clouds in order to improve performance and cut up-front investment cost. This model of applications deployment is called cloud bursting that allows data-intensive applications especially distributed database systems to have the benefit of both private and public clouds.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Distributed; Parallel; and Cluster Computing},
+  file = {/home/maiconsantos/Zotero/storage/5FWRILBC/Mansouri et al. - 2020 - An Automated Implementation of Hybrid Cloud for Pe.pdf}
+}
+
+@inproceedings{tirmaziBorgNextGeneration2020,
+  title = {Borg: The next Generation},
+  shorttitle = {Borg},
+  booktitle = {Proceedings of the {{Fifteenth European Conference}} on {{Computer Systems}}},
+  author = {Tirmazi, Muhammad and Barker, Adam and Deng, Nan and Haque, Md E. and Qin, Zhijing Gene and Hand, Steven and {Harchol-Balter}, Mor and Wilkes, John},
+  year = {2020},
+  month = apr,
+  pages = {1--14},
+  publisher = {{ACM}},
+  address = {{Heraklion Greece}},
+  doi = {10.1145/3342195.3387517},
+  abstract = {This paper analyzes a newly-published trace that covers 8 different Borg [35] clusters for the month of May 2019. The trace enables researchers to explore how scheduling works in large-scale production compute clusters. We highlight how Borg has evolved and perform a longitudinal comparison of the newly-published 2019 trace against the 2011 trace, which has been highly cited within the research community.},
+  isbn = {978-1-4503-6882-7},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/UNBU6P5Q/Tirmazi et al. - 2020 - Borg the next generation.pdf}
+}
+
+@article{toosiInterconnectedCloudComputing2014,
+  title = {Interconnected {{Cloud Computing Environments}}: {{Challenges}}, {{Taxonomy}}, and {{Survey}}},
+  shorttitle = {Interconnected {{Cloud Computing Environments}}},
+  author = {Toosi, Adel Nadjaran and Calheiros, Rodrigo N. and Buyya, Rajkumar},
+  year = {2014},
+  month = jul,
+  journal = {ACM Computing Surveys},
+  volume = {47},
+  number = {1},
+  pages = {1--47},
+  issn = {0360-0300, 1557-7341},
+  doi = {10.1145/2593512},
+  abstract = {A brief review of the Internet history reveals the fact that the Internet evolved after the formation of primarily independent networks. Similarly, interconnected clouds, also called               Inter-cloud               , can be viewed as a natural evolution of cloud computing. Recent studies show the benefits in utilizing multiple clouds and present attempts for the realization of an Inter-cloud or federated cloud environment. However, cloud vendors have not taken into account cloud interoperability issues, and each cloud comes with its own solution and interfaces for services. This survey initially discusses all the relevant aspects motivating cloud interoperability. Furthermore, it categorizes and identifies possible cloud interoperability scenarios and architectures. The spectrum of challenges and obstacles that the Inter-cloud realization is faced with are covered, a taxonomy of them is provided, and fitting enablers that tackle each challenge are identified. All these aspects require a comprehensive review of the state of the art, including ongoing projects and studies in the area. We conclude by discussing future directions and trends toward the holistic approach in this regard.},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/Y8A4IVR9/Toosi et al. - 2014 - Interconnected Cloud Computing Environments Chall.pdf}
+}
+
+@inproceedings{vermaLargescaleClusterManagement2015,
+  title = {Large-Scale Cluster Management at {{Google}} with {{Borg}}},
+  booktitle = {Proceedings of the {{Tenth European Conference}} on {{Computer Systems}}},
+  author = {Verma, Abhishek and Pedrosa, Luis and Korupolu, Madhukar and Oppenheimer, David and Tune, Eric and Wilkes, John},
+  year = {2015},
+  month = apr,
+  pages = {1--17},
+  publisher = {{ACM}},
+  address = {{Bordeaux France}},
+  doi = {10.1145/2741948.2741964},
+  abstract = {Google's Borg system is a cluster manager that runs hundreds of thousands of jobs, from many thousands of different applications, across a number of clusters each with up to tens of thousands of machines.},
+  isbn = {978-1-4503-3238-5},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/LA4UGGQW/Verma et al. - 2015 - Large-scale cluster management at Google with Borg.pdf}
+}
+
+@article{wilkesGoogleClusterusageTraces,
+  title = {Google Cluster-Usage Traces V3},
+  author = {Wilkes, John},
+  pages = {16},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/SVINFCFP/Wilkes - Google cluster-usage traces v3.pdf}
+}
+
+@article{zhouCostMakespanawareWorkflow2019,
+  title = {Cost and Makespan-Aware Workflow Scheduling in Hybrid Clouds},
+  author = {Zhou, Junlong and Wang, Tian and Cong, Peijin and Lu, Pingping and Wei, Tongquan and Chen, Mingsong},
+  year = {2019},
+  month = nov,
+  journal = {Journal of Systems Architecture},
+  volume = {100},
+  pages = {101631},
+  issn = {13837621},
+  doi = {10.1016/j.sysarc.2019.08.004},
+  langid = {english},
+  file = {/home/maiconsantos/Zotero/storage/BJS9PXA2/Zhou et al. - 2019 - Cost and makespan-aware workflow scheduling in hyb.pdf}
+}
