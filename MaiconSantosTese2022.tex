@@ -1359,13 +1359,19 @@ No capítulo anterior, a simulação foi até o ponto em que a demanda dos usuá
 
 \section{Definição de Cloud Bursting}
 
-No entanto, como muitas organizações já operam seus próprios sistemas computacionais, o uso dinâmico de nuvens públicas além de recursos próprios (cloud bursting) é uma opção mais prática. Defendemos o cloud bursting com três vantagens: (1) escalabilidade (escalonamento horizontal: picos esporádicos de carga de trabalho podem ser tratados de forma eficaz, (2) utilização de recursos: o nível de provisionamento de recursos pode ser definido para a carga de trabalho média/normal e (3) segurança: a a política de segurança multinuvem pode ser aplicada. A segurança é uma grande preocupação com a adoção da nuvem pública. Com a explosão da nuvem, os dados confidenciais podem ser mantidos e processados no sistema privado, e cargas de trabalho menos sensíveis à segurança podem ser transferidas para a nuvem pública. \cite{leeCloudBurstingScheduler2017}
+Cloud bursting pode ser definido como a utilização temporária de recursos de nuvens computacionais por meio de infraestruturas de nuvens híbridas \cite{Jigsaw2021}. Neste modelo de implantação, as aplicações que são executadas em ambientes locais, como nuvens privadas, são repassadas, geralmente uma parte, para nuvens privadas, com o objetivo de evitar a interrupção dos serviços.
 
-\cite{NetApp2020}
+De modo geral, as organizações reservam a opção de cloud bursting para aplicações que tendem a gerar picos de demanda e grandes flutuações na utilização de recursos computacionais. No entanto, aplicações muito complexas ou que dependam de recursos específicos de computação não costumam ser boas candidatas para a execução explodida em uma nuvem pública \cite{NetApp2020}.
 
-\cite{Microsoft2022}
+A utilização de nuvens públicas, como complemento para os recursos locais de computação, pode se tornar uma opção mais prática às organizações que já operam seus próprios sistemas computacionais \emph{in-house}. Vantagens como escalabilidade, com o uso de escalonamento horizontal, na qual picos esporádicos de cargas de trabalho podem ser tratadas de forma mais eficaz; a utilização de recursos, na qual o nível de provisionamento pode ser ajustado para a carga de trabalho em níveis normais de uso; e a segurança que permite que uma política multinuvem possa ser aplicada, principalmente, devido à adoção de nuvens públicas. Em ambientes que fazem uso de cloud bursting, os dados confidenciais poderiam ser mantidos e tratados no ambiente privado (nuvem privada) ao passo que cargas de trabalho menos sensíveis à políticas de segurança poderiam ser transferidas para nuvens públicas sem comprometimento da confidencialidade dos dados \cite{leeCloudBurstingScheduler2017}.
 
-\cite{Jigsaw2021}
+% No entanto, como muitas organizações já operam seus próprios sistemas computacionais, o uso dinâmico de nuvens públicas além de recursos próprios (cloud bursting) é uma opção mais prática. Defendemos o cloud bursting com três vantagens: (1) escalabilidade (escalonamento horizontal: picos esporádicos de carga de trabalho podem ser tratados de forma eficaz, (2) utilização de recursos: o nível de provisionamento de recursos pode ser definido para a carga de trabalho média/normal e (3) segurança: a a política de segurança multinuvem pode ser aplicada. A segurança é uma grande preocupação com a adoção da nuvem pública. Com a explosão da nuvem, os dados confidenciais podem ser mantidos e processados no sistema privado, e cargas de trabalho menos sensíveis à segurança podem ser transferidas para a nuvem pública. 
+
+
+
+% \cite{Microsoft2022}
+
+
 
 \section{Determinar Vantagens e Desvantagens (financeiras) de Realizar Cloud Bursting}
 
