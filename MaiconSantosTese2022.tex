@@ -1357,8 +1357,15 @@ ok, vamos tentar.
 
 No capítulo anterior, a simulação foi até o ponto em que a demanda dos usuários suplantou a oferta de recursos, aumentando o tempo de espera dos usuários. Uma alternativa é o incremento dos recursos, implicando em gastos. Outra é utilizar cloud bursting. Nesse capítulo discutir os custos associados ao cloud bursting. É possível que uma estratégia de escalonamento deva ser realizada. Imagino que o escalonamento opere da seguinte forma: tenta lançar local, se não deu, tenta lançar em um outro sítio, se não deu, dispara na pública. Em execução, a medida em que um sitio se torna ocioso, busca para executar o que está na nuvem.
 
-No entanto, como muitas organizações já operam seus próprios sistemas computacionais, o uso dinâmico de nuvens públicas além de recursos próprios (cloud bursting) é uma opção mais prática. Defendemos o cloud bursting com três vantagens: (1) escalabilidade (escalonamento horizontal: picos esporádicos de carga de trabalho podem ser tratados de forma eficaz, (2) utilização de recursos: o nível de provisionamento de recursos pode ser definido para a carga de trabalho média/normal e (3) segurança: a a política de segurança multinuvem pode ser aplicada. A segurança é uma grande preocupação com a adoção da nuvem pública. Com a explosão da nuvem, os dados confidenciais podem ser mantidos e processados no sistema privado, e cargas de trabalho menos sensíveis à segurança podem ser transferidas para a nuvem pública.
+\section{Definição de Cloud Bursting}
 
+No entanto, como muitas organizações já operam seus próprios sistemas computacionais, o uso dinâmico de nuvens públicas além de recursos próprios (cloud bursting) é uma opção mais prática. Defendemos o cloud bursting com três vantagens: (1) escalabilidade (escalonamento horizontal: picos esporádicos de carga de trabalho podem ser tratados de forma eficaz, (2) utilização de recursos: o nível de provisionamento de recursos pode ser definido para a carga de trabalho média/normal e (3) segurança: a a política de segurança multinuvem pode ser aplicada. A segurança é uma grande preocupação com a adoção da nuvem pública. Com a explosão da nuvem, os dados confidenciais podem ser mantidos e processados no sistema privado, e cargas de trabalho menos sensíveis à segurança podem ser transferidas para a nuvem pública. \cite{leeCloudBurstingScheduler2017}
+
+\cite{NetApp2020}
+
+\cite{Microsoft2022}
+
+\cite{Jigsaw2021}
 
 \section{Determinar Vantagens e Desvantagens (financeiras) de Realizar Cloud Bursting}
 
