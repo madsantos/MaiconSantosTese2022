@@ -1,7 +1,7 @@
 LATEX = pdflatex
 BIBTEX = bibtex
 RM = rm -f
-FILE = MaiconSantosTese2021
+FILE = MaiconSantosTese2022
 
 ### Standard PDF Viewers
 # Defines a set of standard PDF viewer tools to use when displaying the result
