@@ -112,27 +112,27 @@ Doutor em Biotecnologia pela Universidade Federal de Pelotas.
 %Lista de Tabelas
 \listoftables
 
-\chapter*{\listabbrvname}
-\acronymused{CAPEX}
-\acronymused{CNPq}
-\acronymused{CPU}
-\acronymused{Gbps}
-\acronymused{HPC}
-\acronymused{IaaS}
-\acronymused{IEP}
-\acronymused{LGPD}
-\acronymused{M}
-\acronymused{MPI}
-\acronymused{OE}
-\acronymused{OPEX}
-\acronymused{QP}
-\acronymused{ROI}
-\acronymused{RSL}
-\acronymused{SLA}
-\acronymused{TCO}
-\acronymused{vCPU}
+% \chapter*{\listabbrvname}
+% \acronymused{CAPEX}
+% \acronymused{CNPq}
+% \acronymused{CPU}
+% \acronymused{Gbps}
+% \acronymused{HPC}
+% \acronymused{IaaS}
+% \acronymused{IEP}
+% \acronymused{LGPD}
+% \acronymused{M}
+% \acronymused{MPI}
+% \acronymused{OE}
+% \acronymused{OPEX}
+% \acronymused{QP}
+% \acronymused{ROI}
+% \acronymused{RSL}
+% \acronymused{SLA}
+% \acronymused{TCO}
+% \acronymused{vCPU}
 
-\listasiglas{_Abreviaturas}
+% \listasiglas{_Abreviaturas}
 
 %lista de abreviaturas e siglas
 \begin{listofabbrv}{CAPEX}%coloque aqui a maior sigla para ajustar a distância
@@ -178,39 +178,16 @@ Para apoiar o desenvolvimento do trabalho proposto, foi realizada uma Revisão S
 
 \section{Estrutura do texto}\label{sec:esttexto}
 
-% O texto desta Proposta de Tese está organizado da seguinte forma: no Capítulo \ref{chap:reqhpc} são apresentados os requisitos de execução para aplicações HPC, juntamente com os diferentes custos associados à implantação de nuvens, assim como caracterizados os aspectos que influenciam nas suas respectivas variações. O Capítulo \ref{chap:trabEst} apresenta a Revisão Sistemática da Literatura, juntamente com os trabalhos relacionados ao tema deste estudo. O Capítulo \ref{chap:prop}, contextualiza a pesquisa a ser desenvolvida, bem como a metodologia a ser seguida para o desenvolvimento da Tese de Doutorado e o cronograma de atividades. Por fim, o Capítulo \ref{chap:considfin}, encerra a leitura desta Proposta, com algumas considerações finais sobre o estudo e, também, mencionando artigo aceito para publicação em periódico de abrangência nacional.
+O texto desta Proposta de Tese está organizado da seguinte forma: no Capítulo \ref{chap:reqhpc} são apresentados os requisitos de execução para aplicações HPC, juntamente com os diferentes custos associados à implantação de nuvens, assim como caracterizados os aspectos que influenciam nas suas respectivas variações. O Capítulo \ref{chap:trabEst} apresenta a Revisão Sistemática da Literatura, juntamente com os trabalhos relacionados ao tema deste estudo. O Capítulo \ref{chap:prop}, contextualiza a pesquisa a ser desenvolvida, bem como a metodologia a ser seguida para o desenvolvimento da Tese de Doutorado e o cronograma de atividades. Por fim, o Capítulo \ref{chap:considfin}, encerra a leitura desta Proposta, com algumas considerações finais sobre o estudo e, também, mencionando artigo aceito para publicação em periódico de abrangência nacional.\\
+
+\ups[inline]{\[\Uparrow~\Uparrow~\Uparrow\]Corrigir referências após finalizar a escrita.}
 
 %\chapter{Requisitos de Execução para Aplicações HPC}\label{chap:reqhpc}
 \chapter{Aplicações HPC sobre Nuvens Computacionas}\label{chap:aplicacoes}
 
-Este capítulo descreve os modelos típicos para exploração de nuvens computacionais. Aqui tu diz que vai executar em IaaS.
+Este capítulo descreve os modelos típicos para exploração de nuvens computacionais. Aqui tu diz que vai executar em IaaS. \unsure{O que eu tenho que escrever aqui? Já está no texto? É só transportar para cá?}
 
-\section{Bag of Tasks}
-Aqui é o que tu tens, puxa para cá. Eu tenho dúvidas se a parte de consolidação seja realmente necessária.
-
-\section{Workflow}
-Aqui entra a história do Pegasus.
-
-\section{Aspectos de Custo}
-
-\section{Discussão}
-Neste capítulo foram apresentados os principais modelos para construções HPC em ambiente de nuvem. O Capítulo concluí discutindo aspectos relacionado ao custo da execução destas aplicações em ambiente de nuvem.
-
-\chapter{Contabilização de Custos}\label{chap:custos}
-Este capítulo apresenta, a partir de um apanhado da literatura, elementos associados à viabilização econômica da exploração de um ambiente de nuvem computacional. Em um primeiro momento, na Seção \ref{sec:fontesdecustos}, são apresentados quais elementos das aplicações caracterizam demandas de recursos de processamento e que, portanto, requerem aquisição destes recursos para que sejam efetivamente executadas. A Seção \ref{sec:fatoresdecustos} caracteriza como podem se apresentar, em infraestruturas físicas reais, as opções de suporte de hardware às demandas de processamento requeridas pelas aplicações. As estratégias de precificação do uso de nuvens computacionais são discutidas na Seção \ref{sec:custoglobal} e a Seção \ref{sec:discussaocustos} conclui o capítulo, destacando como a questão de custo de uso de uma nuvem computacional para HPC será considerado no decorrer do trabalho.
-
-\section{Fontes de Custos}\label{sec:fontesdecustos}
-\section{Fatores de Custos}\label{sec:fatoresdecustos}
-\section{Custo Global}\label{sec:custoglobal}
-\section{Discussão}\label{sec:discussaocustos}
-
-Em ambientes de nuvem, a precificação é o processo pelo qual se determina quanto um provedor de serviços receberá de um usuário final pelos serviços prestados \cite{al-roomiCloudComputingPricing2013}. O processo de precificação pode ser fixo, no qual o usuário final paga sempre o mesmo valor durante todo o tempo de uso dos serviços; dinâmico, em que os valores cobrados mudam com base em alterações de características; e dependente de mercado, que é quando o cliente é cobrado em função das condições de mercado em tempo real.
-
-Neste Capítulo são apresentados diferentes custos associados à implantação de nuvens, Seção \ref{sec:fontescustos}, assim como caracterizados os aspectos que influenciam nas suas respectivas variações, Seção \ref{sec:fatorescustos}. O custo da implantação de uma nuvem é contabilizado a partir da composição destes custos individuais, Seção \ref{sec:custoglobal}. Este trabalho, tendo interesse na exploração de nuvens para HPC, apresenta uma abordagem particular para este caso específico na Seção \ref{sec:custoshpc}. A discussão final, Seção \ref{sec:discussao}, aborda o contexto de custos analisado sob a ótica das necessidades de implantação de nuvens em estruturas de HPC para delimitar o contexto da Revisão Sistemática da Literatura conduzida nesta pesquisa.\change{Revisar esta introdução de capítulo}\\
-
-\ups[inline]{Verificar se este trecho de texto (seções \ref{sec:modelo_de_aplicacao_bot} à \ref{subsec:normalizacao_do_passo_global}) vindo da dissertação continuará aqui em virtude do novo modelo de BoT.}
-
-\section{Modelo de Aplicação BoT}\label{sec:modelo_de_aplicacao_bot}\info{Aqui COMEÇA o texto que veio da dissertação}
+\section{Bag of Tasks}\label{sec:bag_of_tasks}
 
 A infraestrutura provida por nuvens computacionais fornece suporte para a execução de aplicações do tipo BoT. Em muitos casos, as tarefas pertencentes às aplicações BoT possuem um alto custo computacional e para evitar grandes investimentos em recursos de hardware, usuários podem submeter às infraestruturas computacionais em nuvem, de forma oportunista, suas demandas de processamento para este tipo de aplicação.
 
@@ -273,181 +250,21 @@ Na Figura \ref{ExemploBoT} são apresentados os 6 primeiros passos na evolução
 	\label{ExemploBoT}
 \end{figure}
 
-\section{Consolidação de Tarefas}\label{sec:consolidacao_de_tarefas}
-
-A consolidação de tarefas consiste em uma etapa de escalonamento, realizada em nível aplicativo, que realiza o mapeamento das tarefas definidas em uma aplicação sobre um conjunto finito de recursos de processamento. Os critérios de escalonamento para tal consolidação levam em consideração unicamente aqueles atributos empregados para descrever aplicações BoT apresentados na Seção \ref{sec:modelo_de_aplicacao_bot}: data de chegada, duração, número de tarefas, quantidade de processamento requerida e o número de processadores disponíveis.
-
-Assume-se que as seguintes situações possam ser verdadeiras em um determinado instante de execução:
-
-\begin{itemize}
-\item O número total de tarefas é maior que o total de processadores disponíveis.
-\item A quantidade de processamento requerida pelo conjunto de \textit{jobs} aptos a executar é superior àquela oferecida pelo conjunto de processadores disponíveis.
-\end{itemize}
-
-\subsection{Discretização das tarefas}\label{subsec:discretizacao_de_tarefas}
-
-Embora em uma aplicação do tipo BoT inexistam relações de dependência, tampouco precedência entre tarefas, uma tarefa qualquer pode gerar novas tarefas para o bag. Assim, considere duas tarefas $\tau_k^i$ e $\tau_l^j$, definidas em duas quádruplas $q_i$ e $q_j$, de tal forma que $a_i < a_j$, existindo, portanto, um valor $\delta$ tal que $a_i+\delta=a_j$. Isto significa que, pelo menos uma tarefa em $q_i$ pode ter criado $q_j$ ao final da execução de um \textit{job} $w^{\tau^i}_\delta$. Como o modelo de aplicação BoT adotado não distingue as tarefas pertencentes a uma mesma quádrupla, assume-se que todas as tarefas $\tau_l$ de $q_j$ são inseridas no bag após o término do passo $w_{\delta}$ de todas as tarefas $\tau_k$ de $q_i$.
-
-Define-se \emph{passo global} $g$ um instante de tempo discreto na evolução de uma aplicação BoT no modelo descrito em um ambiente com número não limitado de recursos de processamento e sem contenção. Uma aplicação qualquer, descrita por $n$ quádruplas possui $|g| = \max_{i=1}^{k}(a_i+d_i)$ passos globais. Nesta situação, a passagem de $g_i$ para $g_{i+1}$ marca o término da execução de um \textit{job} de cada tarefa presente no bag até $g_i$, inclusive.
-
-Os atributos de um \textit{job} $w_j^i$, criado a partir de uma tarefa $\tau^i_k$ especificada em uma quádrupla $q_i$, são descritos por uma quádrupla contendo $[g_j^i,r_j^i,f_j^i,c_j^i]$, onde $g_j^i$ corresponde ao passo global em que o \textit{job} encontra-se disponível para execução e $c_j^i$ ao custo do \textit{job} definido pela tarefa. Nesta quádrupla, os membros $r_j^i$ e $f_j^i$, respectivamente, representam o número de \textit{jobs} de $\tau_i$ que ainda estão no bag e os que já foram concluídos. Para um dado \textit{job} $w_j^i$, $g_j^i = a_i+f_j^i$, bem como $r_j^i + f_j^i = b_i$ e $c_j^i = c_i$.
-
-Para uma determinada tarefa $\tau^i_k$, são instanciados $d_i$ \textit{jobs} na forma: 
-
-\[\{w_1^i, w_2^i, \dots w_{d_i}^i\} = \{[g_1^i,r_1^i,f_1^i,c_1^i],[g_2^i,r_2^i,f_2^i,c_2^i], [g_3^i,r_3^i,f_3^i,c_3^i] \dots [g_{d_i}^i,r_{d_i}^i,f_{d_i}^i,c_{d_i}^i]\}\]
-
-Para efeito de consolidação das tarefas, assume-se como unidade de manipulação o \textit{job}. Os \textit{jobs} definidos por diferentes tarefas são independentes entre si. Os \textit{jobs} definidos por uma tarefa, no entanto, são executados na ordem expressa pelos respectivos $g_i$.
-
-\subsection{Contingenciamento de execução}\label{subsec:contingenciamento_de_execucao}
-
-Em um ambiente real, a capacidade de processamento é limitada, tanto em termos de recursos, definidos pelo número de processadores ou quantidade de memória, como em termos de capacidade, exemplificada pela velocidade de comunicação. A aplicação em execução, em tais sistemas, é a principal fonte de consumo destes recursos, não sendo, no entanto, a única. A atuação de um sistema de gerenciamento, como o provido pelo mecanismo de escalonamento, também consome a capacidade de processamento oferecida. No modelo BoT apresentado, é considerado apenas o custo computacional de cada tarefa, o que implica em considerar a carga de processamento oferecida pela arquitetura disponível, assumindo, desta forma, ilimitada capacidade de processamento, armazenamento e nulos os custos de comunicação. Assume-se, também, que a influência do mecanismo de escalonamento não introduz sobrecustos à execução.
-
-O número de processadores disponíveis na arquitetura real delimita, no modelo adotado, a capacidade de processamento disponível. Uma arquitetura $M$ dedicada à execução de uma aplicação BoT $A$ é composta por $m$ processadores idênticos, $\{p_1, p_2 \dots p_m\}$, com ilimitada capacidade de memória por processador e custo 0 (zero) para comunicação de tarefas e operações de escalonamento entre eles. Em determinado passo global, a quantidade de processamento máximo disponível nesta máquina é dado por $C = m\times 100\%$.
-
-O número de \textit{jobs} que podem ser executados em um determinado passo global $g$ é limitado pela quantidade de processamento oferecida. Assim, se em um determinado passo global $g$ o somatório dos custos computacionais $c_k^i$ dos \textit{jobs} $w_i$ aptos à execução suplantar a capacidade $C$ de processamento oferecida, haverá contenção na execução. Deve também ser observado que a necessidade de processamento de um \textit{job} não pode ser dividida entre processadores. Como consequência, pode ocorrer fragmentação de uso de processador quando, em um passo global, um novo \textit{job} não pode ser adicionado aos demais por ultrapassar o limite de uso de 100\% de CPU máximo previsto por passo. Assim, a capacidade real $C_g$ explorada em um passo global $g$ é limitada em $C_g \le m\times 100\%$.
-
-\subsection{Normalização do passo global}\label{subsec:normalizacao_do_passo_global}
-
-Como existe contingenciamento na execução dos \textit{jobs}, em função da carga computacional disponível, em um dado passo global $g$ nem todos os \textit{jobs} elegíveis para execução podem ser de fato executados. Assim, cada tarefa terá, no máximo um \textit{job} em execução, havendo a possibilidade de tarefas não terem nenhum \textit{job} executado em um determinado passo global.
-
-Para cada tarefa $\tau^i_k$, apenas um \textit{job} é elegível para execução, sendo este o \textit{job} que possuir o menor $g_j^i$, satisfazendo $g_j^i \le g$. Considerando dois \textit{jobs} $w_j^i$ e $w_k^i$ definidos por uma mesma tarefa $\tau_i$ a relação de ordem temporal definida pelo atributo $g_i$ de cada um deles deve ser preservada.
-
-Considerando dois \textit{jobs} $w_j^i$ e $w_k^h$, definidos pelas tarefas $\tau^i_k$ e $\tau^h_l$, respectivamente, ambas elegíveis para execução, não existe nenhuma ordem pré-definida de execução entre eles.
-
-Em consequência do contingenciamento, em um dado passo $g$ pode existir um conjunto não vazio de \textit{jobs} em que se verifica que $g_i \le g$. Uma parcela limitada das tarefas já iniciadas contendo estes \textit{jobs} é elegível para execução em função da limitação dos recursos de processamento disponíveis. As demais, não elegíveis por não haver recursos de processamento suficientes, terão sua execução retardada.
-
-Deste fato destaca-se a consequência da contingência no modelo de BoT adotado. Conforme previsto na Seção \ref{sec:modelo_de_aplicacao_bot}, o atributo $a_i$ definido por uma quádrupla $q_i$ representa a quantidade de processamento já realizada pela aplicação em uma arquitetura não contingenciada. Portanto, todo atraso na execução de qualquer \textit{job} reflete no atraso, na mesma proporção, da chegada de um novo lote de tarefas (e seus \textit{jobs} correspondentes) da mesma aplicação.
-
-A Figura \ref{fig:normalizatempo} apresenta um exemplo da situação. Supondo duas aplicações $A = \{[0,5,1,c^A_1], [3,d^A_1,2,c^A_1]\}$ e $B = \{[3,d^B_1,3,c^B_1]\}$, cujos atributos não identificados são irrelevantes para compreensão do exemplo. Nesta figura, \textit{jobs} são representados por círculos, sendo envolvidos pelas tarefas que os descrevem. O inteiro informado no interior de cada \textit{job} refere-se ao seu passo de execução. As setas tracejadas identificam a dependência de criação de tarefas anotada entre os \textit{jobs}. A discretização do tempo (passos) também é apresentada.
+\section{Workflow}
+Aqui entra a história do Pegasus.
 
 \begin{figure}[htbp]
 	\centerline{
-		\includegraphics[scale=0.44]{images/NormalizacaoTempo2.pdf}}
-	\caption[Dependência na criação de tarefas entre \textit{jobs}.]{Dependência na criação de tarefas entre \textit{jobs}.}
-\label{fig:normalizatempo}
+		\includegraphics[scale=0.25]{images/sipht.png}}
+	\caption[Exemplo de aplicação \textit{Bag of Tasks}]{Exemplo de aplicação \textit{Bag of Tasks}.}
+	\label{ExemploBoT}
 \end{figure}
 
-Na Figura \ref{fig:normalizatempo}, o BoT $A$ possui dois grupos de tarefas, o primeiro é recebido no tempo 0 (zero), sendo composto por uma (1) tarefa com comprimento de cinco passos, ou seja, de cinco \textit{jobs}. O segundo grupo é composto por duas tarefas, sendo recebido no tempo 3 em uma arquitetura sem contenção. A interpretação é a de que de todas as tarefas lançadas anteriormente, na mesma aplicação, devem ter tido o direito de executar até 3 passos, ou seja, até 3 de seus \textit{jobs}, de forma que a quantidade de trabalho suficiente para criação deste segundo grupo tenha sido completada.
+\cite{deelmanPegasusCloudScience2016}\\
 
-Nesta mesma figura, o BoT $B$, possui um único grupo de tarefas, composto por três tarefas, que é recebido no tempo 3. A execução destas tarefas não depende de trabalhos realizados em outra aplicação, uma vez que trata-se de um novo BoT. Seus \textit{jobs} não são atrasados, portanto, em decorrência de atrasos de execução de \textit{jobs} descritos em outro BoT, no caso da figura, das tarefas do BoT $A$. \info{Aqui TERMINA o texto que veio da dissertação}
+\cite{deelmanPegasusWorkflowManagement2015}
 
-\section{Fontes de Custos em IaaS}\label{sec:fontescustos}
-De um modo geral, os custos associados à utilização dos recursos computacionais disponibilizados por nuvens do tipo IaaS são difíceis de ser quantificados, fazendo com que seja necessária a utilização de modelos de decisão orientados a custos. Um dos modelos mais utilizados é o custo total de propriedade -- TCO (\emph{Total Cost of Ownership}) \cite{strebelEconomicDecisionModel2010}.
-
-O custo total de propriedade, inicialmente definido pela empresa Gartner, Inc.\footnote{\url{https://www.gartner.com/en} - empresa criada no final dos anos 1970, com atuação nos ramos de pesquisa, consultoria, eventos e prospecção do mercado de Tecnologia da Informação.}, é reconhecido como o método padrão para a análise financeira de recursos de Tecnologia da Informação (TI) e outros custos empresariais relacionados à TI \cite{mieritzDefiningGartnerTotal2005}. O modelo de TCO inclui aquisição, gerenciamento e suporte de hardware e software, comunicações, despesas do usuário final e os custos com tempo de inatividade, treinamento e outras perdas de produtividade. Para Filiopoulou e seu grupo \cite{filiopoulouIntegratingCostAnalysis2015}, a estimativa do custo total de propriedade, em particular, é um procedimento que fornece os meios para determinar o valor econômico total de um investimento, incluindo as despesas iniciais de capital (CAPEX, \emph{capital expenditure}) e as despesas operacionais (OPEX, \emph{operational expenditure}). No contexto de computação em nuvem, corresponde à estimativa de valores necessários para implementação e operação de uma infraestrutura.
-
-Os benefícios do uso da abordagem de TCO estão na melhoria da comunicação entre cliente e provedor e na análise de todo o ciclo de vida dos artefatos de TI. Além disso, é possível analisar os custos ou componentes de custos individuais de um artefato de TI por meio de um esquema predefinido \cite{walterbuschEvaluatingCloudComputing2013}. Como o objetivo do modelo TCO é fornecer uma visão abstrata e simplificada do ``mundo real'', em vez de incluir todos os custos relevantes na análise, a complexidade da realidade pode ser reduzida trabalhando com base em premissas e incluindo apenas um número limitado de fatores de custo cuidadosamente selecionados.
-
-Métricas para os cálculos de custo e investimento em infraestruturas de nuvens computacionais necessitam de um modelo claro, juntamente com os fatores que influenciam estes custos. A Tabela \ref{tab:tiposfatores} atribui fatores de custo $f$ para cada tipo de custo $t$ identificado. Os tipos de custo $t \in T$ e os fatores de custo $f \in F$ estão sujeitos aos conjuntos $T$ e $F$:
-\begin{equation}
-  \begin{aligned}
-    T = {} & \{dEst,ava,txIaaS,imp,sup,trein,manut,falha,bs\}
-  \end{aligned}
-\end{equation}
-% \myequations{teste}
-
-\begin{equation}
-  \begin{aligned}
-    F = {} & \{dTempo,sCon,itDec,pComp,cArm,\\ 
-          & tEnt,tSda,tInt,nCon,dom,ssl,lic,txServ,\\
-          & pPort,cSup,rProb,tPrep,tPart,mInstr,perda\}
-  \end{aligned}
-\end{equation}
-
-Cada fator influenciador é atribuído a um tipo de custo e, em seguida, os elementos dos conjuntos $T$ e $F$ são agrupados em fórmulas. Cada fórmula é aplicada a um custo específico, possibilitando a obtenção dos valores para cada tipo de custo.
-
-\begin{table}[htb]
-  \footnotesize
-  \centering
-  \caption{Tipos de custo e fatores de custo relacionados}
-  \label{tab:tiposfatores}
-%   \setlength\tabcolsep{1.6pt} % ajusta a tabela para caber na coluna
-  \begin{tabular}{@{}lm{6.9cm}@{}}
-    \toprule
-    \multicolumn{1}{c}{\textbf{Tipo de custo}} & \multicolumn{1}{c}{\textbf{Fatores de custo}} \\ 
-    \bottomrule
-    \begin{tabular}[c]{m{7cm}@{}l@{}}Decisão estratégica, seleção de serviços de computação em nuvem e tipos de nuvem (\emph{dEst})\end{tabular} & Despesas de tempo (\emph{dTempo}), serviços de consultoria (\emph{sCon}), informações para tomada de decisão (\emph{itDec}). \\ 
-    \addlinespace[0.15cm]
-    \begin{tabular}[c]{m{7cm}@{}l@{}}Avaliação e seleção de prestador de serviços (\emph{ava})\end{tabular} & Despesas de tempo (\emph{dTempo}), serviços de consultoria (\emph{sCon}), informações para tomada de decisão (\emph{itDec}).\\ 
-    \addlinespace[0.15cm]
-    \begin{tabular}[c]{m{7cm}@{}l@{}}Taxa de serviço IaaS (\emph{txIaaS})\end{tabular} & Poder de computação (\emph{pComp}), capacidade de armazenamento (\emph{cArm}), transferência de dados de entrada (\emph{tEnt}), transferência de dados de saída (\emph{tSda}), transferência de dados interna do provedor (\emph{tInt}), número de consultas (\emph{nCon}), domínio (\emph{dom}), certificado SSL (\emph{ssl}), licença (\emph{lic}), taxa de serviço básica (\emph{txServ}). \\
-    \addlinespace[0.15cm]
-    \begin{tabular}[c]{m{7cm}@{}l@{}}Implementação, configuração, integração e migração (\emph{imp})\end{tabular} & Despesas de tempo (\emph{dTempo}), processo de portabilidade (\emph{pPort}). \\
-    \addlinespace[0.15cm]
-    \begin{tabular}[c]{m{7cm}@{}l@{}}Suporte (\emph{sup})\end{tabular} & Despesas de tempo (\emph{dTempo}), custos de suporte (\emph{cSup}), resolução de problemas (\emph{rProb}). \\
-    \addlinespace[0.15cm]
-    \begin{tabular}[c]{m{7cm}@{}l@{}}Treinamento inicial e permanente (\emph{trein})\end{tabular} & Tempo de preparação dos funcionários internos (\emph{tPrep}), tempo de participação dos funcionários internos (\emph{tPart}), material de instruções (\emph{mInstr}), serviços de consultoria externa (\emph{sCon}). \\
-    \addlinespace[0.15cm]
-    \begin{tabular}[c]{m{7cm}@{}l@{}}Manutenção e modificação (\emph{manut})\end{tabular} & Despesas de tempo (\emph{dTempo}). \\
-    \addlinespace[0.15cm]
-    \begin{tabular}[c]{m{7cm}@{}l@{}}Falha no sistema (\emph{falha})\end{tabular} & Perda por período (\emph{perda}). \\
-    \addlinespace[0.15cm]
-    \begin{tabular}[c]{m{7cm}@{}l@{}}\emph{Backsourcing} ou descarte (\emph{bs})\end{tabular} & Despesas de tempo (\emph{dTempo}), processo de portabilidade (\emph{pPort}). \\  
-    \bottomrule
-  \end{tabular}
-  \caption*{Fonte: Adaptado de \cite{walterbuschEvaluatingCloudComputing2013}.}
-\end{table}
-
-\section{Fatores de Custo}
-\label{sec:fatorescustos}
-
-Os custos relacionados à decisão estratégica, seleção de serviços de computação em nuvem e tipos de nuvem (\emph{dEst}), juntamente com os custos de avaliação e seleção de prestadores de serviço (\emph{ava}) são influenciados pelas despesas de tempo (\emph{dTempo}) necessário para a tomada de decisão, as despesas com informações nas quais a decisão pode ser baseada (\emph{itDec}), como, por exemplo literatura científica ou análises de mercado, bem como custos de serviços de consultoria externa (\emph{sCon}). O custo total com as despesas de tempo resultam do tempo total gasto por todos os funcionários $\left(C^{dEst}_{dTempo} = \sum p^{dEst}_{dTempo,m} * a^{dEst}_{dTempo,m}\right)$, ou seja, é determinado pelo valor da hora de trabalho de cada empregado $\left(p^{dEst}_{dTempo,m}\right)$, multiplicado pelo tempo gasto $\left(a^{dEst}_{dTempo,m}\right)$, e somando os valores de todos os empregados $\left(m\right)$ envolvidos. Custos com tomadas de decisão ocorrem em períodos $i < 1$ e, além disso, o custo total com a aquisição de informações (\emph{itDec}) pode ser descrito como o somatório do total de preços (\emph{p}) de todos os materiais adquiridos $\left(C^{dEst}_{itDec} = \sum p^{dEst}_{a}\right)$. Por fim, os custos com serviços de consultoria $\left(C^{dEst}_{sCon}\right)$ são adicionados ao total e todos os gastos correspondentes aos fatores que influenciam o tipo de custo \emph{dEst}, sumarizados pela fórmula $\left(C^{dEst} = C^{dEst}_{dTempo} + C^{dEst}_{sCon} + C^{dEst}_{itDec}\right)$. Para o processo de avaliação e seleção de prestadores de serviços (\emph{ava}), os custos dependem da quantidade de tempo que os empregados dedicam a este processo (\emph{dTempo}) e os custos de eventuais consultorias externas (\emph{sCon}). Os cálculos para $\left(C^{ava}_{dTempo}\right)$ e $\left(C^{ava}_{sCon}\right)$ são análogos a $\left(C^{dEst}_{dTempo}\right)$ e $\left(C^{dEst}_{sCon}\right)$.
-
-Para implementações de nuvem do tipo Infraestrutura como Serviço (IaaS), o tipo de custo que relaciona as taxas sobre os serviços (\emph{txIaaS}) é composto por elementos como o custo com poder de computação (\emph{pComp}), que pode ser calculado multiplicando o número de unidades de processamentos utilizadas $\left(a^{txIaaS}_{pComp,i}\right)$ por período \emph{i}, pelo custo de uma unidade de processamento $\left(p^{txIaaS}_{pComp,i}\right)$. O preço varia de acordo com as características específicas do sistema, como, memória RAM, número de unidades de computação, capacidade de armazenamento, sistema operacional $\left(C^{txIaaS}_{pComp,i} = a^{txIaaS}_{pComp,i} * p^{txIaaS}_{pComp,i}\right)$ e o custo total deste fator \emph{pComp} resulta do somatório de preços durante todos períodos \emph{n} $\left(C^{txIaaS}_{pComp,i} = \sum\limits^{n}_{i=1} C^{txIaaS}_{pComp,i}\right)$. Com a generalização do cálculo $\left(C^{t}_{f,i} = \sum\limits^{n}_{i=1}a^{t}_{f,i} * p^{t}_{f,i}\right)$, que sumariza os custos unitários em função da quantidade consumida em um período de uso \emph{i}, pode-se aplicar o mesmo raciocínio para os valores de capacidade de armazenamento (\emph{cArm}), transferência de dados de entrada (\emph{tEnt}), transferência de dados de saída (\emph{tSda}) e a transferência de dados interna para outros serviços do mesmo provedor (\emph{tInnt}) e o custo com o número de consultas (\emph{nCon}). Os custos com manutenção de domínio para acesso Web (\emph{dom}), certificados SSL (\emph{ssl}), licenciamento de software (\emph{lic}) e taxas básicas de serviços (\emph{txServ}) podem ser determinados pela multiplicação do número de períodos utilizados \emph{n} pelo respectivo preço $p^{t}_{f}$ do fator de custo \emph{f} do respectivo tipo de custo \emph{t} $\left(C^{t}_{f} = n * p^{t}_{f}\right)$.
-
-As despesas com o tempo (\emph{dTempo}) necessário para cumprir as tarefas de implementação, configuração, integração e migração de serviços e dados influenciam o custo total tipo de custo (\emph{imp}). Um fator de custo importante neste tipo de custo é o processo de portabilidade (\emph{pPort}) dos dados do cliente para provedor de serviços. Conforme mencionado, os provedores cobram de seus clientes pela transferência de dados de entrada. Os custos da transferência inicial de dados para a nuvem para fins de migração do sistema pertencem a este tipo de custo. Eles são calculados multiplicando o volume de dados por unidade (ou seja, gigabyte) pelo preço de uma unidade. Alguns provedores oferecem serviços de envio de disco rígido para inserir os dados do cliente. No entanto, essa abordagem não se concentra no volume de dados, mas sim no número de discos rígidos e no tempo de carregamento de dados. O fator de custo de \emph{pPort} não depende de mudanças temporais de preço porque se presume que o processo de portabilidade de dados pode ser concluído dentro de um período \emph{t}: $\left(C^{imp}_{pPort} = a^{imp}_{pPort} * p^{imp}_{pPort}\right)$. As despesas de tempo $C^{imp}_{dTempo}$ podem ser determinadas da mesma maneira que $C^{dEst}_{dTempo}$: $\left(C^{imp}_{dTempo} = \sum p^{imp}_{dTempo,m} * a^{imp}_{dTempo,m}\right)$.
-
-O tipo de custo Suporte (\emph{sup}) depende do custo dos serviços de atendimento via telefone, e-mail, sistema de chamados ou \emph{chat} durante todo ciclo de vida da infraestrutura de nuvem. Portanto, este tipo de custo depende do gasto de tempo (\emph{dTempo}) necessário para interação com a equipe de suporte, bem como dos custos ocorridos. Alguns provedores de serviços cobram seus usuários com base no tempo necessário para a resolução de problemas e suporte. Os custos totais com suporte podem ser determinados pela multiplicação do preços de uma unidade pelo número total de unidades necessárias $\left(C^{sup}_{cSup} = p^{sup}_{cSup} * a^{sup}_{cSup}\right)$. Já os custos com resolução de problemas dependem do número de unidades consumidas e o preço por unidade $\left(C^{sup}_{rProb} = p^{sup}_{rProb} * a^{sup}_{rProb }\right)$.
-
-Os custos totais do tipo de custo "treinamento inicial e permanente" (\emph{trein}) podem ser subdivididos em treinamento interno, no qual os próprios colaborados atuam como treinadores, e treinamento externo, no qual são necessários treinadores externos à empresa. Os custos de um treinamento interno dependem da quantidade de tempo de preparação investido por um ou mais empregados (\emph{tPrep}), o tempo de participação dos funcionários internos (\emph{tPart}) e os custos com material para os treinamentos (\emph{mInstr}):
-
-\begin{eqnarray*}
-C^{trein}_{int} &=& \sum C^{trein}_{tPrep,m} + \sum C^{trein}_{tPart,m} + C^{trein}_{mInstr,m} \\
-                &=& \sum\left(p^{trein}_{tPrep,m} * a^{trein}_{tPrep,m}\right) \\
-                &+& \sum\left(p^{trein}_{tPart,m} * a^{trein}_{tPart,m}\right) + C^{trein}_{mInstr}
-\end{eqnarray*}
-
-O total dos custos de um treinamento externo pode se calculado pela adição dos custos com serviços de consultoria que organizam o treinamento (\emph{sCon}), a quantidade de tempo que os empregados investem na participação do treinamento (\emph{tPart}) e os custos com materiais de treinamento (\emph{mInstr}):
-
-\begin{eqnarray*}
-C^{trein}_{ext} &=& \sum C^{trein}_{sCon} + \sum C^{trein}_{tPart} + C^{trein}_{mInstr,m} \\
-                &=& \sum\left(p^{trein}_{sCon} * a^{trein}_{sCon}\right) \\
-                &+& \sum\left(p^{trein}_{tPart,m} * a^{trein}_{tPart,m}\right) + C^{trein}_{mInstr}
-\end{eqnarray*}
-
-Custos com manutenção e modificação (\emph{manut}) dependem das despesas com tempo gasto (\emph{dTempo}) em manutenções gerais e em modificações feitas para implementação de serviços $\left(C^{manut}_{dTempo}\right)$. O cálculo das despesas de tempo para uma respectiva tarefa de manutenção é baseada na fórmula do tipo de custo \emph{dEst}: $\left(c^{manut}_{dTempo} = \sum p^{dEst}_{dTempo,m} * a^{dEst}_{dTempo,m}\right)$.
-
-Custos totais de uma falha de sistema precisam ser declarados para cada empresa individualmente. Os possíveis fatores de custo são, por exemplo, perda de tempo de trabalho produtivo, penalidades contratuais por atrasos ou danos à reputação da empresa, que são difíceis de mensurar. Assim, apenas destaca-se uma fórmula geral que representa a perda por período \emph{i}:
-\begin{eqnarray*}
-C^{falha}_{perda} = \sum\limits^{n}_{i=1} a^{falha}_{perda,i} * p^{falha}_{perda,i}
-\end{eqnarray*}
-
-O processo de descarte, ou \emph{backsourcing}, de um sistema envolve despesas de tempo (\emph{dTempo}) e processo de portabilidade (\emph{pPort}). No entanto, os custos com a portabilidade dos dados entre nuvens, ou para um sistema diferente, fazem parte do TCO de um novo serviço e não do TCO do sistema no qual os dados estão sendo retirados. Os custos podem ser determinados da mesma maneira que os custos do processo de portabilidade dos dados para a nuvem $\left(C^{bs}_{pPort} = a^{bs}_{pPort} * p^{bs}_{pPort}\right)$ e também dependem do gasto de tempo necessário para a decisão estratégica necessária:
-\begin{eqnarray*}
-C^{bs}_{dTempo} = \sum p^{bs}_{dTempo,m} * a^{bs}_{dTempo,m}
-\end{eqnarray*}
-
-\section{Custo Global}
-\label{sec:custoglobal}
-Em um ambiente de nuvem pública do tipo IaaS, o custo total de propriedade de um serviço de computação em nuvem é igual à soma de todos os tipos de custos envolvidos e pode ser definido como:
-
-\begin{equation}
-  \centering
-  \begin{aligned}
-    TCO_{Nuvem} = \sum C^t ~\textsf{onde}~ t \in T
-  \end{aligned}
-  \label{eq:tco}
-\end{equation}
-
-O valor total de um tipo de custo $t$ é igual à soma de todos os fatores de custo $f$ envolvidos, conforme segue: $C^t = \sum C^t_f ~\textsf{onde}~ t \in T, f \in F$. 
-
-Neste modelo de TCO é considerado o período total de tempo no qual os serviços de nuvem foram ou serão utilizados. Este período é subdividido em vários períodos menores $i$, com duração de um mês, geralmente, predefinido pelo provedor de serviços. Assim, o período total é composto por $n$ períodos menores, de acordo com $C^t_f = \sum^n_i C^t_{f,i} ~\textsf{onde}~ i = \{1, \dots, n\}, t \in T, f \in F$. As variáveis $a^t_{f,i}$ e $p^t_{f,i}$ são utilizadas, respectivamente, para representar a quantidade consumida ou necessária no período $i$ e caracterizar os custos ou preços unitários na fórmula $C^t_{f,i} = a^t_{f,i} ~\textsf{*}~ p^t_{f,i}$.
-
-Ao contrário de serviços entregues por meio de nuvens públicas, nas estruturas de nuvens privadas os usuários e provedores fazem parte da mesma organização ou os serviços são prestados, de modo exclusivo, por terceiros. No primeiro cenário, os custos envolvidos incluem, por exemplo, licenciamento de softwares implementados bem como a infraestrutura de TI que deve ser fornecida pela organização. Já no caso de entrega de serviços por provedor exclusivo, o fornecimento é semelhante a uma nuvem pública IaaS, no modo em que o usuário obtém os recursos de um provedor. Apesar disso, o provedor não gerencia dados em uma estrutura pública, mas, sim, em uma nuvem privada exclusiva. 
-
-Finalmente, em soluções de nuvens híbridas, que agregam as características de nuvens públicas e privadas, as despesas totais são iguais aos custos totais, ou pelo menos proporcionais, envolvidos em cada solução individual. Além disso, despesas com o processo de agregação de soluções (públicas e privadas) devem ser consideradas na composição dos custos e investimentos.
-
-\section{Aspectos de Custo em Ambientes HPC}\label{sec:custoshpc}
+\section{Aspectos de Custo}\label{aspectos_de_custo}
 
 Aplicações para Processamento de Alto Desempenho possuem diferentes características que podem determinar sua adequação a um ambiente de nuvem. Questionamentos a respeito de por que e quem deve escolher uma nuvem para execução de aplicações HPC, quais destas aplicações e como a nuvem pode ser usada para HPC devem balizar os estudos de viabilidade de migração para ambientes remotos distribuídos. 
 
@@ -589,6 +406,542 @@ Os ambientes de nuvem e as estruturas clássicas para HPC têm maneiras distinta
 As solicitações de usuários para acessar exclusivamente partes de um \textit{cluster} HPC são enfileiradas sempre que os recursos estiverem sobrecarregados. Em ambientes de nuvem isso não ocorre devido à disponibilidade ``ilimitada'' de recursos, também chamada de elasticidade. Além do mais, hardware para HPC, especificamente interfaces de rede, são consideravelmente mais caras do que exemplares utilizados para criação de nuvens tradicionais, com hardware de \textit{commodity}\footnote{Em um contexto de Tecnologia da Informação, é um dispositivo ou componente de dispositivo que é relativamente barato, amplamente disponível e, em alguns casos, intercambiável com outro hardware do mesmo tipo.}. Sendo assim, alocar usuários em hardwares específicos para HPC, configura um desperdício para o provedor de serviços, caso ele não atenda exclusivamente usuários com demandas HPC.
 
 O desafio em gerenciar recursos HPC em nuvens está em desenvolver um modelo de negócio sustentável, com economia de escala e que ofereça processamento de alto desempenho aos usuários. Para avançar nesta área, esforços de pesquisa devem ser concentrados para que os provedores possam oferecer sistemas de filas e modelos de preços que levem em conta o tempo que os usuários estão dispostos a esperar para ter acesso aos recursos. Alguns modelos flexíveis de aluguel de recursos HPC em nuvens, como apresentado em \cite{zhaoDesigningFlexibleResource2012e}, são baseados em estratégias de planejamento que consideram instâncias sob demanda e \textit{spot}, motivados pelos interesses das duas partes, usuário e provedor, envolvidas no processo de alocar recursos.
+
+% \section{Discussão}
+% Neste capítulo foram apresentados os principais modelos para construções HPC em ambiente de nuvem. O Capítulo concluí discutindo aspectos relacionado ao custo da execução destas aplicações em ambiente de nuvem.
+
+\chapter{Contabilização de Custos}\label{chap:contabilizacao_de_custos}
+
+Em ambientes de nuvem, a precificação é o processo pelo qual se determina quanto um provedor de serviços receberá de um usuário final pelos serviços prestados \cite{al-roomiCloudComputingPricing2013}. O processo de precificação pode ser fixo, no qual o usuário final paga sempre o mesmo valor durante todo o tempo de uso dos serviços; dinâmico, em que os valores cobrados mudam com base em alterações de características; e dependente de mercado, que é quando o cliente é cobrado em função das condições de mercado em tempo real.
+
+Este capítulo apresenta, a partir de um apanhado da literatura, elementos associados à viabilização econômica da exploração de um ambiente de nuvem computacional. Em um primeiro momento, na Seção \ref{sec:fontes_de_custos}, são apresentados quais elementos das aplicações caracterizam demandas de recursos de processamento e que, portanto, requerem aquisição destes recursos para que sejam efetivamente executadas. A Seção \ref{sec:fatores_de_custos} caracteriza como podem se apresentar, em infraestruturas físicas reais, as opções de suporte de hardware às demandas de processamento requeridas pelas aplicações. As estratégias de precificação do uso de nuvens computacionais são discutidas na Seção \ref{sec:custo_global} e a Seção \ref{sec:discussao} conclui o capítulo, destacando como a questão de custo de uso de uma nuvem computacional para HPC será considerado no decorrer do trabalho.
+
+% Neste Capítulo são apresentados diferentes custos associados à implantação de nuvens, Seção \ref{sec:fontescustos}, assim como caracterizados os aspectos que influenciam nas suas respectivas variações, Seção \ref{sec:fatorescustos}. O custo da implantação de uma nuvem é contabilizado a partir da composição destes custos individuais, Seção \ref{sec:custoglobal}. Este trabalho, tendo interesse na exploração de nuvens para HPC, apresenta uma abordagem particular para este caso específico na Seção \ref{sec:custoshpc}. A discussão final, Seção \ref{sec:discussao}, aborda o contexto de custos analisado sob a ótica das necessidades de implantação de nuvens para HPC para delimitar o contexto da Revisão Sistemática da Literatura conduzida nesta pesquisa.
+
+\section{Fontes de Custos}\label{sec:fontes_de_custos}
+
+De um modo geral, os custos associados à utilização dos recursos computacionais disponibilizados por nuvens do tipo IaaS são difíceis de ser quantificados, fazendo com que seja necessária a utilização de modelos de decisão orientados a custos. Um dos modelos mais utilizados é o custo total de propriedade -- TCO (\emph{Total Cost of Ownership}) \cite{strebelEconomicDecisionModel2010}.
+
+O custo total de propriedade, inicialmente definido pela empresa Gartner, Inc.\footnote{\url{https://www.gartner.com/en} - empresa criada no final dos anos 1970, com atuação nos ramos de pesquisa, consultoria, eventos e prospecção do mercado de Tecnologia da Informação.}, é reconhecido como o método padrão para a análise financeira de recursos de Tecnologia da Informação (TI) e outros custos empresariais relacionados à TI \cite{mieritzDefiningGartnerTotal2005}. O modelo de TCO inclui aquisição, gerenciamento e suporte de hardware e software, comunicações, despesas do usuário final e os custos com tempo de inatividade, treinamento e outras perdas de produtividade. Para Filiopoulou e seu grupo \cite{filiopoulouIntegratingCostAnalysis2015}, a estimativa do custo total de propriedade, em particular, é um procedimento que fornece os meios para determinar o valor econômico total de um investimento, incluindo as despesas iniciais de capital (CAPEX, \emph{capital expenditure}) e as despesas operacionais (OPEX, \emph{operational expenditure}). No contexto de computação em nuvem, corresponde à estimativa de valores necessários para implementação e operação de uma infraestrutura.
+
+Os benefícios do uso da abordagem de TCO estão na melhoria da comunicação entre cliente e provedor e na análise de todo o ciclo de vida dos artefatos de TI. Além disso, é possível analisar os custos ou componentes de custos individuais de um artefato de TI por meio de um esquema predefinido \cite{walterbuschEvaluatingCloudComputing2013}. Como o objetivo do modelo TCO é fornecer uma visão abstrata e simplificada do ``mundo real'', em vez de incluir todos os custos relevantes na análise, a complexidade da realidade pode ser reduzida trabalhando com base em premissas e incluindo apenas um número limitado de fatores de custo cuidadosamente selecionados.
+
+Métricas para os cálculos de custo e investimento em infraestruturas de nuvens computacionais necessitam de um modelo claro, juntamente com os fatores que influenciam estes custos. A Tabela \ref{tab:tiposfatores} atribui fatores de custo $f$ para cada tipo de custo $t$ identificado. Os tipos de custo $t \in T$ e os fatores de custo $f \in F$ estão sujeitos aos conjuntos $T$ e $F$:
+\begin{equation}
+  \begin{aligned}
+    T = {} & \{dEst,ava,txIaaS,imp,sup,trein,manut,falha,bs\}
+  \end{aligned}
+\end{equation}
+\begin{equation}
+  \begin{aligned}
+    F = {} & \{dTempo,sCon,itDec,pComp,cArm,\\ 
+          & tEnt,tSda,tInt,nCon,dom,ssl,lic,txServ,\\
+          & pPort,cSup,rProb,tPrep,tPart,mInstr,perda\}
+  \end{aligned}
+\end{equation}
+
+Cada fator influenciador é atribuído a um tipo de custo e, em seguida, os elementos dos conjuntos $T$ e $F$ são agrupados em fórmulas. Cada fórmula é aplicada a um custo específico, possibilitando a obtenção dos valores para cada tipo de custo.
+
+\begin{table}[H]
+  \footnotesize
+  \centering
+  \caption{Tipos de custo e fatores de custo relacionados}
+  \label{tab:tiposfatores}
+%   \setlength\tabcolsep{1.6pt} % ajusta a tabela para caber na coluna
+  \begin{tabular}{@{}lm{6.9cm}@{}}
+    \toprule
+    \multicolumn{1}{c}{\textbf{Tipo de custo}} & \multicolumn{1}{c}{\textbf{Fatores de custo}} \\ 
+    \bottomrule
+    \begin{tabular}[c]{m{7cm}@{}l@{}}Decisão estratégica, seleção de serviços de computação em nuvem e tipos de nuvem (\emph{dEst})\end{tabular} & Despesas de tempo (\emph{dTempo}), serviços de consultoria (\emph{sCon}), informações para tomada de decisão (\emph{itDec}). \\
+    \hline 
+    % \addlinespace[0.15cm]
+    \begin{tabular}[c]{m{7cm}@{}l@{}}Avaliação e seleção de prestador de serviços (\emph{ava})\end{tabular} & Despesas de tempo (\emph{dTempo}), serviços de consultoria (\emph{sCon}), informações para tomada de decisão (\emph{itDec}).\\ 
+    \hline
+    % \addlinespace[0.15cm]
+    \begin{tabular}[c]{m{7cm}@{}l@{}}Taxa de serviço IaaS (\emph{txIaaS})\end{tabular} & Poder de computação (\emph{pComp}), capacidade de armazenamento (\emph{cArm}), transferência de dados de entrada (\emph{tEnt}), transferência de dados de saída (\emph{tSda}), transferência de dados interna do provedor (\emph{tInt}), número de consultas (\emph{nCon}), domínio (\emph{dom}), certificado SSL (\emph{ssl}), licença (\emph{lic}), taxa de serviço básica (\emph{txServ}). \\
+    \hline
+    % \addlinespace[0.15cm]
+    \begin{tabular}[c]{m{7cm}@{}l@{}}Implementação, configuração, integração e migração (\emph{imp})\end{tabular} & Despesas de tempo (\emph{dTempo}), processo de portabilidade (\emph{pPort}). \\
+    \hline
+    % \addlinespace[0.15cm]
+    \begin{tabular}[c]{m{7cm}@{}l@{}}Suporte (\emph{sup})\end{tabular} & Despesas de tempo (\emph{dTempo}), custos de suporte (\emph{cSup}), resolução de problemas (\emph{rProb}). \\
+    \hline
+    % \addlinespace[0.15cm]
+    \begin{tabular}[c]{m{7cm}@{}l@{}}Treinamento inicial e permanente (\emph{trein})\end{tabular} & Tempo de preparação dos funcionários internos (\emph{tPrep}), tempo de participação dos funcionários internos (\emph{tPart}), material de instruções (\emph{mInstr}), serviços de consultoria externa (\emph{sCon}). \\
+    \hline
+    % \addlinespace[0.15cm]
+    \begin{tabular}[c]{m{7cm}@{}l@{}}Manutenção e modificação (\emph{manut})\end{tabular} & Despesas de tempo (\emph{dTempo}). \\
+    \hline
+    % \addlinespace[0.15cm]
+    \begin{tabular}[c]{m{7cm}@{}l@{}}Falha no sistema (\emph{falha})\end{tabular} & Perda por período (\emph{perda}). \\
+    \hline
+    % \addlinespace[0.15cm]
+    \begin{tabular}[c]{m{7cm}@{}l@{}}\emph{Backsourcing} ou descarte (\emph{bs})\end{tabular} & Despesas de tempo (\emph{dTempo}), processo de portabilidade (\emph{pPort}). \\  
+    \bottomrule
+  \end{tabular}
+  \caption*{Fonte: Adaptado de \cite{walterbuschEvaluatingCloudComputing2013}.}
+\end{table}
+
+\section{Fatores de Custos}\label{sec:fatores_de_custos}
+
+Os custos relacionados à decisão estratégica, seleção de serviços de computação em nuvem e tipos de nuvem (\emph{dEst}), juntamente com os custos de avaliação e seleção de prestadores de serviço (\emph{ava}) são influenciados pelas despesas de tempo (\emph{dTempo}) necessário para a tomada de decisão, as despesas com informações nas quais a decisão pode ser baseada (\emph{itDec}), como, por exemplo literatura científica ou análises de mercado, bem como custos de serviços de consultoria externa (\emph{sCon}). O custo total com as despesas de tempo resultam do tempo total gasto por todos os funcionários $\left(C^{dEst}_{dTempo} = \sum p^{dEst}_{dTempo,m} * a^{dEst}_{dTempo,m}\right)$, ou seja, é determinado pelo valor da hora de trabalho de cada empregado $\left(p^{dEst}_{dTempo,m}\right)$, multiplicado pelo tempo gasto $\left(a^{dEst}_{dTempo,m}\right)$, e somando os valores de todos os empregados $\left(m\right)$ envolvidos. Custos com tomadas de decisão ocorrem em períodos $i < 1$ e, além disso, o custo total com a aquisição de informações (\emph{itDec}) pode ser descrito como o somatório do total de preços (\emph{p}) de todos os materiais adquiridos $\left(C^{dEst}_{itDec} = \sum p^{dEst}_{a}\right)$. Por fim, os custos com serviços de consultoria $\left(C^{dEst}_{sCon}\right)$ são adicionados ao total e todos os gastos correspondentes aos fatores que influenciam o tipo de custo \emph{dEst}, sumarizados pela fórmula $\left(C^{dEst} = C^{dEst}_{dTempo} + C^{dEst}_{sCon} + C^{dEst}_{itDec}\right)$. Para o processo de avaliação e seleção de prestadores de serviços (\emph{ava}), os custos dependem da quantidade de tempo que os empregados dedicam a este processo (\emph{dTempo}) e os custos de eventuais consultorias externas (\emph{sCon}). Os cálculos para $\left(C^{ava}_{dTempo}\right)$ e $\left(C^{ava}_{sCon}\right)$ são análogos a $\left(C^{dEst}_{dTempo}\right)$ e $\left(C^{dEst}_{sCon}\right)$.
+
+Para implementações de nuvem do tipo Infraestrutura como Serviço (IaaS), o tipo de custo que relaciona as taxas sobre os serviços (\emph{txIaaS}) é composto por elementos como o custo com poder de computação (\emph{pComp}), que pode ser calculado multiplicando o número de unidades de processamentos utilizadas $\left(a^{txIaaS}_{pComp,i}\right)$ por período \emph{i}, pelo custo de uma unidade de processamento $\left(p^{txIaaS}_{pComp,i}\right)$. O preço varia de acordo com as características específicas do sistema, como, memória RAM, número de unidades de computação, capacidade de armazenamento, sistema operacional $\left(C^{txIaaS}_{pComp,i} = a^{txIaaS}_{pComp,i} * p^{txIaaS}_{pComp,i}\right)$ e o custo total deste fator \emph{pComp} resulta do somatório de preços durante todos períodos \emph{n} $\left(C^{txIaaS}_{pComp,i} = \sum\limits^{n}_{i=1} C^{txIaaS}_{pComp,i}\right)$. Com a generalização do cálculo $\left(C^{t}_{f,i} = \sum\limits^{n}_{i=1}a^{t}_{f,i} * p^{t}_{f,i}\right)$, que sumariza os custos unitários em função da quantidade consumida em um período de uso \emph{i}, pode-se aplicar o mesmo raciocínio para os valores de capacidade de armazenamento (\emph{cArm}), transferência de dados de entrada (\emph{tEnt}), transferência de dados de saída (\emph{tSda}) e a transferência de dados interna para outros serviços do mesmo provedor (\emph{tInnt}) e o custo com o número de consultas (\emph{nCon}). Os custos com manutenção de domínio para acesso Web (\emph{dom}), certificados SSL (\emph{ssl}), licenciamento de software (\emph{lic}) e taxas básicas de serviços (\emph{txServ}) podem ser determinados pela multiplicação do número de períodos utilizados \emph{n} pelo respectivo preço $p^{t}_{f}$ do fator de custo \emph{f} do respectivo tipo de custo \emph{t} $\left(C^{t}_{f} = n * p^{t}_{f}\right)$.
+
+As despesas com o tempo (\emph{dTempo}) necessário para cumprir as tarefas de implementação, configuração, integração e migração de serviços e dados influenciam o custo total tipo de custo (\emph{imp}). Um fator de custo importante neste tipo de custo é o processo de portabilidade (\emph{pPort}) dos dados do cliente para provedor de serviços. Conforme mencionado, os provedores cobram de seus clientes pela transferência de dados de entrada. Os custos da transferência inicial de dados para a nuvem para fins de migração do sistema pertencem a este tipo de custo. Eles são calculados multiplicando o volume de dados por unidade (ou seja, gigabyte) pelo preço de uma unidade. Alguns provedores oferecem serviços de envio de disco rígido para inserir os dados do cliente. No entanto, essa abordagem não se concentra no volume de dados, mas sim no número de discos rígidos e no tempo de carregamento de dados. O fator de custo de \emph{pPort} não depende de mudanças temporais de preço porque se presume que o processo de portabilidade de dados pode ser concluído dentro de um período \emph{t}: $\left(C^{imp}_{pPort} = a^{imp}_{pPort} * p^{imp}_{pPort}\right)$. As despesas de tempo $C^{imp}_{dTempo}$ podem ser determinadas da mesma maneira que $C^{dEst}_{dTempo}$: $\left(C^{imp}_{dTempo} = \sum p^{imp}_{dTempo,m} * a^{imp}_{dTempo,m}\right)$.
+
+O tipo de custo Suporte (\emph{sup}) depende do custo dos serviços de atendimento via telefone, e-mail, sistema de chamados ou \emph{chat} durante todo ciclo de vida da infraestrutura de nuvem. Portanto, este tipo de custo depende do gasto de tempo (\emph{dTempo}) necessário para interação com a equipe de suporte, bem como dos custos ocorridos. Alguns provedores de serviços cobram seus usuários com base no tempo necessário para a resolução de problemas e suporte. Os custos totais com suporte podem ser determinados pela multiplicação do preços de uma unidade pelo número total de unidades necessárias $\left(C^{sup}_{cSup} = p^{sup}_{cSup} * a^{sup}_{cSup}\right)$. Já os custos com resolução de problemas dependem do número de unidades consumidas e o preço por unidade $\left(C^{sup}_{rProb} = p^{sup}_{rProb} * a^{sup}_{rProb }\right)$.
+
+Os custos totais do tipo de custo "treinamento inicial e permanente" (\emph{trein}) podem ser subdivididos em treinamento interno, no qual os próprios colaborados atuam como treinadores, e treinamento externo, no qual são necessários treinadores externos à empresa. Os custos de um treinamento interno dependem da quantidade de tempo de preparação investido por um ou mais empregados (\emph{tPrep}), o tempo de participação dos funcionários internos (\emph{tPart}) e os custos com material para os treinamentos (\emph{mInstr}):
+
+\begin{eqnarray*}
+C^{trein}_{int} &=& \sum C^{trein}_{tPrep,m} + \sum C^{trein}_{tPart,m} + C^{trein}_{mInstr,m} \\
+                &=& \sum\left(p^{trein}_{tPrep,m} * a^{trein}_{tPrep,m}\right) \\
+                &+& \sum\left(p^{trein}_{tPart,m} * a^{trein}_{tPart,m}\right) + C^{trein}_{mInstr}
+\end{eqnarray*}
+
+O total dos custos de um treinamento externo pode se calculado pela adição dos custos com serviços de consultoria que organizam o treinamento (\emph{sCon}), a quantidade de tempo que os empregados investem na participação do treinamento (\emph{tPart}) e os custos com materiais de treinamento (\emph{mInstr}):
+
+\begin{eqnarray*}
+C^{trein}_{ext} &=& \sum C^{trein}_{sCon} + \sum C^{trein}_{tPart} + C^{trein}_{mInstr,m} \\
+                &=& \sum\left(p^{trein}_{sCon} * a^{trein}_{sCon}\right) \\
+                &+& \sum\left(p^{trein}_{tPart,m} * a^{trein}_{tPart,m}\right) + C^{trein}_{mInstr}
+\end{eqnarray*}
+
+Custos com manutenção e modificação (\emph{manut}) dependem das despesas com tempo gasto (\emph{dTempo}) em manutenções gerais e em modificações feitas para implementação de serviços $\left(C^{manut}_{dTempo}\right)$. O cálculo das despesas de tempo para uma respectiva tarefa de manutenção é baseada na fórmula do tipo de custo \emph{dEst}: $\left(c^{manut}_{dTempo} = \sum p^{dEst}_{dTempo,m} * a^{dEst}_{dTempo,m}\right)$.
+
+Custos totais de uma falha de sistema precisam ser declarados para cada empresa individualmente. Os possíveis fatores de custo são, por exemplo, perda de tempo de trabalho produtivo, penalidades contratuais por atrasos ou danos à reputação da empresa, que são difíceis de mensurar. Assim, apenas destaca-se uma fórmula geral que representa a perda por período \emph{i}:
+\begin{eqnarray*}
+C^{falha}_{perda} = \sum\limits^{n}_{i=1} a^{falha}_{perda,i} * p^{falha}_{perda,i}
+\end{eqnarray*}
+
+O processo de descarte, ou \emph{backsourcing}, de um sistema envolve despesas de tempo (\emph{dTempo}) e processo de portabilidade (\emph{pPort}). No entanto, os custos com a portabilidade dos dados entre nuvens, ou para um sistema diferente, fazem parte do TCO de um novo serviço e não do TCO do sistema no qual os dados estão sendo retirados. Os custos podem ser determinados da mesma maneira que os custos do processo de portabilidade dos dados para a nuvem $\left(C^{bs}_{pPort} = a^{bs}_{pPort} * p^{bs}_{pPort}\right)$ e também dependem do gasto de tempo necessário para a decisão estratégica necessária:
+\begin{eqnarray*}
+C^{bs}_{dTempo} = \sum p^{bs}_{dTempo,m} * a^{bs}_{dTempo,m}
+\end{eqnarray*}
+
+\section{Custo Global}\label{sec:custo_global}
+
+Em um ambiente de nuvem pública do tipo IaaS, o custo total de propriedade de um serviço de computação em nuvem é igual à soma de todos os tipos de custos envolvidos e pode ser definido como:
+
+\begin{equation}
+  \centering
+  \begin{aligned}
+    TCO_{Nuvem} = \sum C^t ~\textsf{onde}~ t \in T
+  \end{aligned}
+  \label{eq:tco}
+\end{equation}
+
+O valor total de um tipo de custo $t$ é igual à soma de todos os fatores de custo $f$ envolvidos, conforme segue: $C^t = \sum C^t_f ~\textsf{onde}~ t \in T, f \in F$. 
+
+Neste modelo de TCO é considerado o período total de tempo no qual os serviços de nuvem foram ou serão utilizados. Este período é subdividido em vários períodos menores $i$, com duração de um mês, geralmente, predefinido pelo provedor de serviços. Assim, o período total é composto por $n$ períodos menores, de acordo com $C^t_f = \sum^n_i C^t_{f,i} ~\textsf{onde}~ i = \{1, \dots, n\}, t \in T, f \in F$. As variáveis $a^t_{f,i}$ e $p^t_{f,i}$ são utilizadas, respectivamente, para representar a quantidade consumida ou necessária no período $i$ e caracterizar os custos ou preços unitários na fórmula $C^t_{f,i} = a^t_{f,i} ~\textsf{*}~ p^t_{f,i}$.
+
+Ao contrário de serviços entregues por meio de nuvens públicas, nas estruturas de nuvens privadas os usuários e provedores fazem parte da mesma organização ou os serviços são prestados, de modo exclusivo, por terceiros. No primeiro cenário, os custos envolvidos incluem, por exemplo, licenciamento de softwares implementados bem como a infraestrutura de TI que deve ser fornecida pela organização. Já no caso de entrega de serviços por provedor exclusivo, o fornecimento é semelhante a uma nuvem pública IaaS, no modo em que o usuário obtém os recursos de um provedor. Apesar disso, o provedor não gerencia dados em uma estrutura pública, mas, sim, em uma nuvem privada exclusiva. 
+
+Finalmente, em soluções de nuvens híbridas, que agregam as características de nuvens públicas e privadas, as despesas totais são iguais aos custos totais, ou pelo menos proporcionais, envolvidos em cada solução individual. Além disso, despesas com o processo de agregação de soluções (públicas e privadas) devem ser consideradas na composição dos custos e investimentos.
+
+% \section{Discussão}\label{sec:discussao}
+
+% Aplicações HPC necessitam de muitos recursos computacionais e fornecê-los de maneira otimizada requer ajustes em vários aspectos \cite{GantikowReichKnahletal.2015}. Em termos de desempenho, o uso de virtualização já está bem mais aprimorado, devido ao suporte à virtualização no nível de sistema operacional, fornecendo desempenho próximo às infraestruturas de \textit{bare-metal}.
+
+% Do ponto de vista do fluxo de trabalho, a transição de uma infraestrutura de hardware dedicado para serviços oferecidos em nuvem implica em uma modificação de processos. Isto é válido para qualquer tipo de aplicação, inclusive para as aplicações HPC. Esta mudança de processo é especialmente complicada devido ao armazenamento e à transferência de grandes quantidades de dados. Este aspecto pode ser simplificado com a hospedagem dos dados diretamente no provedor de serviços.
+
+% Os ambientes de nuvem e as estruturas clássicas para HPC têm maneiras distintas de gerenciar recursos de computação. Para extrair o melhor desempenho de um ambiente em nuvem, os esforços concentraram-se em aumentar o isolamento entre máquinas virtuais e reduzir a sobrecarga imposta pelas técnicas de virtualização. As estruturas HPC, por sua vez, visam extrair o máximo de desempenho possível da infraestrutura \cite{netto_hpc_2018}. 
+
+% As solicitações de usuários para acessar exclusivamente partes de um \textit{cluster} HPC são enfileiradas sempre que os recursos estiverem sobrecarregados. Em ambientes de nuvem isso não ocorre devido à disponibilidade ``ilimitada'' de recursos, também chamada de elasticidade. Além do mais, hardware para HPC, especificamente interfaces de rede, são consideravelmente mais caras do que exemplares utilizados para criação de nuvens tradicionais, com hardware de \textit{commodity}\footnote{Em um contexto de Tecnologia da Informação, é um dispositivo ou componente de dispositivo que é relativamente barato, amplamente disponível e, em alguns casos, intercambiável com outro hardware do mesmo tipo.}. Sendo assim, alocar usuários em hardwares específicos para HPC, configura um desperdício para o provedor de serviços, caso ele não atenda exclusivamente usuários com demandas HPC.
+
+% O desafio em gerenciar recursos HPC em nuvens está em desenvolver um modelo de negócio sustentável, com economia de escala e que ofereça processamento de alto desempenho aos usuários. Para avançar nesta área, esforços de pesquisa devem ser concentrados para que os provedores possam oferecer sistemas de filas e modelos de preços que levem em conta o tempo que os usuários estão dispostos a esperar para ter acesso aos recursos. Alguns modelos flexíveis de aluguel de recursos HPC em nuvens, como apresentado em \cite{zhaoDesigningFlexibleResource2012e}, são baseados em estratégias de planejamento que consideram instâncias sob demanda e \textit{spot}, motivados pelos interesses das duas partes, usuário e provedor, envolvidas no processo de alocar recursos.
+
+% \section{Discussão}\label{sec:discussaocustos}
+
+% Em ambientes de nuvem, a precificação é o processo pelo qual se determina quanto um provedor de serviços receberá de um usuário final pelos serviços prestados \cite{al-roomiCloudComputingPricing2013}. O processo de precificação pode ser fixo, no qual o usuário final paga sempre o mesmo valor durante todo o tempo de uso dos serviços; dinâmico, em que os valores cobrados mudam com base em alterações de características; e dependente de mercado, que é quando o cliente é cobrado em função das condições de mercado em tempo real.
+
+% Neste Capítulo foram apresentados diferentes custos associados à implantação de nuvens, Seção \ref{sec:fontes_de_custos}, assim como caracterizados os aspectos que influenciam nas suas respectivas variações, Seção \ref{sec:fatores_de_custos}. O custo da implantação de uma nuvem é contabilizado a partir da composição destes custos individuais, Seção \ref{sec:custo_global}.
+
+
+% Este trabalho, tendo interesse na exploração de nuvens para HPC, apresenta uma abordagem particular para este caso específico na Seção \ref{sec:custoshpc}. A discussão final, Seção \ref{sec:discussao}, aborda o contexto de custos analisado sob a ótica das necessidades de implantação de nuvens em estruturas de HPC para delimitar o contexto da Revisão Sistemática da Literatura conduzida nesta pesquisa.\change{Revisar esta introdução de capítulo}\\
+
+% \ups[inline]{Verificar se este trecho de texto (seções \ref{sec:modelo_de_aplicacao_bot} à \ref{subsec:normalizacao_do_passo_global}) vindo da dissertação continuará aqui em virtude do novo modelo de BoT.}
+
+% \section{Modelo de Aplicação BoT}\label{sec:modelo_de_aplicacao_bot}\info{Aqui COMEÇA o texto que veio da dissertação}
+
+% A infraestrutura provida por nuvens computacionais fornece suporte para a execução de aplicações do tipo BoT. Em muitos casos, as tarefas pertencentes às aplicações BoT possuem um alto custo computacional e para evitar grandes investimentos em recursos de hardware, usuários podem submeter às infraestruturas computacionais em nuvem, de forma oportunista, suas demandas de processamento para este tipo de aplicação.
+
+% Neste trabalho, uma aplicação BoT é descrita por um conjunto $A$ composto por $n \ge 1$ quádruplas descrevendo, cada uma, um conjunto de tarefas $\tau$, na forma:
+
+% \[
+% A = \{q_1 \dots q_n\} ~\textsf{onde}~ q_i = [a_i,d_i,b_i,c_i], \forall  i | 1 \le  i \le n
+% \]
+
+% Os elementos destas quádruplas são:
+% \begin{enumerate*}[itemjoin={{; }},itemjoin*={{; e }}]
+% 	\item[]\textbf{\emph{a}}, o instante de tempo no qual o conjunto de tarefas chega para o processamento
+% 	\item[]\textbf{\emph{d}}, o tempo de duração do grupo de tarefas
+% 	\item[]\textbf{\emph{b}}, a quantidade de tarefas descritas por quádrupla correspondente
+% 	\item[]\textbf{\emph{c}}, a taxa de utilização de CPU para cada tarefa da quádrupla. O valor informado para o custo deve estar entre 1 e 100, indicando o percentual de uso da CPU de cada uma das tarefas quando em execução.
+% \end{enumerate*}
+% As informações relacionadas a tempo, $a$ e $d$, são informadas na unidade adotada. No modelo adotado, as informações de tempo consideram a existência de um número não limitado de processadores e sua execução em um ambiente livre de contenção. Assim, cada quádrupla $q_i$ descreve um grupo de $b_i$ tarefas $\tau_i^j, \forall j | 1 \le j \le b_i$ que são inseridas no \textit{bag} no tempo $a_i$, com duração $d_i$ e custo individual de $c_i$.
+
+% % Para a condução desta RSL foram acessadas diversas bases de indexação de trabalhos, amplamente utilizadas por pesquisadores. Ao todo foram selecionadas cinco bases:
+% % % \begin{enumerate*}[label=\textit{\roman*}),itemjoin={{; }},itemjoin*={{; e }}]
+% % \begin{enumerate*}
+% % % [label=\textit{\roman*}),itemjoin={{; }},itemjoin*={{; e }}]
+% %   \item \textbf{\emph{a}}: ACM Digital Library
+% %   \item \textbf{\emph{m}}: IEEE Digital Library
+% %   \item Science@Direct
+% %   \item Scopus
+% %   \item Web of Science
+% % \end{enumerate*}. Tais bases foram escolhidas devido a sua importância e por serem repositórios digitais que oferecem acesso eletrônico à maioria dos periódicos e artigos de conferências publicados na área da Ciência da Computação.
+
+% O número total de tarefas de uma aplicação $A$ composta por $n$ quádruplas é dado por: 
+
+% \[
+% N_A^n = \sum_{i=1}^{n}b_i
+% \]
+
+% Não existe nenhuma restrição de ordem de execução entre as tarefas definidas em cada quádrupla, uma vez que, por definição, as tarefas em um BoT são independentes. No entanto, a data de chegada $a_i$ das tarefas definidas pela tupla $q_i$ impõe que nenhuma tarefa definida por $q_i$ inicie antes do tempo $a_i$.
+
+% A seguir é apresentado um exemplo da descrição de uma aplicação conforme o modelo definido.
+
+% \[
+% A = \{[0,5,3,50],[0,8,5,30],[3,4,6,80],[4,10,2,20]\}
+% \]
+
+% O exemplo de aplicação apresentado consiste em uma aplicação $A$ composta de um total de 16 tarefas, distribuídas em quatro grupos de tarefas idênticos. Os dois primeiros grupos definem tarefas que chegam no tempo 0 (zero) do processamento. As tarefas do terceiro e do quarto grupo são adicionadas ao \emph{bag} nos tempos 3 e 4. No modelo adotado, estes tempos consideram a existência de um número não limitado de processadores e sua execução em um ambiente livre de contenção.
+
+% Para efeito de controle de evolução das aplicações BoT, o tempo é assumido discreto. Desta forma, os atributos descrevendo unidade tempo, os atributos $a$ e $d$ das quádruplas (tempo de chegada e duração) definem a relação de granularidade entre as tarefas, nas quais sendo maior o tempo, mais grossa a granularidade, podendo cada unidade ser mapeada em um valor qualquer, alterando, para uma mesma aplicação, a granularidade de todas as tarefas de modo uniforme.
+
+% Define-se \emph{passo} a passagem de uma unidade de tempo. Desta forma, a duração $d_i$ de uma tarefa $\tau_i$ descreve o número de passos necessários para executá-la. Ao conjunto de instruções de passo de uma tarefa se dá o nome de \emph{job}. Assim, cada tarefa $\tau_i$ define $d_i$ \textit{jobs} pelo conjunto $\{w_1 \dots w_{d_i}\}$, os quais devem ser executados na estrita sequência de ordem na qual foram definidos, garantindo que $w_1$ não seja executado antes do passo definido por $a_i$. O passo $a_i$ deve ser interpretado, no caso da execução da aplicação em uma arquitetura não contingenciada, pelo número total de passos previamente executados pela aplicação. Inexistem relações de ordem entre os \textit{jobs} de diferentes tarefas, pelas razões já expostas. O número total de \textit{jobs} de uma aplicação $A$ descrita por $n$ quádruplas é dado por:
+
+% \[
+% N^*_A = \sum_{i=1}^{n}d_i \times b_i
+% \]
+
+% Na Figura \ref{ExemploBoT} são apresentados os 6 primeiros passos na evolução da aplicação $A$ descrita no exemplo anterior. Observe que nesta representação está sendo assumido a existência de um número não limitado de recursos de processamento e inexistência de condições de contenção de execução. No passo inicial (passo=0), 8 tarefas estão presentes no bag e são lançadas para execução. Terminado o passo, avança o tempo (passo=1) e um \textit{job} de cada uma das tarefas é completado. O mesmo ocorre ao término do passo 1 e do passo 2. No passo 3, um novo conjunto de tarefas é recebido no bag e lançado. Ao final do passo 3, todas as tarefas em execução finalizam a execução de um \textit{job}. No passo 4, como no passo anterior, um novo conjunto de tarefas inicia a execução e todas as tarefas completam a execução de um \textit{job}. Neste passo ocorre também que um conjunto de tarefas executa seu último \textit{job}, finalizando sua execução. No passo seguinte (passo=5) as tarefas remanescentes avançam, concluindo mais um passo. A execução prossegue reproduzindo o padrão apresentado.
+
+% \begin{figure}[htbp]
+% 	\centerline{
+% 		\includegraphics[scale=0.9]{images/BagOfTasks4.pdf}}
+% 	\caption[Exemplo de aplicação \textit{Bag of Tasks}]{Exemplo de aplicação \textit{Bag of Tasks}.}
+% 	\label{ExemploBoT}
+% \end{figure}
+
+% \section{Consolidação de Tarefas}\label{sec:consolidacao_de_tarefas}
+
+% A consolidação de tarefas consiste em uma etapa de escalonamento, realizada em nível aplicativo, que realiza o mapeamento das tarefas definidas em uma aplicação sobre um conjunto finito de recursos de processamento. Os critérios de escalonamento para tal consolidação levam em consideração unicamente aqueles atributos empregados para descrever aplicações BoT apresentados na Seção \ref{sec:modelo_de_aplicacao_bot}: data de chegada, duração, número de tarefas, quantidade de processamento requerida e o número de processadores disponíveis.
+
+% Assume-se que as seguintes situações possam ser verdadeiras em um determinado instante de execução:
+
+% \begin{itemize}
+% \item O número total de tarefas é maior que o total de processadores disponíveis.
+% \item A quantidade de processamento requerida pelo conjunto de \textit{jobs} aptos a executar é superior àquela oferecida pelo conjunto de processadores disponíveis.
+% \end{itemize}
+
+% \subsection{Discretização das tarefas}\label{subsec:discretizacao_de_tarefas}
+
+% Embora em uma aplicação do tipo BoT inexistam relações de dependência, tampouco precedência entre tarefas, uma tarefa qualquer pode gerar novas tarefas para o bag. Assim, considere duas tarefas $\tau_k^i$ e $\tau_l^j$, definidas em duas quádruplas $q_i$ e $q_j$, de tal forma que $a_i < a_j$, existindo, portanto, um valor $\delta$ tal que $a_i+\delta=a_j$. Isto significa que, pelo menos uma tarefa em $q_i$ pode ter criado $q_j$ ao final da execução de um \textit{job} $w^{\tau^i}_\delta$. Como o modelo de aplicação BoT adotado não distingue as tarefas pertencentes a uma mesma quádrupla, assume-se que todas as tarefas $\tau_l$ de $q_j$ são inseridas no bag após o término do passo $w_{\delta}$ de todas as tarefas $\tau_k$ de $q_i$.
+
+% Define-se \emph{passo global} $g$ um instante de tempo discreto na evolução de uma aplicação BoT no modelo descrito em um ambiente com número não limitado de recursos de processamento e sem contenção. Uma aplicação qualquer, descrita por $n$ quádruplas possui $|g| = \max_{i=1}^{k}(a_i+d_i)$ passos globais. Nesta situação, a passagem de $g_i$ para $g_{i+1}$ marca o término da execução de um \textit{job} de cada tarefa presente no bag até $g_i$, inclusive.
+
+% Os atributos de um \textit{job} $w_j^i$, criado a partir de uma tarefa $\tau^i_k$ especificada em uma quádrupla $q_i$, são descritos por uma quádrupla contendo $[g_j^i,r_j^i,f_j^i,c_j^i]$, onde $g_j^i$ corresponde ao passo global em que o \textit{job} encontra-se disponível para execução e $c_j^i$ ao custo do \textit{job} definido pela tarefa. Nesta quádrupla, os membros $r_j^i$ e $f_j^i$, respectivamente, representam o número de \textit{jobs} de $\tau_i$ que ainda estão no bag e os que já foram concluídos. Para um dado \textit{job} $w_j^i$, $g_j^i = a_i+f_j^i$, bem como $r_j^i + f_j^i = b_i$ e $c_j^i = c_i$.
+
+% Para uma determinada tarefa $\tau^i_k$, são instanciados $d_i$ \textit{jobs} na forma: 
+
+% \[\{w_1^i, w_2^i, \dots w_{d_i}^i\} = \{[g_1^i,r_1^i,f_1^i,c_1^i],[g_2^i,r_2^i,f_2^i,c_2^i], [g_3^i,r_3^i,f_3^i,c_3^i] \dots [g_{d_i}^i,r_{d_i}^i,f_{d_i}^i,c_{d_i}^i]\}\]
+
+% Para efeito de consolidação das tarefas, assume-se como unidade de manipulação o \textit{job}. Os \textit{jobs} definidos por diferentes tarefas são independentes entre si. Os \textit{jobs} definidos por uma tarefa, no entanto, são executados na ordem expressa pelos respectivos $g_i$.
+
+% \subsection{Contingenciamento de execução}\label{subsec:contingenciamento_de_execucao}
+
+% Em um ambiente real, a capacidade de processamento é limitada, tanto em termos de recursos, definidos pelo número de processadores ou quantidade de memória, como em termos de capacidade, exemplificada pela velocidade de comunicação. A aplicação em execução, em tais sistemas, é a principal fonte de consumo destes recursos, não sendo, no entanto, a única. A atuação de um sistema de gerenciamento, como o provido pelo mecanismo de escalonamento, também consome a capacidade de processamento oferecida. No modelo BoT apresentado, é considerado apenas o custo computacional de cada tarefa, o que implica em considerar a carga de processamento oferecida pela arquitetura disponível, assumindo, desta forma, ilimitada capacidade de processamento, armazenamento e nulos os custos de comunicação. Assume-se, também, que a influência do mecanismo de escalonamento não introduz sobrecustos à execução.
+
+% O número de processadores disponíveis na arquitetura real delimita, no modelo adotado, a capacidade de processamento disponível. Uma arquitetura $M$ dedicada à execução de uma aplicação BoT $A$ é composta por $m$ processadores idênticos, $\{p_1, p_2 \dots p_m\}$, com ilimitada capacidade de memória por processador e custo 0 (zero) para comunicação de tarefas e operações de escalonamento entre eles. Em determinado passo global, a quantidade de processamento máximo disponível nesta máquina é dado por $C = m\times 100\%$.
+
+% O número de \textit{jobs} que podem ser executados em um determinado passo global $g$ é limitado pela quantidade de processamento oferecida. Assim, se em um determinado passo global $g$ o somatório dos custos computacionais $c_k^i$ dos \textit{jobs} $w_i$ aptos à execução suplantar a capacidade $C$ de processamento oferecida, haverá contenção na execução. Deve também ser observado que a necessidade de processamento de um \textit{job} não pode ser dividida entre processadores. Como consequência, pode ocorrer fragmentação de uso de processador quando, em um passo global, um novo \textit{job} não pode ser adicionado aos demais por ultrapassar o limite de uso de 100\% de CPU máximo previsto por passo. Assim, a capacidade real $C_g$ explorada em um passo global $g$ é limitada em $C_g \le m\times 100\%$.
+
+% \subsection{Normalização do passo global}\label{subsec:normalizacao_do_passo_global}
+
+% Como existe contingenciamento na execução dos \textit{jobs}, em função da carga computacional disponível, em um dado passo global $g$ nem todos os \textit{jobs} elegíveis para execução podem ser de fato executados. Assim, cada tarefa terá, no máximo um \textit{job} em execução, havendo a possibilidade de tarefas não terem nenhum \textit{job} executado em um determinado passo global.
+
+% Para cada tarefa $\tau^i_k$, apenas um \textit{job} é elegível para execução, sendo este o \textit{job} que possuir o menor $g_j^i$, satisfazendo $g_j^i \le g$. Considerando dois \textit{jobs} $w_j^i$ e $w_k^i$ definidos por uma mesma tarefa $\tau_i$ a relação de ordem temporal definida pelo atributo $g_i$ de cada um deles deve ser preservada.
+
+% Considerando dois \textit{jobs} $w_j^i$ e $w_k^h$, definidos pelas tarefas $\tau^i_k$ e $\tau^h_l$, respectivamente, ambas elegíveis para execução, não existe nenhuma ordem pré-definida de execução entre eles.
+
+% Em consequência do contingenciamento, em um dado passo $g$ pode existir um conjunto não vazio de \textit{jobs} em que se verifica que $g_i \le g$. Uma parcela limitada das tarefas já iniciadas contendo estes \textit{jobs} é elegível para execução em função da limitação dos recursos de processamento disponíveis. As demais, não elegíveis por não haver recursos de processamento suficientes, terão sua execução retardada.
+
+% Deste fato destaca-se a consequência da contingência no modelo de BoT adotado. Conforme previsto na Seção \ref{sec:modelo_de_aplicacao_bot}, o atributo $a_i$ definido por uma quádrupla $q_i$ representa a quantidade de processamento já realizada pela aplicação em uma arquitetura não contingenciada. Portanto, todo atraso na execução de qualquer \textit{job} reflete no atraso, na mesma proporção, da chegada de um novo lote de tarefas (e seus \textit{jobs} correspondentes) da mesma aplicação.
+
+% A Figura \ref{fig:normalizatempo} apresenta um exemplo da situação. Supondo duas aplicações $A = \{[0,5,1,c^A_1], [3,d^A_1,2,c^A_1]\}$ e $B = \{[3,d^B_1,3,c^B_1]\}$, cujos atributos não identificados são irrelevantes para compreensão do exemplo. Nesta figura, \textit{jobs} são representados por círculos, sendo envolvidos pelas tarefas que os descrevem. O inteiro informado no interior de cada \textit{job} refere-se ao seu passo de execução. As setas tracejadas identificam a dependência de criação de tarefas anotada entre os \textit{jobs}. A discretização do tempo (passos) também é apresentada.
+
+% \begin{figure}[htbp]
+% 	\centerline{
+% 		\includegraphics[scale=0.44]{images/NormalizacaoTempo2.pdf}}
+% 	\caption[Dependência na criação de tarefas entre \textit{jobs}.]{Dependência na criação de tarefas entre \textit{jobs}.}
+% \label{fig:normalizatempo}
+% \end{figure}
+
+% Na Figura \ref{fig:normalizatempo}, o BoT $A$ possui dois grupos de tarefas, o primeiro é recebido no tempo 0 (zero), sendo composto por uma (1) tarefa com comprimento de cinco passos, ou seja, de cinco \textit{jobs}. O segundo grupo é composto por duas tarefas, sendo recebido no tempo 3 em uma arquitetura sem contenção. A interpretação é a de que de todas as tarefas lançadas anteriormente, na mesma aplicação, devem ter tido o direito de executar até 3 passos, ou seja, até 3 de seus \textit{jobs}, de forma que a quantidade de trabalho suficiente para criação deste segundo grupo tenha sido completada.
+
+% Nesta mesma figura, o BoT $B$, possui um único grupo de tarefas, composto por três tarefas, que é recebido no tempo 3. A execução destas tarefas não depende de trabalhos realizados em outra aplicação, uma vez que trata-se de um novo BoT. Seus \textit{jobs} não são atrasados, portanto, em decorrência de atrasos de execução de \textit{jobs} descritos em outro BoT, no caso da figura, das tarefas do BoT $A$. \info{Aqui TERMINA o texto que veio da dissertação}
+
+% \section{Fontes de Custos em IaaS}\label{sec:fontescustos}
+% De um modo geral, os custos associados à utilização dos recursos computacionais disponibilizados por nuvens do tipo IaaS são difíceis de ser quantificados, fazendo com que seja necessária a utilização de modelos de decisão orientados a custos. Um dos modelos mais utilizados é o custo total de propriedade -- TCO (\emph{Total Cost of Ownership}) \cite{strebelEconomicDecisionModel2010}.
+
+% O custo total de propriedade, inicialmente definido pela empresa Gartner, Inc.\footnote{\url{https://www.gartner.com/en} - empresa criada no final dos anos 1970, com atuação nos ramos de pesquisa, consultoria, eventos e prospecção do mercado de Tecnologia da Informação.}, é reconhecido como o método padrão para a análise financeira de recursos de Tecnologia da Informação (TI) e outros custos empresariais relacionados à TI \cite{mieritzDefiningGartnerTotal2005}. O modelo de TCO inclui aquisição, gerenciamento e suporte de hardware e software, comunicações, despesas do usuário final e os custos com tempo de inatividade, treinamento e outras perdas de produtividade. Para Filiopoulou e seu grupo \cite{filiopoulouIntegratingCostAnalysis2015}, a estimativa do custo total de propriedade, em particular, é um procedimento que fornece os meios para determinar o valor econômico total de um investimento, incluindo as despesas iniciais de capital (CAPEX, \emph{capital expenditure}) e as despesas operacionais (OPEX, \emph{operational expenditure}). No contexto de computação em nuvem, corresponde à estimativa de valores necessários para implementação e operação de uma infraestrutura.
+
+% Os benefícios do uso da abordagem de TCO estão na melhoria da comunicação entre cliente e provedor e na análise de todo o ciclo de vida dos artefatos de TI. Além disso, é possível analisar os custos ou componentes de custos individuais de um artefato de TI por meio de um esquema predefinido \cite{walterbuschEvaluatingCloudComputing2013}. Como o objetivo do modelo TCO é fornecer uma visão abstrata e simplificada do ``mundo real'', em vez de incluir todos os custos relevantes na análise, a complexidade da realidade pode ser reduzida trabalhando com base em premissas e incluindo apenas um número limitado de fatores de custo cuidadosamente selecionados.
+
+% Métricas para os cálculos de custo e investimento em infraestruturas de nuvens computacionais necessitam de um modelo claro, juntamente com os fatores que influenciam estes custos. A Tabela \ref{tab:tiposfatores} atribui fatores de custo $f$ para cada tipo de custo $t$ identificado. Os tipos de custo $t \in T$ e os fatores de custo $f \in F$ estão sujeitos aos conjuntos $T$ e $F$:
+% \begin{equation}
+%   \begin{aligned}
+%     T = {} & \{dEst,ava,txIaaS,imp,sup,trein,manut,falha,bs\}
+%   \end{aligned}
+% \end{equation}
+% % \myequations{teste}
+
+% \begin{equation}
+%   \begin{aligned}
+%     F = {} & \{dTempo,sCon,itDec,pComp,cArm,\\ 
+%           & tEnt,tSda,tInt,nCon,dom,ssl,lic,txServ,\\
+%           & pPort,cSup,rProb,tPrep,tPart,mInstr,perda\}
+%   \end{aligned}
+% \end{equation}
+
+% Cada fator influenciador é atribuído a um tipo de custo e, em seguida, os elementos dos conjuntos $T$ e $F$ são agrupados em fórmulas. Cada fórmula é aplicada a um custo específico, possibilitando a obtenção dos valores para cada tipo de custo.
+
+% \begin{table}[htb]
+%   \footnotesize
+%   \centering
+%   \caption{Tipos de custo e fatores de custo relacionados}
+%   \label{tab:tiposfatores}
+% %   \setlength\tabcolsep{1.6pt} % ajusta a tabela para caber na coluna
+%   \begin{tabular}{@{}lm{6.9cm}@{}}
+%     \toprule
+%     \multicolumn{1}{c}{\textbf{Tipo de custo}} & \multicolumn{1}{c}{\textbf{Fatores de custo}} \\ 
+%     \bottomrule
+%     \begin{tabular}[c]{m{7cm}@{}l@{}}Decisão estratégica, seleção de serviços de computação em nuvem e tipos de nuvem (\emph{dEst})\end{tabular} & Despesas de tempo (\emph{dTempo}), serviços de consultoria (\emph{sCon}), informações para tomada de decisão (\emph{itDec}). \\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{m{7cm}@{}l@{}}Avaliação e seleção de prestador de serviços (\emph{ava})\end{tabular} & Despesas de tempo (\emph{dTempo}), serviços de consultoria (\emph{sCon}), informações para tomada de decisão (\emph{itDec}).\\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{m{7cm}@{}l@{}}Taxa de serviço IaaS (\emph{txIaaS})\end{tabular} & Poder de computação (\emph{pComp}), capacidade de armazenamento (\emph{cArm}), transferência de dados de entrada (\emph{tEnt}), transferência de dados de saída (\emph{tSda}), transferência de dados interna do provedor (\emph{tInt}), número de consultas (\emph{nCon}), domínio (\emph{dom}), certificado SSL (\emph{ssl}), licença (\emph{lic}), taxa de serviço básica (\emph{txServ}). \\
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{m{7cm}@{}l@{}}Implementação, configuração, integração e migração (\emph{imp})\end{tabular} & Despesas de tempo (\emph{dTempo}), processo de portabilidade (\emph{pPort}). \\
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{m{7cm}@{}l@{}}Suporte (\emph{sup})\end{tabular} & Despesas de tempo (\emph{dTempo}), custos de suporte (\emph{cSup}), resolução de problemas (\emph{rProb}). \\
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{m{7cm}@{}l@{}}Treinamento inicial e permanente (\emph{trein})\end{tabular} & Tempo de preparação dos funcionários internos (\emph{tPrep}), tempo de participação dos funcionários internos (\emph{tPart}), material de instruções (\emph{mInstr}), serviços de consultoria externa (\emph{sCon}). \\
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{m{7cm}@{}l@{}}Manutenção e modificação (\emph{manut})\end{tabular} & Despesas de tempo (\emph{dTempo}). \\
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{m{7cm}@{}l@{}}Falha no sistema (\emph{falha})\end{tabular} & Perda por período (\emph{perda}). \\
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{m{7cm}@{}l@{}}\emph{Backsourcing} ou descarte (\emph{bs})\end{tabular} & Despesas de tempo (\emph{dTempo}), processo de portabilidade (\emph{pPort}). \\  
+%     \bottomrule
+%   \end{tabular}
+%   \caption*{Fonte: Adaptado de \cite{walterbuschEvaluatingCloudComputing2013}.}
+% \end{table}
+
+% \section{Fatores de Custo}
+% \label{sec:fatorescustos}
+
+% Os custos relacionados à decisão estratégica, seleção de serviços de computação em nuvem e tipos de nuvem (\emph{dEst}), juntamente com os custos de avaliação e seleção de prestadores de serviço (\emph{ava}) são influenciados pelas despesas de tempo (\emph{dTempo}) necessário para a tomada de decisão, as despesas com informações nas quais a decisão pode ser baseada (\emph{itDec}), como, por exemplo literatura científica ou análises de mercado, bem como custos de serviços de consultoria externa (\emph{sCon}). O custo total com as despesas de tempo resultam do tempo total gasto por todos os funcionários $\left(C^{dEst}_{dTempo} = \sum p^{dEst}_{dTempo,m} * a^{dEst}_{dTempo,m}\right)$, ou seja, é determinado pelo valor da hora de trabalho de cada empregado $\left(p^{dEst}_{dTempo,m}\right)$, multiplicado pelo tempo gasto $\left(a^{dEst}_{dTempo,m}\right)$, e somando os valores de todos os empregados $\left(m\right)$ envolvidos. Custos com tomadas de decisão ocorrem em períodos $i < 1$ e, além disso, o custo total com a aquisição de informações (\emph{itDec}) pode ser descrito como o somatório do total de preços (\emph{p}) de todos os materiais adquiridos $\left(C^{dEst}_{itDec} = \sum p^{dEst}_{a}\right)$. Por fim, os custos com serviços de consultoria $\left(C^{dEst}_{sCon}\right)$ são adicionados ao total e todos os gastos correspondentes aos fatores que influenciam o tipo de custo \emph{dEst}, sumarizados pela fórmula $\left(C^{dEst} = C^{dEst}_{dTempo} + C^{dEst}_{sCon} + C^{dEst}_{itDec}\right)$. Para o processo de avaliação e seleção de prestadores de serviços (\emph{ava}), os custos dependem da quantidade de tempo que os empregados dedicam a este processo (\emph{dTempo}) e os custos de eventuais consultorias externas (\emph{sCon}). Os cálculos para $\left(C^{ava}_{dTempo}\right)$ e $\left(C^{ava}_{sCon}\right)$ são análogos a $\left(C^{dEst}_{dTempo}\right)$ e $\left(C^{dEst}_{sCon}\right)$.
+
+% Para implementações de nuvem do tipo Infraestrutura como Serviço (IaaS), o tipo de custo que relaciona as taxas sobre os serviços (\emph{txIaaS}) é composto por elementos como o custo com poder de computação (\emph{pComp}), que pode ser calculado multiplicando o número de unidades de processamentos utilizadas $\left(a^{txIaaS}_{pComp,i}\right)$ por período \emph{i}, pelo custo de uma unidade de processamento $\left(p^{txIaaS}_{pComp,i}\right)$. O preço varia de acordo com as características específicas do sistema, como, memória RAM, número de unidades de computação, capacidade de armazenamento, sistema operacional $\left(C^{txIaaS}_{pComp,i} = a^{txIaaS}_{pComp,i} * p^{txIaaS}_{pComp,i}\right)$ e o custo total deste fator \emph{pComp} resulta do somatório de preços durante todos períodos \emph{n} $\left(C^{txIaaS}_{pComp,i} = \sum\limits^{n}_{i=1} C^{txIaaS}_{pComp,i}\right)$. Com a generalização do cálculo $\left(C^{t}_{f,i} = \sum\limits^{n}_{i=1}a^{t}_{f,i} * p^{t}_{f,i}\right)$, que sumariza os custos unitários em função da quantidade consumida em um período de uso \emph{i}, pode-se aplicar o mesmo raciocínio para os valores de capacidade de armazenamento (\emph{cArm}), transferência de dados de entrada (\emph{tEnt}), transferência de dados de saída (\emph{tSda}) e a transferência de dados interna para outros serviços do mesmo provedor (\emph{tInnt}) e o custo com o número de consultas (\emph{nCon}). Os custos com manutenção de domínio para acesso Web (\emph{dom}), certificados SSL (\emph{ssl}), licenciamento de software (\emph{lic}) e taxas básicas de serviços (\emph{txServ}) podem ser determinados pela multiplicação do número de períodos utilizados \emph{n} pelo respectivo preço $p^{t}_{f}$ do fator de custo \emph{f} do respectivo tipo de custo \emph{t} $\left(C^{t}_{f} = n * p^{t}_{f}\right)$.
+
+% As despesas com o tempo (\emph{dTempo}) necessário para cumprir as tarefas de implementação, configuração, integração e migração de serviços e dados influenciam o custo total tipo de custo (\emph{imp}). Um fator de custo importante neste tipo de custo é o processo de portabilidade (\emph{pPort}) dos dados do cliente para provedor de serviços. Conforme mencionado, os provedores cobram de seus clientes pela transferência de dados de entrada. Os custos da transferência inicial de dados para a nuvem para fins de migração do sistema pertencem a este tipo de custo. Eles são calculados multiplicando o volume de dados por unidade (ou seja, gigabyte) pelo preço de uma unidade. Alguns provedores oferecem serviços de envio de disco rígido para inserir os dados do cliente. No entanto, essa abordagem não se concentra no volume de dados, mas sim no número de discos rígidos e no tempo de carregamento de dados. O fator de custo de \emph{pPort} não depende de mudanças temporais de preço porque se presume que o processo de portabilidade de dados pode ser concluído dentro de um período \emph{t}: $\left(C^{imp}_{pPort} = a^{imp}_{pPort} * p^{imp}_{pPort}\right)$. As despesas de tempo $C^{imp}_{dTempo}$ podem ser determinadas da mesma maneira que $C^{dEst}_{dTempo}$: $\left(C^{imp}_{dTempo} = \sum p^{imp}_{dTempo,m} * a^{imp}_{dTempo,m}\right)$.
+
+% O tipo de custo Suporte (\emph{sup}) depende do custo dos serviços de atendimento via telefone, e-mail, sistema de chamados ou \emph{chat} durante todo ciclo de vida da infraestrutura de nuvem. Portanto, este tipo de custo depende do gasto de tempo (\emph{dTempo}) necessário para interação com a equipe de suporte, bem como dos custos ocorridos. Alguns provedores de serviços cobram seus usuários com base no tempo necessário para a resolução de problemas e suporte. Os custos totais com suporte podem ser determinados pela multiplicação do preços de uma unidade pelo número total de unidades necessárias $\left(C^{sup}_{cSup} = p^{sup}_{cSup} * a^{sup}_{cSup}\right)$. Já os custos com resolução de problemas dependem do número de unidades consumidas e o preço por unidade $\left(C^{sup}_{rProb} = p^{sup}_{rProb} * a^{sup}_{rProb }\right)$.
+
+% Os custos totais do tipo de custo "treinamento inicial e permanente" (\emph{trein}) podem ser subdivididos em treinamento interno, no qual os próprios colaborados atuam como treinadores, e treinamento externo, no qual são necessários treinadores externos à empresa. Os custos de um treinamento interno dependem da quantidade de tempo de preparação investido por um ou mais empregados (\emph{tPrep}), o tempo de participação dos funcionários internos (\emph{tPart}) e os custos com material para os treinamentos (\emph{mInstr}):
+
+% \begin{eqnarray*}
+% C^{trein}_{int} &=& \sum C^{trein}_{tPrep,m} + \sum C^{trein}_{tPart,m} + C^{trein}_{mInstr,m} \\
+%                 &=& \sum\left(p^{trein}_{tPrep,m} * a^{trein}_{tPrep,m}\right) \\
+%                 &+& \sum\left(p^{trein}_{tPart,m} * a^{trein}_{tPart,m}\right) + C^{trein}_{mInstr}
+% \end{eqnarray*}
+
+% O total dos custos de um treinamento externo pode se calculado pela adição dos custos com serviços de consultoria que organizam o treinamento (\emph{sCon}), a quantidade de tempo que os empregados investem na participação do treinamento (\emph{tPart}) e os custos com materiais de treinamento (\emph{mInstr}):
+
+% \begin{eqnarray*}
+% C^{trein}_{ext} &=& \sum C^{trein}_{sCon} + \sum C^{trein}_{tPart} + C^{trein}_{mInstr,m} \\
+%                 &=& \sum\left(p^{trein}_{sCon} * a^{trein}_{sCon}\right) \\
+%                 &+& \sum\left(p^{trein}_{tPart,m} * a^{trein}_{tPart,m}\right) + C^{trein}_{mInstr}
+% \end{eqnarray*}
+
+% Custos com manutenção e modificação (\emph{manut}) dependem das despesas com tempo gasto (\emph{dTempo}) em manutenções gerais e em modificações feitas para implementação de serviços $\left(C^{manut}_{dTempo}\right)$. O cálculo das despesas de tempo para uma respectiva tarefa de manutenção é baseada na fórmula do tipo de custo \emph{dEst}: $\left(c^{manut}_{dTempo} = \sum p^{dEst}_{dTempo,m} * a^{dEst}_{dTempo,m}\right)$.
+
+% Custos totais de uma falha de sistema precisam ser declarados para cada empresa individualmente. Os possíveis fatores de custo são, por exemplo, perda de tempo de trabalho produtivo, penalidades contratuais por atrasos ou danos à reputação da empresa, que são difíceis de mensurar. Assim, apenas destaca-se uma fórmula geral que representa a perda por período \emph{i}:
+% \begin{eqnarray*}
+% C^{falha}_{perda} = \sum\limits^{n}_{i=1} a^{falha}_{perda,i} * p^{falha}_{perda,i}
+% \end{eqnarray*}
+
+% O processo de descarte, ou \emph{backsourcing}, de um sistema envolve despesas de tempo (\emph{dTempo}) e processo de portabilidade (\emph{pPort}). No entanto, os custos com a portabilidade dos dados entre nuvens, ou para um sistema diferente, fazem parte do TCO de um novo serviço e não do TCO do sistema no qual os dados estão sendo retirados. Os custos podem ser determinados da mesma maneira que os custos do processo de portabilidade dos dados para a nuvem $\left(C^{bs}_{pPort} = a^{bs}_{pPort} * p^{bs}_{pPort}\right)$ e também dependem do gasto de tempo necessário para a decisão estratégica necessária:
+% \begin{eqnarray*}
+% C^{bs}_{dTempo} = \sum p^{bs}_{dTempo,m} * a^{bs}_{dTempo,m}
+% \end{eqnarray*}
+
+% \section{Custo Global}
+% \label{sec:custoglobal}
+% % Em um ambiente de nuvem pública do tipo IaaS, o custo total de propriedade de um serviço de computação em nuvem é igual à soma de todos os tipos de custos envolvidos e pode ser definido como:
+
+% \begin{equation}
+%   \centering
+%   \begin{aligned}
+%     TCO_{Nuvem} = \sum C^t ~\textsf{onde}~ t \in T
+%   \end{aligned}
+%   \label{eq:tco}
+% \end{equation}
+
+% O valor total de um tipo de custo $t$ é igual à soma de todos os fatores de custo $f$ envolvidos, conforme segue: $C^t = \sum C^t_f ~\textsf{onde}~ t \in T, f \in F$. 
+
+% Neste modelo de TCO é considerado o período total de tempo no qual os serviços de nuvem foram ou serão utilizados. Este período é subdividido em vários períodos menores $i$, com duração de um mês, geralmente, predefinido pelo provedor de serviços. Assim, o período total é composto por $n$ períodos menores, de acordo com $C^t_f = \sum^n_i C^t_{f,i} ~\textsf{onde}~ i = \{1, \dots, n\}, t \in T, f \in F$. As variáveis $a^t_{f,i}$ e $p^t_{f,i}$ são utilizadas, respectivamente, para representar a quantidade consumida ou necessária no período $i$ e caracterizar os custos ou preços unitários na fórmula $C^t_{f,i} = a^t_{f,i} ~\textsf{*}~ p^t_{f,i}$.
+
+% Ao contrário de serviços entregues por meio de nuvens públicas, nas estruturas de nuvens privadas os usuários e provedores fazem parte da mesma organização ou os serviços são prestados, de modo exclusivo, por terceiros. No primeiro cenário, os custos envolvidos incluem, por exemplo, licenciamento de softwares implementados bem como a infraestrutura de TI que deve ser fornecida pela organização. Já no caso de entrega de serviços por provedor exclusivo, o fornecimento é semelhante a uma nuvem pública IaaS, no modo em que o usuário obtém os recursos de um provedor. Apesar disso, o provedor não gerencia dados em uma estrutura pública, mas, sim, em uma nuvem privada exclusiva. 
+
+% Finalmente, em soluções de nuvens híbridas, que agregam as características de nuvens públicas e privadas, as despesas totais são iguais aos custos totais, ou pelo menos proporcionais, envolvidos em cada solução individual. Além disso, despesas com o processo de agregação de soluções (públicas e privadas) devem ser consideradas na composição dos custos e investimentos.
+
+% \section{Aspectos de Custo em Ambientes HPC}\label{sec:custoshpc}
+
+% Aplicações para Processamento de Alto Desempenho possuem diferentes características que podem determinar sua adequação a um ambiente de nuvem. Questionamentos a respeito de por que e quem deve escolher uma nuvem para execução de aplicações HPC, quais destas aplicações e como a nuvem pode ser usada para HPC devem balizar os estudos de viabilidade de migração para ambientes remotos distribuídos. 
+
+% Ambientes HPC são orientados a desempenho, ao passo que nuvens computacionais são orientadas pela relação custo (monetário) \emph{vs.} utilização de recursos. Além disso, nuvens foram, originalmente, projetadas para a execução de aplicações comerciais e de serviços para a internet. O uso de conexões de rede não apropriadas para alto desempenho, a sobrecarga das técnicas de virtualização e as limitações dos sistemas de armazenamento podem ser considerados barreiras para a adoção de nuvens para aplicações HPC. Cabe, então, identificar \cite{guptaEvaluatingImprovingPerformance2016d}:
+
+% \begin{itemize}[noitemsep]
+%     \item \emph{Quem} é o usuário candidato para um ambiente de nuvem;
+%     \item \emph{Qual} é o tipo de aplicação que pode se beneficiar de uma execução em ambiente de nuvem;
+%     \item \emph{Por que} o usuário terá benefícios na execução de sua aplicação em ambiente de nuvem; e,
+%     \item \emph{Como} este benefício pode ser atingido.
+% \end{itemize}
+
+% Com base nestes pontos, as tabelas \ref{tab:questoes1} e \ref{tab:questoes2} apresentam alguns posicionamentos com relação aos questionamentos originados a partir de duas diferentes abordagens que visam auxiliar nas decisões de migração para ambientes de nuvem computacional: 
+% \begin{enumerate*}[label=\textit{\alph*}),itemjoin={{; }},itemjoin*={{; e }}]
+%   \item considera-se os aspectos da execução em modelos de desempenho, custo e negócios
+%   \item são exploradas técnicas para preencher as lacunas entre nuvens e aplicações HPC
+% \end{enumerate*}. Estas abordagens têm por objetivo identificar as diferenças de demandas por HPC, por parte dos usuários, e quais alternativas eles dispõem para implantar suas aplicações. As alternativas que buscam preencher a lacuna entre aplicações HPC e nuvens podem ser classificadas em duas categorias \cite{guptaEvaluatingImprovingPerformance2016d}: primeiro, aquelas que objetivam tornar as nuvens cientes das aplicações HPC e, segundo, aquelas que buscam tornar as aplicações HPC cientes das infraestruturas de nuvem nas quais serão executadas.
+
+% A Tabela \ref{tab:questoes1} traz respostas para a o cenário no qual é pretendido tornar as nuvens cientes das aplicações HPC que serão executadas. Para isso, são exploradas técnicas de virtualização leve (por exemplo, contêineres) e determina-se quão próximo do desempenho de máquina física é possível chegar com as aplicações HPC. São exemplos, \textit{hypervisors} otimizados para HPC e nuvens otimizadas para computação de alto desempenho como Amazon HPC.
+
+% \begin{table}[htb]
+%   \footnotesize
+%   \centering
+%   \caption{Questões sobre nuvens cientes de aplicações HPC}
+%   \label{tab:questoes1}
+% %   \setlength\tabcolsep{1.6pt} % ajusta a tabela para caber na coluna
+%   \begin{tabular}{@{}lm{11.2cm}@{}}
+%     \toprule
+%     \multicolumn{1}{c}{\textbf{Questionamento}} & \multicolumn{1}{c}{\textbf{Resposta}} \\ 
+%     \bottomrule
+%     \begin{tabular}[c]{@{}l@{}}Quem\end{tabular} & Pequenas e médias organizações ou empresas em crescimento. \\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Qual\end{tabular} & Aplicações com padrões de comunicação menos intensos e menos sensíveis a interferências. \\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Por que\end{tabular} & Pequenas e médias organizações que são sensíveis aos argumentos de CAPEX/OPEX. \\
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Como\end{tabular} & Tornar as nuvens cientes das aplicações HPC, por exemplo, com uso de virtualização leve e afinidade de CPU. \\ 
+%     \bottomrule
+%   \end{tabular}
+%   \caption*{Fonte: Adaptado de \cite{guptaEvaluatingImprovingPerformance2016d}.}
+% \end{table}
+
+% Já na Tabela \ref{tab:questoes2}, as respostas tratam de pontos que devem ser considerados quando se busca por ambientes de execução capazes de trabalhar com aplicações HPC cientes de nuvens computacionais. Esta alternativa, embora ainda pouco explorada, permite ajustes nos tempos de execução das aplicações HPC em nuvens para obtenção de um melhor desempenho com uso de tecnologias como balanceadores de carga com reconhecimento de nuvem para aplicações HPC e a implantação de topologias com reconhecimento de aplicações científicas na nuvem.
+
+% \begin{table}[htb]
+%   \footnotesize
+%   \centering
+%   \caption{Questões sobre aplicações HPC cientes de nuvem}
+%   \label{tab:questoes2}
+% %   \setlength\tabcolsep{1.6pt} % ajusta a tabela para caber na coluna
+%   \begin{tabular}{@{}lm{11.2cm}@{}}
+%     \toprule
+%     \multicolumn{1}{c}{\textbf{Questionamento}} & \multicolumn{1}{c}{\textbf{Resposta}} \\ 
+%     \bottomrule
+%     \begin{tabular}[c]{@{}l@{}}Quem\end{tabular} & Usuários com aplicações que tem melhor relação custo/desempenho em nuvens \textit{vs.} outras plataformas. \\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Qual\end{tabular} & Aplicações com necessidades de desempenho que podem ser atendidas em média escala (em termos de número de \textit{cores}). \\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Por que\end{tabular} & Nuvens permitem que vários usuários acessem estruturas compartilhadas, garantindo um melhor uso dos recursos. \\
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Como\end{tabular} & Abordagem híbrida supercomputador-nuvem com escalonamento ciente de aplicação e \textit{cloud bursting}. \\ 
+%     \bottomrule
+%   \end{tabular}
+%   \caption*{Fonte: Adaptado de \cite{guptaEvaluatingImprovingPerformance2016d}.}
+% \end{table}
+
+% O uso de nuvens para execução de aplicações HPC pode ser visto como um bom complemento para estruturas locais de supercomputadores e \textit{clusters}, não podendo, ainda, substituí-las totalmente. Abordagens de utilização de nuvens híbridas, nas quais ocorre uma integração entre infraestruturas de nuvens públicas e privadas, permitem a ocorrência de \emph{cloud bursting} \cite{mansouri_automated_2020}. Isto faz com que aplicativos utilizem toda a capacidade dos recursos computacionais de uma nuvem privada e, em reação a este aumento, migrem suas tarefas em ambientes de nuvem pública, à medida que os recursos locais se tornem escassos.
+
+% Aplicações científicas tem necessidades significativamente diferentes das aplicações comerciais típicas, executando suas tarefas de maneira fortemente acoplada e em escalas bem maiores de recursos computacionais. Tal comportamento leva a requisitos de largura de banda e latência mais exigentes do que a maioria dos usuários de nuvem. Aplicações científicas também requerem acesso a grandes quantidades de dados e isso pode levar a um grande custo de inicialização e armazenamento \cite{magellan_report_2011}.
+
+% Cargas de trabalho científicas podem ser classificadas em três categorias abrangentes de acordo com seus requisitos: fortemente acopladas em grande escala, médio alcance e alto rendimento. A Tabela \ref{tab-reccloud} apresenta características que favorecem o entendimento da viabilidade de execução de aplicações HPC em nuvens. Também classifica, em alto nível, cargas de trabalho executadas pela comunidade científica.
+
+% \begin{table}[htb]
+%   \footnotesize
+%   \centering
+%   \caption{Recomendação de uso de nuvens em função do tipo de aplicação HPC}
+%   \label{tab-reccloud}
+% %   \setlength\tabcolsep{1.6pt} % ajusta a tabela para caber na coluna
+%   \begin{tabular}{@{}lm{11.1cm}@{}}
+%     \toprule
+%     \multicolumn{1}{c}{\textbf{Tipo de Aplicação}} & \multicolumn{1}{c}{\textbf{Recomendação}} \\ 
+%     \bottomrule
+%     \begin{tabular}[c]{@{}l@{}}Fortemente acoplada\\ em grande escala\end{tabular} & Tipicamente, aplicações MPI, que utilizam milhares de \textit{cores} e exigem uma rede de comunicação de alto desempenho. Neste caso, qualquer gargalo de virtualização  ou problemas de alta latência na rede terão impacto negativo no desempenho das aplicações. Logo, é recomendável a execução em ambientes tradicionais de supercomputação ou em nuvens privadas com servidores \textit{bare metal} e redes de alta velocidade. \\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Médio alcance\end{tabular} & Estas aplicações utilizam um número variado de \textit{cores} (dezenas ou centenas) e têm requisitos de desempenho mais baixos do que as aplicações de grande escala fortemente acopladas. Consequentemente, são mais tolerantes à virtualização e redes tradicionais. É recomendado que estas aplicações explorem os benefícios do acesso rápido a recursos para a nuvem, especialmente a virtualização leve (contêineres). \\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Alto rendimento\end{tabular} & Aplicações  compostas por tarefas independentes que exigem pouca ou nenhuma comunicação. Tais aplicações podem se beneficiar de um grande número de recursos disponíveis e são tolerantes à heterogeneidade. Recomenda-se o uso de nuvens para estas aplicações, especialmente explorando mecanismos de elasticidade. Outros benefícios também podem ser alcançados por meio de ambientes de nuvem híbrida HPC, distribuindo tarefas em \textit{clusters} locais e nuvens públicas. \\ 
+%     \bottomrule
+%   \end{tabular}
+%   \caption*{Fonte: Adaptado de \cite{magellan_report_2011}.}
+% \end{table}
+
+% A partir da classificação das cargas de trabalho científicas, caracterizadas anteriormente (Tabela \ref{tab-reccloud}), é possível identificar alguns exemplos de cada um dos tipos de aplicação, conforme descrito na Tabela \ref{tab-exemplos}.
+
+% \begin{table}[htb]
+%   \footnotesize
+%   \centering
+%   \caption{Exemplos de aplicações HPC}
+%   \label{tab-exemplos}
+% %   \setlength\tabcolsep{1.6pt} % ajusta a tabela para caber na coluna
+%   \begin{tabular}{@{}lm{11.1cm}@{}}
+%     \toprule
+%     \multicolumn{1}{c}{\textbf{Tipo de Aplicação}} & \multicolumn{1}{c}{\textbf{Exemplos}} \\ 
+%     \bottomrule
+%     \begin{tabular}[c]{@{}l@{}}Fortemente acoplada\\ em grande escala\end{tabular} & Aplicações MPI; aplicações de geração de modelos climáticos, sísmicos. \\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Médio alcance\end{tabular} & Aplicações de simulação orientada a eventos; aplicações escalonadas no tempo, cujos trabalhos são menos sensíveis a prazos. \\ 
+%     \addlinespace[0.15cm]
+%     \begin{tabular}[c]{@{}l@{}}Alto rendimento\end{tabular} & Aplicações BoT; aplicações MapReduce; simulações Monte Carlo. \\ 
+%     \bottomrule
+%   \end{tabular}
+% \end{table}
+
+% Em seu estudo, o grupo de Parashar \cite{parashar_cloud_2013} apresentou uma divisão dos ambientes de nuvem para HPC em três categorias:
+% \begin{enumerate*}[label=\textit{\alph*}),itemjoin={{; }},itemjoin*={{; e }}]
+%   \item \textbf{{\itshape HPC in the Cloud}}, que se concentra em mover aplicações HPC para ambientes de nuvem
+%   \item \textbf{{\itshape HPC Plus Cloud}}, na qual usuários fazem uso de nuvens para complementar seus recursos de HPC, em situações de picos de demanda (\textit{cloud bursting})
+%   \item \textbf{{\itshape HPC as a Service}}, que expõe os recursos HPC por meio de serviços de nuvem
+% \end{enumerate*}. Estas categorias estão relacionadas a como os recursos são alocados e abstraídos para simplificar o uso da nuvem.
+
+% A execução de aplicações HPC em nuvem ainda possui vários problemas em aberto. Para exemplificar, a abstração da infraestrutura de nuvem limita o ajuste das aplicações.  Além disso, a maioria das conexões de rede dos provedores de nuvem não é rápida o suficiente para aplicações fortemente acopladas em grande escala, com alta comunicação entre processadores. 
+
+% O modelo de negócio para uma nuvem HPC também é um campo a ser bem explorado. Em nuvens públicas, provedores de serviços lançam várias cargas de trabalho sobre os mesmos recursos físicos a fim de explorar economia de escala, que nem sempre é apropriada para HPC. Além disso, mesmo que pequenas empresas se beneficiem do rápido acesso a recursos de nuvens públicas, isso nem sempre é verdadeiro para grandes usuários de HPC \cite{netto_hpc_2018}. 
+
+% Por outro lado, em ambientes de nuvens privadas, usuários de HPC podem ter acesso direto ao gerenciamento dos componentes e o compartilhamento de recursos é reduzido por consequência de o modelo de múltiplos inquilinos ficar limitado a um grupo específico de usuários.
+
+% Questões referentes à troca de CAPEX por OPEX tem destaque no processo de decisão de migração de aplicações para ambientes de nuvem. CAPEX está relacionado com os investimentos feitos na aquisição de equipamentos, softwares e inicialização dos mesmos dentro do provedor de serviço. Já o OPEX diz respeito aos investimentos feitos com alocação de serviços, como por exemplo, manutenção de equipamentos e contratação de serviços de nuvem. 
+
+% Aplicações que fazem uso variável dos recursos computacionais determinam uma menor utilização global dos equipamentos. Juntamente com os pontos referentes a CAPEX e OPEX, esta utilização variável de recursos serve de argumentos para provedores e usuários finais de nuvem. Os usuários podem se beneficiar caso suas execuções se caracterizem como aplicações de uso variável \cite{guptaEvaluatingImprovingPerformance2016d}. Por outro lado, provedores de nuvem podem tirar benefícios de uma utilização agregada de recursos de todos os seus inquilinos. Para isso, é fundamental que a agregação possa sustentar um modelo de precificação lucrativo frente aos grandes investimentos iniciais necessários para oferecer recursos de computação e armazenamento por meio de uma interface em nuvem pública. No caso de uma nuvem privada, o lucro está em oferecer mais produtividade para os usuários, atendendo de modo satisfatório às demandas da instituição.
+
+% \section{Discussão}\label{sec:discussao}
+
+% Aplicações HPC necessitam de muitos recursos computacionais e fornecê-los de maneira otimizada requer ajustes em vários aspectos \cite{GantikowReichKnahletal.2015}. Em termos de desempenho, o uso de virtualização já está bem mais aprimorado, devido ao suporte à virtualização no nível de sistema operacional, fornecendo desempenho próximo às infraestruturas de \textit{bare-metal}.
+
+% Do ponto de vista do fluxo de trabalho, a transição de uma infraestrutura de hardware dedicado para serviços oferecidos em nuvem implica em uma modificação de processos. Isto é válido para qualquer tipo de aplicação, inclusive para as aplicações HPC. Esta mudança de processo é especialmente complicada devido ao armazenamento e à transferência de grandes quantidades de dados. Este aspecto pode ser simplificado com a hospedagem dos dados diretamente no provedor de serviços.
+
+% Os ambientes de nuvem e as estruturas clássicas para HPC têm maneiras distintas de gerenciar recursos de computação. Para extrair o melhor desempenho de um ambiente em nuvem, os esforços concentraram-se em aumentar o isolamento entre máquinas virtuais e reduzir a sobrecarga imposta pelas técnicas de virtualização. As estruturas HPC, por sua vez, visam extrair o máximo de desempenho possível da infraestrutura \cite{netto_hpc_2018}. 
+
+% As solicitações de usuários para acessar exclusivamente partes de um \textit{cluster} HPC são enfileiradas sempre que os recursos estiverem sobrecarregados. Em ambientes de nuvem isso não ocorre devido à disponibilidade ``ilimitada'' de recursos, também chamada de elasticidade. Além do mais, hardware para HPC, especificamente interfaces de rede, são consideravelmente mais caras do que exemplares utilizados para criação de nuvens tradicionais, com hardware de \textit{commodity}\footnote{Em um contexto de Tecnologia da Informação, é um dispositivo ou componente de dispositivo que é relativamente barato, amplamente disponível e, em alguns casos, intercambiável com outro hardware do mesmo tipo.}. Sendo assim, alocar usuários em hardwares específicos para HPC, configura um desperdício para o provedor de serviços, caso ele não atenda exclusivamente usuários com demandas HPC.
+
+% O desafio em gerenciar recursos HPC em nuvens está em desenvolver um modelo de negócio sustentável, com economia de escala e que ofereça processamento de alto desempenho aos usuários. Para avançar nesta área, esforços de pesquisa devem ser concentrados para que os provedores possam oferecer sistemas de filas e modelos de preços que levem em conta o tempo que os usuários estão dispostos a esperar para ter acesso aos recursos. Alguns modelos flexíveis de aluguel de recursos HPC em nuvens, como apresentado em \cite{zhaoDesigningFlexibleResource2012e}, são baseados em estratégias de planejamento que consideram instâncias sob demanda e \textit{spot}, motivados pelos interesses das duas partes, usuário e provedor, envolvidas no processo de alocar recursos.
 
 \chapter{Trabalhos Relacionados e Estado da Arte}\label{chap:trabEst}
 
@@ -1179,7 +1532,7 @@ A definição dos níveis de classificação tomou por base o quantitativo de pr
 
 \section{Configuração dos Nós}\label{sec:confnos}
 
-No presente trabalho, entende-se por nó a infraestrutura física, em termos de computadores servidores e equipamentos de rede e armazenamento, que será ofertada pelas instituições para uso local e pelos demais participantes da solução de nuvem. Assume-se que, para a implantação inicial da nuvem, em comum acordo, as instituições se comprometem em adquirir e disponibilizar um conjunto padronizado de recursos computacionais. \trocar{Este conjunto de recursos computacionais corresponde ao nó da nuvem e a quantidade de módulos disponibilizados, individualmente, pelas instituições, depende de sua capacidade de investimento, modelada, neste trabalho, conforme caracterizado na Seção \ref{sec:instfederadas}}{Este conjunto de recursos computacionais corresponde ao nó da nuvem. Por sua vez, a quantidade de módulos disponibilizados pelas instituições, individualmente, depende de sua capacidade de investimento, modelada conforme caracterizado na Seção \ref{sec:instfederadas}}.
+No presente trabalho, entende-se por nó a infraestrutura física, em termos de computadores servidores e equipamentos de rede e armazenamento, que será ofertada pelas instituições para uso local e pelos demais participantes da solução de nuvem. Assume-se que, para a implantação inicial da nuvem, em comum acordo, as instituições se comprometem em adquirir e disponibilizar um conjunto padronizado de recursos computacionais. Este conjunto de recursos computacionais corresponde ao nó da nuvem. Por sua vez, a quantidade de módulos disponibilizados pelas instituições, individualmente, depende de sua capacidade de investimento, modelada conforme caracterizado na Seção \ref{sec:instfederadas}.
 
 A definição das especificações técnicas do nó se deu a partir de avaliações feitas sobre tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware. De acordo com a Figura \ref{fig:IEPNosModulos}, cada nó da solução de nuvem computacional federada é formada pelo arranjo de módulos pertencentes às seguintes categorias: controle e computação. O módulo de controle é composto por equipamentos de processamento, armazenamento e conexão de rede ao passo que o módulo de computação conta com recursos de processamento. À medida que são incorporados módulos de computação em um nó de uma dada instituição, é previsto crescimento proporcional do espaço de armazenamento no módulo de controle.
 
