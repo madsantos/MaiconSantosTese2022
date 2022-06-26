@@ -243,7 +243,7 @@ N^*_A = \sum_{i=1}^{n}d_i \times b_i
 
 Na Figura \ref{ExemploBoT} são apresentados os 6 primeiros passos na evolução da aplicação $A$ descrita no exemplo anterior. Observe que nesta representação está sendo assumido a existência de um número não limitado de recursos de processamento e inexistência de condições de contenção de execução. No passo inicial (passo=0), 8 tarefas estão presentes no bag e são lançadas para execução. Terminado o passo, avança o tempo (passo=1) e um \textit{job} de cada uma das tarefas é completado. O mesmo ocorre ao término do passo 1 e do passo 2. No passo 3, um novo conjunto de tarefas é recebido no bag e lançado. Ao final do passo 3, todas as tarefas em execução finalizam a execução de um \textit{job}. No passo 4, como no passo anterior, um novo conjunto de tarefas inicia a execução e todas as tarefas completam a execução de um \textit{job}. Neste passo ocorre também que um conjunto de tarefas executa seu último \textit{job}, finalizando sua execução. No passo seguinte (passo=5) as tarefas remanescentes avançam, concluindo mais um passo. A execução prossegue reproduzindo o padrão apresentado.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centerline{
 		\includegraphics[scale=0.9]{images/BagOfTasks4.pdf}}
 	\caption[Exemplo de aplicação \textit{Bag of Tasks}]{Exemplo de aplicação \textit{Bag of Tasks}.}
@@ -251,18 +251,39 @@ Na Figura \ref{ExemploBoT} são apresentados os 6 primeiros passos na evolução
 \end{figure}
 
 \section{Workflow}
-Aqui entra a história do Pegasus.
 
-\begin{figure}[htbp]
-	\centerline{
-		\includegraphics[scale=0.25]{images/sipht.png}}
-	\caption[Exemplo de aplicação \textit{Bag of Tasks}]{Exemplo de aplicação \textit{Bag of Tasks}.}
-	\label{ExemploBoT}
-\end{figure}
+Os fluxos de trabalho científicos (\emph{workflows}) estão presentes em diversos domínios de aplicação e pesquisa, como por exemplo, astronomia, biologia, física gravitacional, estudos de terremotos, entre outros.
+
+Pesquisas científicas utilizam conjuntos de dados cada vez mais complexos a fim de executar simulações e análises. Neste cenário, tecnologias de fluxos de trabalho científicos buscam maneiras de gerenciar a complexidade das aplicações científicas e a maneira de lidar com grandes quantidades de dados.
+
+À medida que os fluxos de trabalho científicos crescem em complexidade e importância, é necessário um maior entendimento com relação à gerência de tais estruturas. Torna-se importante conhecer os requisitos dos \emph{workflows} (fluxos de trabalho), bem como seus comportamentos, que podem conduzir para significativas melhorias no que tange a algoritmos para provisionamento de recursos computacionais, escalonamentos de \emph{jobs} e manuseio dos dados \cite{juveCharacterizingProfilingScientific2013}.
+
+
+
+
+
+Aqui entra a história do Pegasus.
 
 \cite{deelmanPegasusCloudScience2016}\\
 
-\cite{deelmanPegasusWorkflowManagement2015}
+\cite{deelmanPegasusWorkflowManagement2015}\\
+
+\cite{deelmanEvolutionPegasusWorkflow2019}\\
+
+\cite{deelmanPegasusWorkflowManagement2015a}\\
+
+\cite{deelmanPegasusWorkflowManagement2021}\\
+
+
+
+\cite{vahiCustomExecutionEnvironments2019}
+
+\begin{figure}[H]
+	\centerline{
+		\includegraphics[scale=0.25]{images/sipht.png}}
+	\caption[SIPHT workflow]{SIPHT workflow \cite{juveCharacterizingProfilingScientific2013}.}
+	\label{sipht}
+\end{figure}
 
 \section{Aspectos de Custo}\label{aspectos_de_custo}
 
