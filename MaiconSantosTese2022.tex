@@ -241,30 +241,62 @@ Define-se \emph{passo} a passagem de uma unidade de tempo. Desta forma, a duraç
 N^*_A = \sum_{i=1}^{n}d_i \times b_i
 \]
 
-Na Figura \ref{ExemploBoT} são apresentados os 6 primeiros passos na evolução da aplicação $A$ descrita no exemplo anterior. Observe que nesta representação está sendo assumido a existência de um número não limitado de recursos de processamento e inexistência de condições de contenção de execução. No passo inicial (passo=0), 8 tarefas estão presentes no bag e são lançadas para execução. Terminado o passo, avança o tempo (passo=1) e um \textit{job} de cada uma das tarefas é completado. O mesmo ocorre ao término do passo 1 e do passo 2. No passo 3, um novo conjunto de tarefas é recebido no bag e lançado. Ao final do passo 3, todas as tarefas em execução finalizam a execução de um \textit{job}. No passo 4, como no passo anterior, um novo conjunto de tarefas inicia a execução e todas as tarefas completam a execução de um \textit{job}. Neste passo ocorre também que um conjunto de tarefas executa seu último \textit{job}, finalizando sua execução. No passo seguinte (passo=5) as tarefas remanescentes avançam, concluindo mais um passo. A execução prossegue reproduzindo o padrão apresentado.
+Na Figura \ref{img:ExemploBoT} são apresentados os 6 primeiros passos na evolução da aplicação $A$ descrita no exemplo anterior. Observe que nesta representação está sendo assumido a existência de um número não limitado de recursos de processamento e inexistência de condições de contenção de execução. No passo inicial (passo=0), 8 tarefas estão presentes no bag e são lançadas para execução. Terminado o passo, avança o tempo (passo=1) e um \textit{job} de cada uma das tarefas é completado. O mesmo ocorre ao término do passo 1 e do passo 2. No passo 3, um novo conjunto de tarefas é recebido no bag e lançado. Ao final do passo 3, todas as tarefas em execução finalizam a execução de um \textit{job}. No passo 4, como no passo anterior, um novo conjunto de tarefas inicia a execução e todas as tarefas completam a execução de um \textit{job}. Neste passo ocorre também que um conjunto de tarefas executa seu último \textit{job}, finalizando sua execução. No passo seguinte (passo=5) as tarefas remanescentes avançam, concluindo mais um passo. A execução prossegue reproduzindo o padrão apresentado.
 
 \begin{figure}[H]
 	\centerline{
 		\includegraphics[scale=0.9]{images/BagOfTasks4.pdf}}
 	\caption[Exemplo de aplicação \textit{Bag of Tasks}]{Exemplo de aplicação \textit{Bag of Tasks}.}
-	\label{ExemploBoT}
+	\label{img:ExemploBoT}
 \end{figure}
 
-\section{Workflow}
+\section{Fluxos de Trabalho Científicos - \emph{Workflows}}
 
-Os fluxos de trabalho científicos (\emph{workflows}) estão presentes em diversos domínios de aplicação e pesquisa, como por exemplo, astronomia, biologia, física gravitacional, estudos de terremotos, entre outros.
+Os fluxos de trabalho científicos (\emph{workflows}) estão presentes em diversos domínios de aplicação e pesquisa, como por exemplo, astronomia, biologia, física gravitacional, estudos de terremotos, entre outros. Eles permitem que os usuários expressem facilmente tarefas computacionais de várias etapas, por exemplo, recuperar dados de um instrumento ou banco de dados, reformatar os dados e executar uma análise. 
+
+Um fluxo de trabalho científico descreve as dependências entre as tarefas e, na maioria dos casos, é descrito como um grafo acíclico direcionado (DAG)\improve{Adicionar na lista de siglas}, no qual os nós são tarefas e as arestas denotam as dependências das\unsure{dependência "das" tarefas ou "entre" as tarefas?} tarefas. As tarefas em um fluxo de trabalho científico podem ser desde tarefas seriais curtas até tarefas paralelas muito grandes, cercadas por um grande número de tarefas seriais pequenas usadas para pré e pós-processamento \cite{Pegasus2022}.
 
 Pesquisas científicas utilizam conjuntos de dados cada vez mais complexos a fim de executar simulações e análises. Neste cenário, tecnologias de fluxos de trabalho científicos buscam maneiras de gerenciar a complexidade das aplicações científicas e a maneira de lidar com grandes quantidades de dados.
 
 À medida que os fluxos de trabalho científicos crescem em complexidade e importância, é necessário um maior entendimento com relação à gerência de tais estruturas. Torna-se importante conhecer os requisitos dos \emph{workflows} (fluxos de trabalho), bem como seus comportamentos, que podem conduzir para significativas melhorias no que tange a algoritmos para provisionamento de recursos computacionais, escalonamentos de \emph{jobs} e manuseio dos dados \cite{juveCharacterizingProfilingScientific2013}.
 
+% Os fluxos de trabalho científicos permitem que os usuários expressem facilmente tarefas computacionais de várias etapas, por exemplo, recuperar dados de um instrumento ou banco de dados, reformatar os dados e executar uma análise. Um fluxo de trabalho científico descreve as dependências entre as tarefas e, na maioria dos casos, o fluxo de trabalho é descrito como um grafo acíclico direcionado (DAG), onde os nós são tarefas e as arestas denotam as dependências das tarefas. Uma propriedade definidora para um fluxo de trabalho científico é que ele gerencia o fluxo de dados. As tarefas em um fluxo de trabalho científico podem ser desde tarefas seriais curtas até tarefas paralelas muito grandes (MPI, por exemplo) cercadas por um grande número de tarefas seriais pequenas usadas para pré e pós-processamento.
 
+Como exemplo de um fluxo de trabalho científico, a Figura \ref{img:PegasusWMS} apresenta o SIPHT. Este fluxo representa uma aplicação que procura por pequenos RNAs não traduzidos, conhecidos como sRNA.
+
+\begin{figure}[H]
+	\centerline{
+		\includegraphics[scale=0.2]{images/sipht.png}}
+	\caption[Fluxo de trabalho SIPHT]{Fluxo de trabalho SIPHT \cite{juveCharacterizingProfilingScientific2013}.}
+	\label{sipht}
+\end{figure}
 
 
 
 Aqui entra a história do Pegasus.
 
-\cite{deelmanPegasusCloudScience2016}\\
+O projeto Pegasus engloba um conjunto de tecnologias que ajudam a executar aplicativos baseados em fluxo de trabalho em vários ambientes diferentes, incluindo desktops, clusters de campus, grades e nuvens. A Pegasus conecta o domínio científico e o ambiente de execução mapeando automaticamente descrições de fluxo de trabalho de alto nível em recursos distribuídos. Ele localiza automaticamente os dados de entrada necessários e os recursos computacionais necessários para a execução do fluxo de trabalho. O Pegasus permite que os cientistas construam fluxos de trabalho em termos abstratos sem se preocupar com os detalhes do ambiente de execução subjacente ou com os detalhes das especificações de baixo nível exigidas pelo middleware (Condor, Globus ou Amazon EC2). A Pegasus também conecta a infraestrutura cibernética atual ao coordenar efetivamente vários recursos distribuídos.
+
+Pegasus tem sido usado em vários domínios científicos, incluindo astronomia, bioinformática, ciência de terremotos, física de ondas gravitacionais, ciência oceânica, limnologia e outros. Quando ocorrem erros, o Pegasus tenta se recuperar, quando possível, repetindo tarefas, repetindo todo o fluxo de trabalho, fornecendo pontos de verificação no nível do fluxo de trabalho, mapeando novamente partes do fluxo de trabalho, tentando fontes de dados alternativas para dados de teste e, quando tudo mais falha, fornecendo um fluxo de trabalho de resgate contendo uma descrição apenas do trabalho que ainda precisa ser feito. Ele limpa o armazenamento à medida que o fluxo de trabalho é executado para que os fluxos de trabalho com uso intenso de dados tenham espaço suficiente para serem executados em recursos com restrições de armazenamento. O Pegasus acompanha o que foi feito (proveniência), incluindo os locais dos dados usados e produzidos, e qual software foi usado com quais parâmetros.
+
+O Pegasus possui vários recursos que contribuem para sua usabilidade e eficácia.
+
+Portabilidade / Reutilização – Os fluxos de trabalho criados pelo usuário podem ser executados facilmente em diferentes ambientes sem alteração. Atualmente, a Pegasus executa fluxos de trabalho em cima do Condor, infraestruturas de grade como Open Science Grid e XSEDE, Amazon EC2, Google Cloud e muitos clusters de campus. O mesmo fluxo de trabalho pode ser executado em um único sistema ou em um conjunto heterogêneo de recursos.
+Desempenho – O mapeador Pegasus pode reordenar, agrupar e priorizar tarefas para aumentar o desempenho geral do fluxo de trabalho.
+Escalabilidade – A Pegasus pode dimensionar facilmente o tamanho do fluxo de trabalho e os recursos pelos quais o fluxo de trabalho é distribuído. A Pegasus executa fluxos de trabalho que variam de apenas algumas tarefas computacionais até 1 milhão. O número de recursos envolvidos na execução de um fluxo de trabalho pode ser dimensionado conforme necessário, sem nenhum impedimento ao desempenho.
+Proveniência – Por padrão, todos os trabalhos no Pegasus são iniciados usando o wrapper Kickstart que captura a proveniência do trabalho em tempo de execução e ajuda na depuração. Os dados de proveniência são coletados em um banco de dados e os dados podem ser consultados com ferramentas como pegasus-statistics, pegasus-plots ou diretamente usando SQL.
+Gerenciamento de dados – Pegasus lida com seleção de réplicas, transferências de dados e registros de saída em catálogos de dados. Essas tarefas são adicionadas a um fluxo de trabalho como tarefas auxiliares pelo planejador Pegasus.
+Confiabilidade – Trabalhos e transferências de dados são repetidos automaticamente em caso de falhas. Ferramentas de depuração como o pegasus-analyzer ajudam o usuário a depurar o fluxo de trabalho em caso de falhas não recuperáveis.
+Recuperação de erros – Quando ocorrem erros, a Pegasus tenta recuperar quando possível repetindo tarefas, repetindo todo o fluxo de trabalho, fornecendo pontos de verificação no nível do fluxo de trabalho, mapeando novamente partes do fluxo de trabalho, tentando fontes de dados alternativas para dados de teste e, quando tudo mais falhar, fornecendo um fluxo de trabalho de resgate contendo uma descrição apenas do trabalho que ainda precisa ser feito. Ele limpa o armazenamento à medida que o fluxo de trabalho é executado para que os fluxos de trabalho com uso intenso de dados tenham espaço suficiente para serem executados em recursos com restrições de armazenamento. O Pegasus acompanha o que foi feito (proveniência), incluindo os locais dos dados usados e produzidos, e qual software foi usado com quais parâmetros.
+
+\begin{figure}[H]
+	\centerline{
+		\includegraphics[scale=0.14]{images/PegasusWMS.png}}
+	\caption[Arquitetura do Pegasus Workflow Management System (WMS)]{Arquitetura do Pegasus Workflow Management System (WMS)\improve{adicionar na lista de siglas?} \cite{deelmanPegasusCloudScience2016}.}
+	\label{img:PegasusWMS}
+\end{figure}
+
+
 
 \cite{deelmanPegasusWorkflowManagement2015}\\
 
@@ -274,16 +306,7 @@ Aqui entra a história do Pegasus.
 
 \cite{deelmanPegasusWorkflowManagement2021}\\
 
-
-
 \cite{vahiCustomExecutionEnvironments2019}
-
-\begin{figure}[H]
-	\centerline{
-		\includegraphics[scale=0.25]{images/sipht.png}}
-	\caption[SIPHT workflow]{SIPHT workflow \cite{juveCharacterizingProfilingScientific2013}.}
-	\label{sipht}
-\end{figure}
 
 \section{Aspectos de Custo}\label{aspectos_de_custo}
 
