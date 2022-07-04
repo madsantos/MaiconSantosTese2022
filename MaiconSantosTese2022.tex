@@ -254,7 +254,7 @@ Na Figura \ref{img:ExemploBoT} são apresentados os 6 primeiros passos na evolu�
 
 Os fluxos de trabalho científicos (\emph{workflows}) estão presentes em diversos domínios de aplicação e pesquisa, como por exemplo, astronomia, biologia, física gravitacional, estudos de terremotos, entre outros. Eles permitem que os usuários expressem facilmente tarefas computacionais de várias etapas, por exemplo, recuperar dados de um instrumento ou banco de dados, reformatar os dados e executar uma análise. 
 
-Um fluxo de trabalho científico descreve as dependências entre as tarefas e, na maioria dos casos, é descrito como um grafo acíclico direcionado (DAG)\improve{Adicionar na lista de siglas}, no qual os nós são tarefas e as arestas denotam as dependências das\unsure{dependência "das" tarefas ou "entre" as tarefas?} tarefas. As tarefas em um fluxo de trabalho científico podem ser desde tarefas seriais curtas até tarefas paralelas muito grandes, cercadas por um grande número de tarefas seriais pequenas usadas para pré e pós-processamento \cite{Pegasus2022}.
+Um fluxo de trabalho científico descreve as dependências entre as tarefas e, na maioria dos casos, é descrito como um grafo acíclico direcionado (DAG)\improve{Adicionar na lista de siglas}, no qual os nós são tarefas e as arestas denotam as dependências entre tarefas. As tarefas em um fluxo de trabalho científico podem ser desde tarefas seriais curtas até tarefas paralelas muito grandes, cercadas por um grande número de tarefas seriais pequenas usadas para pré e pós-processamento.
 
 Pesquisas científicas utilizam conjuntos de dados cada vez mais complexos a fim de executar simulações e análises. Neste cenário, tecnologias de fluxos de trabalho científicos buscam maneiras de gerenciar a complexidade das aplicações científicas e a maneira de lidar com grandes quantidades de dados.
 
@@ -262,7 +262,7 @@ Pesquisas científicas utilizam conjuntos de dados cada vez mais complexos a fim
 
 % Os fluxos de trabalho científicos permitem que os usuários expressem facilmente tarefas computacionais de várias etapas, por exemplo, recuperar dados de um instrumento ou banco de dados, reformatar os dados e executar uma análise. Um fluxo de trabalho científico descreve as dependências entre as tarefas e, na maioria dos casos, o fluxo de trabalho é descrito como um grafo acíclico direcionado (DAG), onde os nós são tarefas e as arestas denotam as dependências das tarefas. Uma propriedade definidora para um fluxo de trabalho científico é que ele gerencia o fluxo de dados. As tarefas em um fluxo de trabalho científico podem ser desde tarefas seriais curtas até tarefas paralelas muito grandes (MPI, por exemplo) cercadas por um grande número de tarefas seriais pequenas usadas para pré e pós-processamento.
 
-Como exemplo de um fluxo de trabalho científico, a Figura \ref{img:PegasusWMS} apresenta o SIPHT. Este fluxo representa uma aplicação que procura por pequenos RNAs não traduzidos, conhecidos como sRNA.
+Como exemplo de um fluxo de trabalho científico, a Figura \ref{img:PegasusWMS} apresenta o SIPHT. Este fluxo representa uma aplicação que procura por pequenos RNAs não traduzidos, conhecidos como sRNA, que regulam processos como secreção e virulência em bactérias. Tal projeto de bioinformática, a cargo da Universidade de Harvard, utiliza um fluxo de trabalho para automatizar a busca de genes codificadores de sRNA para todos os \emph{replicons} bacterianos em um grande banco de dados de informações sobre biotecnologia.
 
 \begin{figure}[H]
 	\centerline{
@@ -271,7 +271,9 @@ Como exemplo de um fluxo de trabalho científico, a Figura \ref{img:PegasusWMS} 
 	\label{sipht}
 \end{figure}
 
+No contexto de fluxos de trabalho científicos, o projeto Pegasus \cite{Pegasus2022} surge com uma alternativa para a execução de aplicações baseadas em \emph{workflows} em diferentes ambientes, que podem ser desde desktops ou notebooks até infraestruturas computacionais de grande porte como clusters, grids ou nuvens.
 
+Com o Pegasus é possível conectar o domínio científico e o ambiente de execução,  realizando o mapeamento automático das descrições do fluxo de trabalho em recursos de computação distribuídos. É possível localizar 
 
 Aqui entra a história do Pegasus.
 
@@ -1774,6 +1776,12 @@ aqui vamos escrever...
 
 ok, vamos tentar.
 
+\section{Escalonamento e Contabilização de Custos}
+
+Estratégias para distribuição de carga e para contabilização dos usos dos recursos.
+
+\textcolor{magenta}{Iniciar com aquela tabela que iniciamos das estratégias do CloudSim Plus.}
+
 \chapter{Introdução de Cloud Bursting}
 
 No capítulo anterior, a simulação foi até o ponto em que a demanda dos usuários suplantou a oferta de recursos, aumentando o tempo de espera dos usuários. Uma alternativa é o incremento dos recursos, implicando em gastos. Outra é utilizar cloud bursting. Nesse capítulo discutir os custos associados ao cloud bursting. É possível que uma estratégia de escalonamento deva ser realizada. Imagino que o escalonamento opere da seguinte forma: tenta lançar local, se não deu, tenta lançar em um outro sítio, se não deu, dispara na pública. Em execução, a medida em que um sitio se torna ocioso, busca para executar o que está na nuvem.
@@ -1800,19 +1808,33 @@ A utilização de nuvens públicas, como complemento para os recursos locais de 
 - Reaplicar a estratégia do Passo 3 neste novo contexto\\
 - Reavaliar os custos\\
 
-\chapter{Impacto nos Custos}
+\section{Escalonamento e Contabilização de Custos}
 
-Aqui relacionar vantagens e desvantagens das soluções: incrementar a nuvem, realizar bursting.
+Nesta seção será descrito como o cloud bursting será utilizado em uma nuvem federada com fins acadêmicos. As alternativas de escalonamento deverão ficar por aqui.
 
-%   Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-%   blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-%   Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-%   blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-%   Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-%   blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-%   Bla blabla blablabla bla.  Bla blabla blablabla bla.  Bla blabla
-%   blablabla bla.  Bla blabla blablabla bla.  Bla blabla blablabla bla.
-%   Bla blabla blablabla bla~\ref{tabela2}.
+\textcolor{magenta}{Como ``adaptar'' as estratégias do CloudSim Plus para este contexto.}
+
+\chapter{Estudos de Caso}
+
+Neste capítulo são realizados estudos de casos na aplicação de estratégias de cloud bursting em um cenário de nuvem federada para uso acadêmico em pesquisa. O estudo realizado considera dois contextos de aplicação. O primeiro, relatado na Seção \ref{sec:googleloads}, considera a carga computacional anotada em arquivos de traços de execução do Google. O segundo, Seção \ref{sec:workflowloads}, é aplicado sobre workflows de aplicações científicas, conforme  caracterizados no projeto Pegasus. Os dados de desempenho coletados dizem respeito ao tempo total de execução e ao custo financeiro global da execução do conjunto de aplicações submetidas. O capítulo inicia apresentando as infraestruturas utilizadas nos estudos conduzidos, Seção \ref{sec:infraestruturascasosdeestudo}, e é concluído com uma discussão, na Seção \ref{sec:discussaocasosdeestudo}, sobre o impacto financeiro da adoção de cloud bursting sobre a nuvem federada.
+
+\section{Infraestruturas consideradas}\label{sec:infraestruturascasosdeestudo}
+
+Os estudos de caso serão conduzidos para avaliar o impacto tanto no desempenho, caracterizado como tempo total de execução do conjunto de aplicações lançadas em cada cenário avaliado, como no custo financeiro total do uso dos recursos disponibilizados. Tendo como objetivo oferecer dados para determinar vantagens e desvantagens financeiras da aplicação de recursos para ampliação da infraestrutura de nuvem federada na forma de adição de recursos físicos ou na realização de cloud bursting, é analisada a escalabilidade de diferentes configurações de arquitetura em função do crescimento da demanda das aplicações. As configurações de arquitetura são nomeadas Base, Ampliada e Bursted.
+
+A infraestrutura Base é composta por X nós de processamento, cada nó dotado de C cores e M memória. 
+
+A infraestrutura Ampliada possui os mesmos X nós de processamento existentes na infraestrutura Base, mas 2xC cores e 2xM memória por nó.
+
+A infraestrutura Bursted é composta pela arquitetura Base, ao qual é adicionado suporte em uma nuvem pública de XxC cores e XxM memória.
+
+Para delimitar o conjunto de análises a serem realizadas, será considerado que a largura de banda entre todos os nós, e também entre cada um dos nós e a nuvem pública, é constante em 100Mbps.
+
+\section{Cargas de Produção}\label{sec:googleloads}
+
+\section{Workflows Científicos}\label{sec:workflowloads}
+
+\section{Discussão}\label{sec:discussaocasosdeestudo}
 
 % \begin{table}
 % \begin{center}
