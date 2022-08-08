@@ -1782,9 +1782,6 @@ Estratégias para distribuição de carga e para contabilização dos usos dos r
 
 \textcolor{magenta}{Iniciar com aquela tabela que iniciamos das estratégias do CloudSim Plus.}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{graphicx}
 \begin{table}[H]
   \scriptsize
   \centering
@@ -1809,7 +1806,7 @@ Estratégias para distribuição de carga e para contabilização dos usos dos r
   \midrule
   CompletelyFair          & Uma implementação simplificada do Completely Fair Scheduler (CFS) que é o escalonador padrão usado para a maioria das tarefas no kernel Linux recente. É um escalonador de tempo compartilhado que compartilha núcleos de CPU entre aplicativos em execução, antecipando-os após um período de tempo (slice de tempo) para permitir que outros comecem a executar durante seus intervalos de tempo.	\\
   \addlinespace[0.15cm]
-  SpaceShared             & Implementa uma política de escalonamento realizada por uma máquina virtual para executar seus Cloudlets. Ele considera que haverá apenas um Cloudlet por VM. Outros Cloudlets estarão em lista de espera. Também considera que o tempo de transferência dos Cloudlets para a VM acontece antes do início da execução do Cloudlet. Ou seja, embora os Cloudlets devam aguardar a CPU, a transferência de dados acontece assim que os Cloudlets são enviados. Este escalonador não considera as prioridades dos Cloudlets para definir a ordem de execução. Se as prioridades reais forem definidas para Cloudlets, elas serão simplesmente ignoradas pelo agendador.	\\
+  SpaceShared             & Implementa uma política de escalonamento realizada por uma máquina virtual para executar seus Cloudlets. Ele considera que haverá apenas um Cloudlet por VM. Outros Cloudlets estarão em lista de espera. Também considera que o tempo de transferência dos Cloudlets para a VM acontece antes do início da execução do Cloudlet. Ou seja, embora os Cloudlets devam aguardar a CPU, a transferência de dados acontece assim que os Cloudlets são enviados. Este escalonador não considera as prioridades dos Cloudlets para definir a ordem de execução. Se as prioridades reais forem definidas para Cloudlets, elas serão simplesmente ignoradas pelo agendador. \\
   \addlinespace[0.15cm]
   TimeShared              & Implementa uma política de escalonamento realizada por uma máquina virtual para executar seus Cloudlets. Cloudlets são executados de maneira compartilhada no tempo na VM. Cada VM precisa ter sua própria instância de um CloudletScheduler. Este escalonador não considera as prioridades dos Cloudlets para definir a ordem de execução. Se as prioridades reais forem definidas para Cloudlets, elas serão simplesmente ignoradas pelo agendador.	\\ 
   \midrule
