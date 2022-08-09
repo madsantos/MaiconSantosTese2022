@@ -183,7 +183,7 @@ O texto desta Proposta de Tese está organizado da seguinte forma: no Capítulo 
 \ups[inline]{\[\Uparrow~\Uparrow~\Uparrow\]Corrigir referências após finalizar a escrita.}
 
 %\chapter{Requisitos de Execução para Aplicações HPC}\label{chap:reqhpc}
-\chapter{Aplicações HPC sobre Nuvens Computacionas}\label{chap:aplicacoes}
+\chapter{Aplicações HPC sobre Nuvens Computacionais}\label{chap:aplicacoes}
 
 Este capítulo descreve os modelos típicos para exploração de nuvens computacionais. Aqui tu diz que vai executar em IaaS. \unsure{O que eu tenho que escrever aqui? Já está no texto? É só transportar para cá?}
 
@@ -1367,7 +1367,7 @@ pode ser o caso em instituições acadêmicas e de pesquisa, a análise em termo
 
 Esta seção apresenta os trabalhos relacionados ao tema abordado neste estudo, destacando os pontos relevantes com relação à análise de investimentos para infraestruturas de nuvem. 
 
-No mercado de computação em nuvem, o valor cobrado por cada solução varia muito. Levar em conta somente o desempenho na comparação de fornecedores pode não ser suficiente. Em seu trabalho, \cite{roloffHighPerformanceComputing2012c} (T01, conforme Tabela \ref{tab:trabsel}) define uma métrica de eficiência de custos que se propõe a realizar uma comparação mais justa em relação ao que é disponibilizado ao usuário, escalando o valor do desempenho com o preço por hora. Suas conclusões mostram que nuvens podem fornecer uma plataforma viável para a execução de aplicações HPC, mesmo que com algumas desvantagens na implantação, como criação e personalização de instâncias virtuais, problemas de conexão e gerenciamento e tempo de inicialização. Em vários \textit{benchmarks}, os provedores de nuvem obtiveram desempenho e eficiência de custos melhores que o \textit{cluster} local. Além disso, é necessário analisar o comportamento das aplicações de destino, bem como características dos provedores, a fim de escolher o mais adequado para uma determinada aplicação.
+No mercado de computação em nuvem, o valor cobrado por cada solução varia muito. Levar em conta somente o desempenho na comparação de fornecedores pode não ser suficiente. Em seu trabalho, \cite{roloffHighPerformanceComputing2012c} (T01, conforme Tabela \ref{tab:trabsel}) define uma métrica de eficiência de custos que se propõe a realizar uma comparação mais justa em relação ao que é disponibilizado ao usuário, escalando o valor do desempenho com o preço por hora. Suas conclusões mostram que nuvens podem fornecer uma plataforma viável para a execução de aplicações HPC, mesmo que com algumas desvantagens na implantação, como criação e personalização de instâncias virtuais, problemas de conexão e gerenciamento e tempo de inicialização. Em \textit{benchmarks}, os provedores de nuvem obtiveram desempenho e eficiência de custos melhores que o \textit{cluster} local. Além disso, é necessário analisar o comportamento das aplicações de destino, bem como características dos provedores, a fim de escolher o mais adequado para uma determinada aplicação.
 
 Em \cite{maratheComparativeStudyHighperformance2013c} (T02), são comparadas instâncias da Amazon EC2 com \textit{clusters} locais na execução de um conjunto de \textit{benchmarks}. O índice considerado é o tempo de resposta. Com relação aos tempos de espera em filas, no modelo, foram utilizados traços de execuções reais. Para que fosse possível uma comparação dos custos totais das execuções, foi desenvolvido um modelo econômico com o objetivo de precificar os \textit{clusters}, supondo que estes fossem oferecidos como recursos de nuvem. Por fim, os autores concluem que \textit{clusters} HPC de ponta são superiores em desempenho e que, a partir da perspectiva de usuário, há várias considerações na escolha de uma plataforma, como tempo de espera e custo real.
 
@@ -1502,6 +1502,34 @@ Nas colunas seguintes, ``Nuvem Privada'', ``Nuvem Pública'' e ``\textit{Cluster
   \end{tabularx}%
   }
 \end{table}	
+
+\chapter{Nuvens Federadas e a Academia}
+
+A abordagem adotada em diversas situações para solucionar a questão de oferecimento de poder de processamento a instituições de pesquisa é oferecer um suporte de nuvem computacional. As configurações de tais ambientes são diversas, assim como diversas são as estratégias adotadas em sua construção. Não raro, se observa a criação de uma nuvem federada pela simples associação de instituições promovendo o compartilhamento de seus recursos físicos. Estratégias mais elaboradas, envolvendo agências oficiais de fomentos e, eventualmente, políticas de incentivo públicas, também promovem a criação de tais infraestruturas.
+
+Este capítulo apresenta os conceitos fundamentais associados a nuvens federadas, Seção \label{sec:nuvemfederada} e algumas estratégias de escalonamento neste tipo de infraestrutura, na Seção\ref{sec:escalonamentonuvemfederada}, a fim de caracterizar questões relacionadas ao compartilhamento dos recursos. A  Seção \label{sec:iniciativasacademicas} ilustra algumas instâncias desta solução como infraestrutura para o processamento na academia e a Seção \ref{sec:discussao} finaliza este capítulo 
+
+\section{A Nuvem Federada}\label{sec:nuvemfederada}
+\emph{2 páginas}
+
+Dizer que a ideia é o compartilhamento dos recursos (aquela aposta de que uma instituição nem sempre está utilizando o que possui) e dizer que políticas de escalonamento são importantes para manter taxas de utilização que a tornem interessantes. O texto que começa com \textbf{O paradigma de computação em nuvem federada...} e termina com \textbf{... alta disponibilidade} vem para este ponto.
+
+\section{Estratégias de Escalonamento}\label{sec:escalonamentonuvemfederada}
+\emph{2 páginas}
+Aqui é bom ter uma condução para que, depois, a tabela \ref{tab:estrategias} possa ser discutida.
+
+\section{Iniciativas Acadêmicas}\label{sec:iniciativasacademicas}
+\emph{2 páginas}
+
+Aqui aquele texto da proposta. É importante recuperar textos da proposta. Um parágrafo para cada ambiente está ok.
+
+\section{Discussão}\label{sec:discussao}
+
+A construção e manutenção de uma infraestrutura de nuvem federada requer altos investimentos das instituições envolvidas. Em uma ambiente acadêmico de pesquisa, particularmente considerando o cenário brasileiro, este tipo de investimento, usualmente é parcial, ou mesmo totalmente, coberto por agências de fomento. 
+
+----------------------------------------------
+
+
 
 \chapter{Especificação do caso de estudo}
 
