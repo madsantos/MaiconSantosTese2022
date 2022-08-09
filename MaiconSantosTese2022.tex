@@ -1860,6 +1860,110 @@ Nesta seção será descrito como o cloud bursting será utilizado em uma nuvem 
 
 Neste capítulo são realizados estudos de casos na aplicação de estratégias de cloud bursting em um cenário de nuvem federada para uso acadêmico em pesquisa. O estudo realizado considera dois contextos de aplicação. O primeiro, relatado na Seção \ref{sec:googleloads}, considera a carga computacional anotada em arquivos de traços de execução do Google. O segundo, Seção \ref{sec:workflowloads}, é aplicado sobre workflows de aplicações científicas, conforme  caracterizados no projeto Pegasus. Os dados de desempenho coletados dizem respeito ao tempo total de execução e ao custo financeiro global da execução do conjunto de aplicações submetidas. O capítulo inicia apresentando as infraestruturas utilizadas nos estudos conduzidos, Seção \ref{sec:infraestruturascasosdeestudo}, e é concluído com uma discussão, na Seção \ref{sec:discussaocasosdeestudo}, sobre o impacto financeiro da adoção de cloud bursting sobre a nuvem federada.
 
+\section{Instituições Federadas}\label{sec:instfederadas2}
+
+O paradigma de computação em nuvem federada permite, aos provedores de serviço, o compartilhamento de recursos computacionais mediante regras estabelecidas pela própria federação \cite{toosi_interconnected_2014}. Este modelo visa superar limitações de recursos de infraestruturas locais dos provedores por meio do repasse de solicitações para outros membros da federação. Além disso, uma federação em nuvem possibilita que provedores operando com baixa demanda de solicitações, disponibilizem parte de seus recursos para que sejam utilizados pelos demais integrantes da nuvem federada.
+
+Uma abordagem de nuvem federada deve ser capaz de resolver problemas de interoperabilidade, uma vez que diferentes tecnologias podem ser unificadas e abstraídas para os seus consumidores finais. No entanto, se apresenta como uma alternativa financeiramente interessante para o dimensionamento de recursos necessários para o atendimento a picos de demanda que ocorram de forma distribuída, no tempo, entre seus usuários. O ganho, portanto, está na distribuição dos custos de implantação e manutenção da rede entre os sítios participantes, com a probabilidade de alta disponibilidade às demandas.\ups{Distribuição dos custos e alta disponibilidade deve ser visto.}
+
+Para o cenário a ser estudado neste trabalho, a infraestrutura de nuvem federada será composta por recursos computacionais disponibilizados pelas IEPs do Estado do Rio Grande do Sul. Neste cenário é considerado que as instituições parceiras na criação da nuvem estão de acordo com o pacto federado para a implantação da nuvem e estarão dispostas a instalar o conjunto de equipamentos necessários a efetivar sua participação. Entendendo que a capacidade de investimento de cada instituição difere, é de se considerar que cada uma contribua, em termos de equipamentos alocados à nuvem, de acordo com sua realidade. Para configuração do cenário a ser considerado é necessário, assim, definir um modelo de como os recursos computacionais estarão distribuídos, fisicamente, entre as instituições. 
+
+O critério de seleção proposto associa o potencial de investimento de cada instituição ao percentual de participação em projetos de pesquisa, registrados junto ao CNPq (Conselho Nacional de Desenvolvimento Científico e Tecnológico). Com base no Mapa de Investimentos do CNPq\footnote{\textbf{Mapa de Investimentos do CNPq}. Disponível em: \url{http://efomento.cnpq.br/efomento/distribuicaoGeografica/distribuicaoGeografica.do?metodo=apresentar}. Acesso em: 12 julho 2021.}, sob a modalidade de "Apoio a Projetos de Pesquisa", foram selecionadas 15 instituições, contemplado Universidades e Institutos Federais, com maior percentual de participação em Projetos de Pesquisa no Estado do Rio Grande do Sul.
+
+\begin{table}[H]
+    \centering
+    \caption{Instituições Parceiras}
+    \label{tab:instpar2}
+    \begin{tabular}{@{}lcc@{}}
+        \toprule
+        \textbf{Instituição (sigla)} & \multicolumn{1}{l}{\textbf{\# Projetos}} & \multicolumn{1}{l}{\textbf{Nível}} \\ \midrule
+        UFRGS      & 252 & 1 \\
+        UFSM       & 103 & 1 \\ \midrule
+        UFPEL      & 82  & 2 \\
+        FURG       & 58  & 2 \\ \midrule
+        UNISINOS   & 49  & 3 \\
+        PUCRS      & 39  & 3 \\
+        UCS        & 25  & 3 \\
+        UNIPAMPA   & 20  & 3 \\
+        UFCSPA     & 12  & 3 \\
+        UNIVATES   & 12  & 3 \\ \midrule
+        UPF        & 9   & 4 \\ 
+        FEEVALE    & 9   & 4 \\
+        URI        & 9   & 4 \\
+        IFSul      & 8   & 4 \\
+        UNILASALLE & 7   & 4 \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+A Tabela \ref{tab:instpar2} apresenta as Instituições Parceiras, que foram relacionadas de acordo com o critério de seleção proposto. Também constam na Tabela \ref{tab:instpar2}, informações sobre qual nível determinada instituição está classificada.
+
+A definição dos níveis de classificação tomou por base o quantitativo de projetos de pesquisa, divididos em faixas de valores. A partir disso, também defini-se a quantidade de módulos que serão disponibilizados pelas instituições individualmente. Conforme Tabela \ref{tab:noporinst}, é possível determinar o quantitativo sugerido de módulos que cada instituição parceira poderá dispor, em função do nível de classificação ao qual está enquadrada, a partir do número de projetos de pesquisa ativos.
+
+\begin{table}[H]
+    \centering
+    \caption{Níveis de classificação}
+    \label{tab:noporinst}
+    \begin{tabular}{@{}lll@{}}
+        \toprule
+        \textbf{Nível} & \textbf{\# Projetos} & \textbf{\# Módulos} \\ \midrule
+        1              & 100+                 & 8               \\
+        2              & 51 a 100             & 4               \\
+        3              & 11 a 50              & 2               \\
+        4              & 1 a 10               & 1               \\ \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Configuração dos Nós}\label{sec:confnos}
+
+No presente trabalho, entende-se por nó a infraestrutura física, em termos de computadores servidores e equipamentos de rede e armazenamento, que será ofertada pelas instituições para uso local e pelos demais participantes da solução de nuvem. Assume-se que, para a implantação inicial da nuvem, em comum acordo, as instituições se comprometem em adquirir e disponibilizar um conjunto padronizado de recursos computacionais. Este conjunto de recursos computacionais corresponde ao nó da nuvem. Por sua vez, a quantidade de módulos disponibilizados pelas instituições, individualmente, depende de sua capacidade de investimento, modelada conforme caracterizado na Seção \ref{sec:instfederadas}.
+
+A definição das especificações técnicas do nó se deu a partir de avaliações feitas sobre tecnologias atuais de mercado, com base em produtos ofertados pelos principais fabricantes de hardware. De acordo com a Figura \ref{fig:IEPNosModulos}, cada nó da solução de nuvem computacional federada é formada pelo arranjo de módulos pertencentes às seguintes categorias: controle e computação. O módulo de controle é composto por equipamentos de processamento, armazenamento e conexão de rede ao passo que o módulo de computação conta com recursos de processamento. À medida que são incorporados módulos de computação em um nó de uma dada instituição, é previsto crescimento proporcional do espaço de armazenamento no módulo de controle.
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=.8]{images/IEPNosModulos-v2.drawio.pdf}
+	\caption[Composição dos nós da nuvem nas Instituições de Ensino e Pesquisa.]{Composição dos nós da nuvem nas Instituições de Ensino e Pesquisa.} 
+	\label{fig:IEPNosModulos}
+\end{figure}
+
+O papel do módulo de controle é o de gerenciar todos os elementos do nó da nuvem alocados em uma IEP. Este módulo atua como ponto de agregação para as interconexões entre os módulos de computação, equipamentos de armazenamento e conexões, via rede, com o restante da infraestrutura da instituição hospedeira, possibilitando, assim, o compartilhamento dos recursos de hardware com os demais membros da nuvem federada. O módulo de computação oferece o poder de processamento do nó, adicionando \emph{cores} e espaço de armazenamento ao \emph{storage} localizado no módulo de controle.
+
+A partir da classificação apresentada na Seção \ref{sec:instfederadas}, Tabelas \ref{tab:instpar} e \ref{tab:noporinst}, fica posto que as IEPs poderão dispor de até oito módulos de computação, dependendo do nível no qual forem enquadradas, compondo assim um nó da nuvem. Destaca-se que, no modelo proposto para a solução, um módulo de computação não pode ser disposto sem a existência de um módulo de controle. Assim, a menor configuração de um nó da nuvem é composta por, pelo menos, dois módulos, um de controle e outro de computação. Na hipótese de um crescimento do poder de processamento em uma instituição, excedendo a composição máxima de um nó, ou seja, 8 módulos de computação, essa instituição deverá prover a instalação de um segundo nó.
+
+Com relação às especificações técnicas de processamento, armazenamento e conexões de rede, na Tabela \ref{tab:modulosespec} é apresentada uma possibilidade de configuração para os módulos de controle e computação. Essa configuração é a considerada no restante deste trabalho.
+
+\begin{table}[H]
+    \centering
+    \caption{Especificações de hardware dos módulos de controle e computação.}
+    \label{tab:modulosespec}
+    \begin{tabular}{@{}lrrrl@{}}
+        \toprule
+        \multicolumn{1}{c}{\textbf{Módulo}} &
+        \multicolumn{1}{c}{\textit{\textbf{Cores}}} &
+        \multicolumn{1}{c}{\textbf{Memória RAM (GB)}} &
+        \multicolumn{1}{c}{\textbf{Interfaces de Rede}} &
+        \multicolumn{1}{c}{\textbf{Armazenamento}} \\ \midrule
+        Controle   & 16 & 256 & 24 & 10TB* \\
+                   &    &     &    &               \\
+        Computação & 64 & 512 & 2  & 1TB** \\ \bottomrule
+    \end{tabular}
+    \caption*{*~ Quantidade de armazenamento inicialmente disponível no módulo de controle.\\ ** Quantidade de armazenamento adicionada por cada módulo de computação.}
+\end{table}
+  
+O módulo de controle não necessita de recursos dedicados às tarefas de computação devido ao seu papel de gerenciamento dentro da solução. Os recursos de armazenamento, provenientes das adições de novos módulos de computação, são recepcionados na estrutura de \emph{storage} oferecida pelo módulo de controle.
+
+\section{Interligação entre Nós}\label{sec:rede}
+
+A interligação entre os nós que compõe a infraestrutura de nuvem federada merece destaque em função de características  necessárias para que seu funcionamento esteja de acordo com as expectativas dos usuários.
+
+Por ser um infraestrutura geograficamente distribuída, com pontos de conexão localizados em diferentes cidades do estado do Rio Grande do Sul, a existência de uma rede de comunicação de dados estável e suficiente para o desempenho das atividades, as quais se propõe a nuvem federada, é de suma importância para a concretização do projeto. Tal rede deve ser capaz de prover comunicação a todos os nós da nuvem, alocados nas IEPs do estado.
+
+Atualmente, as instituições candidatas a membro da federação de nuvem proposta, estão conectadas por meio da infraestrutura de comunicação ofertada pela Rede Tchê. Tal estrutura já permite, de modo imediato, a troca de informações entre as IEPs do estado do Rio Grande do Sul.
+
+Por apresentar uma capilaridade bem distribuída entre as instituições que, eventualmente, se credenciem a fazer parte da infraestrutura de nuvem federada, a Rede Tchê é uma opção de conexão a ser considerada, com o objetivo de oferecer as capacidades de interconexão exigidas pelos nós da nuvem. A Rede Tchê é uma infraestrutura de rede de computadores que interliga IEPs, no caso, Universidades, Institutos Federais e Centros de Pesquisa, no estado do Rio Grande do Sul. Hoje, todas as instituições se conectam ao nó da Rede Tchê localizado na cidade de Porto Alegre, o qual se configura como a porta de entrada da rede e ponto de conexão à Internet, e com o resto do país, por meio do Ponto de Presença da RNP (Rede Nacional de Ensino e Pesquisa) no Rio Grande do Sul. Isso possibilita que as instituições conectadas desenvolvam vários projetos por meio da infraestrutura disponibilizada pela Rede Tchê e suas abrangências locais.
+
+Uma alternativa à Rede Tchê seria a criação de uma rede de comunicação, entre as IEPs, com topologia em anel duplo, exclusiva para o tráfego de informações pertinentes ao usuários da nuvem federada. A topologia de rede em anel duplo permite que o tráfego flua em dois sentidos diferentes, permitindo um melhor aproveitamento da banda de rede disponível e garantindo um bom nível de redundância para a estrutura. Tal rede alternativa proveria acesso por meio de \emph{links} dedicados entre cada localidade na qual se encontre nós da infraestrutura de nuvem. Para a concretização de um projeto de rede como o citado anteriormente, seriam necessários investimentos financeiros por parte da instituições, além dos recursos que já seriam empregados para disposição dos nós a serem integrados à nuvem federada. O uso de uma rede alternativa pode configurar um ambiente, de certa forma, independente no que diz respeito a eventuais restrições impostas por empresas operadoras de serviços de telecomunicações. Porém, há de se considerar que a construção de uma rede alternativa implica em altos custos tanto de implantação quanto de manutenção, que poderiam inviabilizar financeiramente a concretização de um projeto de nuvem federada.
+
 \section{Infraestruturas consideradas}\label{sec:infraestruturascasosdeestudo}
 
 Os estudos de caso serão conduzidos para avaliar o impacto tanto no desempenho, caracterizado como tempo total de execução do conjunto de aplicações lançadas em cada cenário avaliado, como no custo financeiro total do uso dos recursos disponibilizados. Tendo como objetivo oferecer dados para determinar vantagens e desvantagens financeiras da aplicação de recursos para ampliação da infraestrutura de nuvem federada na forma de adição de recursos físicos ou na realização de cloud bursting, é analisada a escalabilidade de diferentes configurações de arquitetura em função do crescimento da demanda das aplicações. As configurações de arquitetura são nomeadas Base, Ampliada e Bursted.
