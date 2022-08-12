@@ -1510,13 +1510,59 @@ A abordagem adotada em diversas situações para solucionar a questão de oferec
 Este capítulo apresenta os conceitos fundamentais associados a nuvens federadas, Seção \label{sec:nuvemfederada} e algumas estratégias de escalonamento neste tipo de infraestrutura, na Seção\ref{sec:escalonamentonuvemfederada}, a fim de caracterizar questões relacionadas ao compartilhamento dos recursos. A  Seção \label{sec:iniciativasacademicas} ilustra algumas instâncias desta solução como infraestrutura para o processamento na academia e a Seção \ref{sec:discussao} finaliza este capítulo 
 
 \section{A Nuvem Federada}\label{sec:nuvemfederada}
-\emph{2 páginas}
+% \emph{2 páginas}
 
-Dizer que a ideia é o compartilhamento dos recursos (aquela aposta de que uma instituição nem sempre está utilizando o que possui) e dizer que políticas de escalonamento são importantes para manter taxas de utilização que a tornem interessantes. O texto que começa com \textbf{O paradigma de computação em nuvem federada...} e termina com \textbf{... alta disponibilidade} vem para este ponto.
+% Dizer que a ideia é o compartilhamento dos recursos (aquela aposta de que uma instituição nem sempre está utilizando o que possui) e dizer que políticas de escalonamento são importantes para manter taxas de utilização que a tornem interessantes. O texto que começa com \textbf{O paradigma de computação em nuvem federada...} e termina com \textbf{... alta disponibilidade} vem para este ponto.
+
+O paradigma de computação em nuvem federada permite, aos provedores de serviço, o compartilhamento de recursos computacionais mediante regras estabelecidas pela própria federação \cite{toosi_interconnected_2014}. Este modelo visa superar limitações de recursos de infraestruturas locais dos provedores por meio do repasse de solicitações para outros membros da federação. Além disso, uma federação em nuvem possibilita que provedores operando com baixa demanda de solicitações, disponibilizem parte de seus recursos para que sejam utilizados pelos demais integrantes da nuvem federada.
+
+Uma abordagem de nuvem federada deve ser capaz de resolver problemas de interoperabilidade, uma vez que diferentes tecnologias podem ser unificadas e abstraídas para os seus consumidores finais. No entanto, se apresenta como uma alternativa financeiramente interessante para o dimensionamento de recursos necessários para o atendimento a picos de demanda que ocorram de forma distribuída, no tempo, entre seus usuários. O ganho, portanto, está na distribuição dos custos de implantação e manutenção da rede entre os sítios participantes, com a probabilidade de alta disponibilidade às demandas.
 
 \section{Estratégias de Escalonamento}\label{sec:escalonamentonuvemfederada}
-\emph{2 páginas}
-Aqui é bom ter uma condução para que, depois, a tabela \ref{tab:estrategias} possa ser discutida.
+% \emph{2 páginas}
+% Aqui é bom ter uma condução para que, depois, a tabela \ref{tab:estrategias} possa ser discutida.
+
+\begin{table}[H]
+  \scriptsize
+  \centering
+  \caption{Estratégias de escalonamento}
+  \label{tab:estrategias}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{@{}lm{11.2cm}@{}}
+  \toprule
+  \multicolumn{2}{c}{\textbf{Escalonamento de VM no Cluster: VMAllocationPolicy}} \\
+  \midrule
+  BestFit                 & escolhe, como host para uma VM, aquele com o maior número de PEs em uso, que possui PEs livres suficientes para uma VM. \\
+  \addlinespace[0.15cm]
+  FirstFit                & encontra o primeiro Host com recursos adequados para colocar uma determinada VM. \\
+  \addlinespace[0.15cm]
+  Random                  & encontra um Host aleatório com recursos adequados para colocar uma determinada VM. \\
+  \addlinespace[0.15cm]
+  RoundRobin              & encontra o próximo Host com recursos adequados para colocar uma determinada VM de forma circular. Isso significa que quando ele seleciona um host adequado para colocar uma VM, ele se move para o próximo host adequado quando uma nova VM precisa ser colocada. \\
+  \addlinespace[0.15cm]
+  Simple                  & escolhe, como host para uma VM, aquele com menos PEs em uso. \\ 
+  \midrule
+  \multicolumn{2}{c}{\textbf{Escalonamento de cloudlets nas VMs: CloudletScheduler}} \\ 
+  \midrule
+  CompletelyFair          & Uma implementação simplificada do Completely Fair Scheduler (CFS) que é o escalonador padrão usado para a maioria das tarefas no kernel Linux recente. É um escalonador de tempo compartilhado que compartilha núcleos de CPU entre aplicativos em execução, antecipando-os após um período de tempo (slice de tempo) para permitir que outros comecem a executar durante seus intervalos de tempo.	\\
+  \addlinespace[0.15cm]
+  SpaceShared             & Implementa uma política de escalonamento realizada por uma máquina virtual para executar seus Cloudlets. Ele considera que haverá apenas um Cloudlet por VM. Outros Cloudlets estarão em lista de espera. Também considera que o tempo de transferência dos Cloudlets para a VM acontece antes do início da execução do Cloudlet. Ou seja, embora os Cloudlets devam aguardar a CPU, a transferência de dados acontece assim que os Cloudlets são enviados. Este escalonador não considera as prioridades dos Cloudlets para definir a ordem de execução. Se as prioridades reais forem definidas para Cloudlets, elas serão simplesmente ignoradas pelo agendador. \\
+  \addlinespace[0.15cm]
+  TimeShared              & Implementa uma política de escalonamento realizada por uma máquina virtual para executar seus Cloudlets. Cloudlets são executados de maneira compartilhada no tempo na VM. Cada VM precisa ter sua própria instância de um CloudletScheduler. Este escalonador não considera as prioridades dos Cloudlets para definir a ordem de execução. Se as prioridades reais forem definidas para Cloudlets, elas serão simplesmente ignoradas pelo agendador.	\\ 
+  \midrule
+  \multicolumn{2}{c}{\textbf{Migração de VMs: VmAllocationPolicyMigration}} \\ 
+  \midrule
+  BestFitStaticThreshold  & VmAllocationPolicy que usa um Limite de utilização de CPU estático (THR) para detectar a utilização do host {under} e {over}. É uma política de Best Fit que seleciona o Host com a quantidade de CPU MIPS mais utilizada para colocar uma determinada VM. \\
+  \addlinespace[0.15cm]
+  FirstFitStaticThreshold & VmAllocationPolicy que usa um Limite de utilização de CPU estático (THR) para detectar a utilização do host {under} e {over}. É uma política First Fit que seleciona o primeiro Host com capacidade suficiente para uma determinada VM.	\\
+  \addlinespace[0.15cm]
+  StaticThreshold         & Uma política de alocação de VM que usa um limite estático de utilização da CPU para detectar a utilização excessiva do host. É uma política de primeiro ajuste que seleciona o primeiro host encontrado com uso de energia mais eficiente para colocar uma determinada VM. \\
+  \addlinespace[0.15cm]
+  WorstFitStaticThreshold & Um VmAllocationPolicy que usa um Limite de utilização de CPU estático (THR) para detectar a utilização do host {under} e {over}. É uma política de pior ajuste que seleciona o host com a quantidade menos usada de MIPS de CPU para colocar uma determinada VM. \\ 
+  \bottomrule
+  \end{tabular}%
+  }
+  \end{table}
 
 \section{Iniciativas Acadêmicas}\label{sec:iniciativasacademicas}
 \emph{2 páginas}
